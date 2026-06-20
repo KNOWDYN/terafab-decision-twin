@@ -1,0 +1,21 @@
+name: scenario-schema
+on:
+  push:
+  pull_request:
+jobs:
+  validate-scenarios:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install package
+        run: python -m pip install .
+      - name: Validate scenarios
+        run: |
+          terafab scenario validate scenarios/baseline_2026.json
+          terafab scenario validate scenarios/terawatt_stress_2026.json
+          terafab scenario validate scenarios/multi_year_2026_2030.json
+      - name: Run baseline export
+        run: terafab export scenarios/baseline_2026.json runs/baseline_bundle
