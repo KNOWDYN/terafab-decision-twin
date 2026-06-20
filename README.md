@@ -14,13 +14,6 @@ It is a public strategic model, not a claim of verified Terafab operating data. 
 - emits scalar, vector, and matrix outputs with metadata and reproducibility hashes;
 - exports JSON, Markdown, CSV summaries, and gate matrices.
 
-## What it does not do
-
-- It does not verify any Terafab site load, water permit, yield, cost, financing, grid interconnection, or operating status.
-- It does not convert stress tests or assumptions into facts.
-- It does not include restricted or proprietary Terafab source documents.
-- It does not claim affiliation with Terafab or its employees.
-
 ## Package status
 
 Public release: `0.3.0`.
@@ -134,6 +127,4 @@ A one-page public infographic is included in `assets/terafab_one_page_infographi
 
 ## Licensing and ownership
 
-Copyright (c) 2026 KNOWDYN. All rights reserved except as expressly granted in `LICENSE.md`.
-
-Commercial rights require a separate written license from KNOWDYN. Terafab is owned by its official entity. This package is independent and is not affiliated with, endorsed by, authorized by, sponsored by, or connected to Terafab or its employees.
+Copyright (c) 2026 KNOWDYN. All rights reserved except as expressly granted in `LICENSE.md`. Commercial rights require a separate written license from KNOWDYN. Terafab is owned by its official entity. This package is independent and is not affiliated with, endorsed by, authorized by, sponsored by, or connected to Terafab or its employees.
