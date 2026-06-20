@@ -1,35 +1,17 @@
 {
   "name": "Terafab Decision Twin",
   "short_name": "Terafab Twin",
-  "description": "Executive public decision-twin site for Terafab-scale semiconductor energy, water, exergy, yield, economics, governance, and policy analysis.",
+  "description": "A public, evidence-gated strategic model for Terafab-scale semiconductor energy, water, exergy, yield, economics, governance, and policy analysis.",
   "start_url": "/terafab-decision-twin/",
   "scope": "/terafab-decision-twin/",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
-  "categories": [
-    "business",
-    "education",
-    "science",
-    "productivity"
-  ],
+  "categories": ["science", "education", "productivity"],
   "icons": [
-    {
-      "src": "assets/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/maskable-icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/maskable-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }

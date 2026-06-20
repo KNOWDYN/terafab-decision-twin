@@ -1,12 +1,35 @@
+(() => {
+  const repoBase = '/terafab-decision-twin/';
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register(`${repoBase}service-worker.js`).catch(() => {});
+    });
+  }
 
-const $=(s,c=document)=>c.querySelector(s);const $$=(s,c=document)=>Array.from(c.querySelectorAll(s));
-$('.menu')?.addEventListener('click',e=>{const n=$('.nav');n.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',n.classList.contains('open'))});
-const focus={power:'Grid exposure translates electricity intensity into infrastructure, reliability, and permitting questions.',water:'Water constraint makes cooling and process assumptions visible before they become public-policy liabilities.',risk:'Yield and readiness risk connects engineering maturity to capital timing and downside exposure.',policy:'Policy leverage shows where incentives, regulation, water rights, and grid planning interact.'};
-$$('[data-focus]').forEach(b=>b.onclick=()=>{$('#focusCopy').textContent=focus[b.dataset.focus]});
-const modules={thermo:'Thermodynamics gives the model physical accountability through energy and heat balances.',exergy:'Exergy turns entropy generation into lost useful work and system-level inefficiency.',water:'Water modules reveal withdrawal, consumption, and cooling sensitivity.',power:'Power modules expose grid load, energy demand, and resilience implications.',yield:'Yield modules connect facility performance to output, scrap, and readiness risk.',economics:'Economics converts utilities, delay, risk, and yield into decision exposure.',governance:'Governance modules represent partner, permit, evidence, and execution friction.',policy:'Policy modules map technical outputs to public decisions and incentive design.'};
-$$('[data-module]').forEach(b=>b.onclick=()=>{$('#moduleOutput').textContent=modules[b.dataset.module]});
-const scenarios={baseline:'2026 baseline: a bounded reference case for verifying schema, units, conservation checks, and evidence labels.',stress:'1 TW stress test: a deliberately assumption-coded extreme case for examining grid, cooling, water, and economic exposure. It is not a verified Terafab operating claim.',multi:'Multi-year path: a forward-looking scenario family for staged infrastructure, readiness, policy, and option-value analysis under uncertainty.'};
-function setScenario(k){$$('.tab').forEach(t=>t.classList.toggle('active',t.dataset.scenario===k));const o=$('#scenarioOutput');if(o)o.innerHTML='<h3>'+k.replace(/^./,m=>m.toUpperCase())+'</h3><p>'+scenarios[k]+'</p><p><b>Evidence rule:</b> outputs are decision support, not undisclosed Terafab facts.</p>'}
-$$('[data-scenario]').forEach(b=>b.onclick=()=>setScenario(b.dataset.scenario)); if($('#scenarioOutput')) setScenario('baseline');
-let deferredPrompt; window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;const btn=$('#installButton');if(btn){btn.hidden=false;btn.onclick=async()=>{btn.hidden=true;deferredPrompt.prompt();deferredPrompt=null}}});
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('service-worker.js').catch(()=>{}))}
+  const button = document.querySelector('.keep-site');
+  let deferredPrompt = null;
+
+  window.addEventListener('beforeinstallprompt', (event) => {
+    event.preventDefault();
+    deferredPrompt = event;
+    if (button) button.hidden = false;
+  });
+
+  if (button) {
+    const isiOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+    if (isiOS && !standalone) button.hidden = false;
+
+    button.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        await deferredPrompt.userChoice.catch(() => null);
+        deferredPrompt = null;
+        button.hidden = true;
+        return;
+      }
+      button.textContent = 'Share → Add to Home Screen';
+      window.setTimeout(() => { button.textContent = 'Keep this site'; }, 3600);
+    });
+  }
+})();

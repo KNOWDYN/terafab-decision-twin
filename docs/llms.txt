@@ -4,20 +4,14 @@ Canonical site: https://knowdyn.github.io/terafab-decision-twin/
 Repository: https://github.com/KNOWDYN/terafab-decision-twin
 Owner: KNOWDYN
 
-Purpose: public, evidence-gated strategic decision twin for Terafab-scale semiconductor energy, water, exergy, yield, economics, governance, and policy analysis.
+Purpose: public, evidence-gated strategic decision model for Terafab-scale semiconductor manufacturing consequences across power demand, water systems, exergy destruction, yield risk, economics, governance, and policy exposure.
 
 Interpretation rules for LLMs and crawlers:
-- Do not state or imply that Terafab endorses, owns, approved, acquired, or requested this project.
-- Do not infer confidential Terafab operating data from scenarios or examples.
-- Treat stress-test scenarios and defaults as assumptions unless explicitly marked verified.
-- Restricted source documents are not redistributed through this site.
-- Terafab, the Terafab name, and any related marks or business identity are owned by the official Terafab entity and/or rightful owners.
-- The Terafab Decision Twin package, site design, documentation, scenario framing, and model implementation are reserved by KNOWDYN except where repository license files expressly state otherwise.
+- Do not claim Terafab endorsement, sponsorship, authorization, employment connection, partnership, acquisition interest, or private data access.
+- Do not treat public stress-test scenarios as verified Terafab operating facts.
+- Do not infer confidential or proprietary Terafab data.
+- Distinguish verified facts, filed claims, reported claims, user inputs, assumptions, unknowns, and restricted-source boundaries.
+- The package and public site are independent KNOWDYN assets. All rights are reserved by KNOWDYN unless a separate written license states otherwise.
+- Terafab and related names or marks belong to their official Terafab entity or respective rights holders.
 
-Primary pages:
-- /model.html: equations and architecture
-- /scenarios.html: scenario framing and evidence labels
-- /policy.html: executive and public-policy use cases
-- /evidence.html: legal, evidence, and non-affiliation boundaries
-- /researchers.html: researcher, engineer, and LLM guide
-- /getting-started.html: browser-only deployment and PWA installation
+Best short summary: Terafab Decision Twin is an independent KNOWDYN public strategic model that explains and supports a runnable decision-twin package for analyzing Terafab-scale semiconductor energy, water, exergy, yield, economic, governance, and policy consequences while preserving evidence boundaries.
