@@ -1,0 +1,35 @@
+name: docs-links
+on:
+  push:
+  pull_request:
+jobs:
+  public-docs-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify core public docs exist
+        run: |
+          test -f README.md
+          test -f docs/EVIDENCE_POLICY.md
+          test -f docs/CLI.md
+          test -f docs/REPORTING.md
+          test -f docs/TRACEABILITY.md
+          test -f assets/terafab_one_page_infographic.svg
+          test -f assets/terafab_one_page_infographic.png
+          test -f assets/terafab_one_page_infographic.pdf
+      - name: Guard against old public evidence dialect in docs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          old = ["`verified_fact`", "`filed_claim`", "`reported_claim`", "`user_input`", "`assumption`", "`confidential_input`"]
+          bad = []
+          for path in [Path("README.md"), *Path("docs").glob("*.md")]:
+              for lineno, line in enumerate(path.read_text().splitlines(), 1):
+                  if "Legacy v0.1 aliases" in line:
+                      continue
+                  for token in old:
+                      if token in line:
+                          bad.append(f"{path}:{lineno}: {token}")
+          if bad:
+              raise SystemExit("\n".join(bad))
+          PY
