@@ -1,30 +1,47 @@
 {
-  "policy": "Restricted and non-redistributable project sources are not included in this repository. This manifest records source classes and handling rules only.",
+  "manifest_version": "public-source-manifest-v0.3",
+  "policy": "Restricted and non-redistributable project sources are not included in this repository. This manifest records source classes, hashes where available, and handling rules only.",
+  "redistribution_gate": {
+    "restricted_documents_embedded": false,
+    "confidential_inputs_embedded": false,
+    "only_admitted_facts_and_model_structure_public": true
+  },
+  "local_placement_instructions": "If an authorized reviewer has access to private sources, place them outside the repository in a local ignored directory such as local_sources/. Do not commit them.",
   "sources": [
     {
       "name": "terafab_decision_twin-2.md",
       "role": "locked blueprint",
-      "redistribution": "not embedded; implemented through repo structure and traceability docs"
+      "status": "model_identity",
+      "redistribution": "not embedded; implemented through repo structure and traceability docs",
+      "hash_sha256": null
     },
     {
       "name": "Terafab_Formal_JV_Exergy_Yield_Policy_Model.md",
       "role": "controlling formal model",
-      "redistribution": "not embedded; equations implemented and summarized"
+      "status": "model_identity",
+      "redistribution": "not embedded; equations implemented and summarized",
+      "hash_sha256": null
     },
     {
       "name": "terafab.docx",
       "role": "project narrative source",
-      "redistribution": "not embedded"
+      "status": "reported",
+      "redistribution": "not embedded",
+      "hash_sha256": null
     },
     {
       "name": "Terafab_review.md.txt",
       "role": "review and caution source",
-      "redistribution": "not embedded"
+      "status": "reported",
+      "redistribution": "not embedded",
+      "hash_sha256": null
     },
     {
       "name": "KNOWDYN_Terafab_Intelligence_Report_2026.pdf",
       "role": "restricted intelligence report",
-      "redistribution": "excluded"
+      "status": "confidential_private_input",
+      "redistribution": "excluded",
+      "hash_sha256": null
     }
   ]
 }

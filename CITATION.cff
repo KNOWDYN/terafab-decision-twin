@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "Terafab Decision Twin"
+message: "Cite this software as an independent KNOWDYN evidence-gated decision-twin package."
+type: software
+authors:
+  - name: "KNOWDYN"
+version: "0.3.0"
+date-released: "2026-01-01"
+license: "LicenseRef-KNOWDYN-Source-Available-Noncommercial"
+repository-code: "https://github.com/KNOWDYN/terafab-decision-twin"
+abstract: "Evidence-gated Python decision twin for Terafab-scale semiconductor power, water, exergy, yield, economics, governance, and policy scenario analysis."

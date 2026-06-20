@@ -19,5 +19,11 @@ def permit_margin_m3_per_day(annual_volume_m3: float, permit_m3_per_day: float, 
     return float(permit_m3_per_day) - float(annual_volume_m3) / float(days)
 
 
+def permit_margin_with_reserve_m3_per_day(annual_volume_m3: float, permit_m3_per_day: float, reserve_margin_fraction: float = 0.0, days: float = DAYS_PER_YEAR) -> float:
+    """Water/wastewater convention: daily demand <= permit_capacity * (1 - reserve_margin)."""
+    available = float(permit_m3_per_day) * (1.0 - float(reserve_margin_fraction))
+    return available - float(annual_volume_m3) / float(days)
+
+
 def upw_demand_m3(wafer_starts: float, upw_m3_per_wafer: float) -> float:
     return max(0.0, float(wafer_starts) * float(upw_m3_per_wafer))

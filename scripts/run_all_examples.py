@@ -1,13 +1,17 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from terafab_decision_twin.schema import load_scenario
 from terafab_decision_twin.engine import run_scenario
 from terafab_decision_twin.report import markdown_report
 
-ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "runs"
 OUT.mkdir(exist_ok=True)
 

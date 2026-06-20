@@ -2,8 +2,17 @@
   "metadata": {
     "scenario_id": "multi_year_2026_2030",
     "title": "Quarterly 2026-2030 staged demonstration",
-    "version": "0.1.0",
-    "created_by": "Terafab Decision Twin v1"
+    "version": "0.2.0",
+    "created_by": "Terafab Decision Twin v1",
+    "scenario_author": "KNOWDYN",
+    "scenario_date": "2026-01-01",
+    "model_version": "0.3.0",
+    "schema_version": "0.3.0",
+    "source_bundle_version": "public-source-manifest-v0.3",
+    "scenario_type": "multi_year",
+    "scenario_purpose": "Demonstrate multi-period scenario propagation and gate behavior.",
+    "calendar_basis": "model year",
+    "discount_basis": "real annual"
   },
   "time": {
     "start_year": 2026,
@@ -14,335 +23,519 @@
     "phase": {
       "value": "concept",
       "unit": "category",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "one_terawatt_treatment": {
       "value": "not_used",
       "unit": "category",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Baseline does not assert a one-terawatt site load."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Baseline does not assert a one-terawatt site load."
     }
   },
   "energy": {
     "site_electric_load_MW": {
       "value": 150,
       "unit": "MW",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "load_factor": {
       "value": 0.85,
       "unit": "fraction",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "firm_capacity_MW": {
       "value": 200,
       "unit": "MW",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "reserve_margin_fraction": {
       "value": 0.15,
       "unit": "fraction",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "grid_carbon_intensity_kg_per_MWh": {
       "value": 350,
       "unit": "kg/MWh",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     }
   },
   "cooling": {
     "heat_rejection_capacity_MW": {
       "value": 170,
       "unit": "MW",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "heat_rejection_fraction": {
       "value": 0.98,
       "unit": "fraction",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "waste_heat_MW": {
       "value": 5,
       "unit": "MW",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "cop": {
       "value": 6.0,
       "unit": "ratio",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "hot_reservoir_K": {
       "value": 315,
       "unit": "K",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "cold_reservoir_K": {
       "value": 298.15,
       "unit": "K",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "ambient_temperature_K": {
       "value": 298.15,
       "unit": "K",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
+    },
+    "cooling_reserve_margin_fraction": {
+      "value": 0.1,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Unused cooling-capacity reserve for peak demand sensitivity."
     }
   },
   "water": {
     "withdrawal_m3_per_MWh": {
       "value": 1.2,
       "unit": "m3/MWh",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "consumptive_fraction": {
       "value": 0.65,
       "unit": "fraction",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "wastewater_fraction": {
       "value": 0.35,
       "unit": "fraction",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "permit_withdrawal_m3_per_day": {
       "value": 5000,
       "unit": "m3/day",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "permit_discharge_m3_per_day": {
       "value": 2500,
       "unit": "m3/day",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "upw_m3_per_wafer": {
       "value": 0.08,
       "unit": "m3/wafer",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
+    },
+    "water_reserve_margin_fraction": {
+      "value": 0.1,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Unused withdrawal capacity reserve for permit sensitivity."
+    },
+    "wastewater_reserve_margin_fraction": {
+      "value": 0.1,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Unused discharge capacity reserve for permit sensitivity."
     }
   },
   "manufacturing": {
     "wafer_starts_per_month": {
       "value": 30000,
       "unit": "wafers/month",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "die_per_wafer": {
       "value": 600,
       "unit": "die/wafer",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "baseline_yield": {
       "value": 0.72,
       "unit": "fraction",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "learning_rate_per_year": {
       "value": 0.025,
       "unit": "fraction/year",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "contamination_loss_fraction": {
       "value": 0.03,
       "unit": "fraction",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "qualification_readiness": {
       "value": 0.82,
       "unit": "fraction",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "contamination_readiness": {
       "value": 0.78,
       "unit": "fraction",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "packaging_readiness": {
       "value": 0.8,
       "unit": "fraction",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "compute_watts_per_good_die": {
       "value": 250,
       "unit": "W/die",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
+    },
+    "chemical_control_index": {
+      "value": 0.95,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal contamination module sensitivity parameter."
+    },
+    "excursion_rate_per_year": {
+      "value": 0.1,
+      "unit": "1/year",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal contamination module excursion sensitivity parameter."
+    },
+    "filtration_efficiency": {
+      "value": 0.99,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal cleanroom module sensitivity parameter."
+    },
+    "airflow_turnovers_per_hour": {
+      "value": 80,
+      "unit": "1/hour",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal cleanroom module sensitivity parameter."
+    },
+    "particle_load_index": {
+      "value": 0.1,
+      "unit": "index",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal cleanroom module sensitivity parameter."
+    },
+    "thermal_stability_index": {
+      "value": 0.95,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal cleanroom module sensitivity parameter."
+    },
+    "substrate_availability_index": {
+      "value": 0.85,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal packaging module sensitivity parameter."
+    },
+    "advanced_packaging_capacity_index": {
+      "value": 0.85,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal packaging module sensitivity parameter."
+    },
+    "interconnect_yield_index": {
+      "value": 0.85,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal packaging module sensitivity parameter."
+    },
+    "tool_qualification_index": {
+      "value": 0.85,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal qualification module sensitivity parameter."
+    },
+    "process_window_index": {
+      "value": 0.85,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal qualification module sensitivity parameter."
+    },
+    "customer_acceptance_index": {
+      "value": 0.85,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "scenario_author",
+      "confidence": "declared",
+      "notes": "Formal qualification module sensitivity parameter."
     }
   },
   "economics": {
     "electricity_price_USD_per_MWh": {
       "value": 75,
       "unit": "USD/MWh",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "water_price_USD_per_m3": {
       "value": 1.5,
       "unit": "USD/m3",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "capex_USD": {
       "value": 12000000000,
       "unit": "USD",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "annual_fixed_opex_USD": {
       "value": 400000000,
       "unit": "USD/year",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "discount_rate": {
       "value": 0.08,
       "unit": "fraction",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "asset_life_years": {
       "value": 20,
       "unit": "years",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "incentive_public_USD": {
       "value": 1500000000,
       "unit": "USD",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     }
   },
   "governance": {
     "partner_count": {
       "value": 3,
       "unit": "count",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "governance_complexity_index": {
       "value": 0.35,
       "unit": "index",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "decision_latency_months": {
       "value": 6,
       "unit": "months",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     }
   },
   "policy": {
     "jobs_created": {
       "value": 4500,
       "unit": "jobs",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "domestic_supply_security_index": {
       "value": 0.7,
       "unit": "index",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "local_water_stress_index": {
       "value": 0.3,
       "unit": "index",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "public_legitimacy_index": {
       "value": 0.65,
       "unit": "index",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "regulatory_readiness_index": {
       "value": 0.62,
       "unit": "index",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     },
     "emissions_price_USD_per_tCO2": {
       "value": 25,
       "unit": "USD/tCO2",
-      "status": "assumption",
-      "source": "scenario author",
-      "rationale": "Declared scenario input; not a verified Terafab operating fact."
+      "status": "scenario_assumption",
+      "source_ref": "scenario author",
+      "confidence": "declared",
+      "notes": "Declared scenario input; not a verified Terafab operating fact."
     }
   },
   "control": {
     "strict_evidence": false,
-    "fail_on_unverified_claims": false
+    "fail_on_unverified_claims": false,
+    "allow_unknown_substitution": false,
+    "allowed_actions": [
+      "build",
+      "delay",
+      "scale",
+      "redesign",
+      "allocate",
+      "contract",
+      "license",
+      "partner",
+      "curtail",
+      "abandon"
+    ],
+    "output_registry": [
+      "scalar_outputs",
+      "vector_outputs",
+      "matrix_outputs"
+    ],
+    "report_format": "json"
   }
 }

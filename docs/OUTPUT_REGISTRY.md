@@ -1,8 +1,25 @@
 # Output Registry
 
-## Scalars
+Every run emits scalar, vector, and matrix outputs.
 
-The v1 engine returns scalar summaries including:
+## Scalar records
+
+`output_records` contain:
+
+```text
+name
+kind
+value
+unit
+scenario_id
+source_status
+equation_ref
+assumptions_used
+warning_flags
+reproducibility_hash
+```
+
+## Registered scalar outputs
 
 - `energy_MWh`
 - `average_site_load_MW`
@@ -37,8 +54,11 @@ The v1 engine returns scalar summaries including:
 
 ## Vectors
 
-Each run returns a `time_series` list with one row per model period.
+`time_series` contains one row per model period. Rows include time labels and system state outputs.
 
-## Gate matrix
+## Matrices
 
-Each run returns a gate table with gate name, pass/fail state, severity, margin, and message.
+- `gate_matrix`: gate by period with severity, status, margin, and message.
+- `module_output_matrix`: formal module outputs.
+- `partner_allocation_matrix`: governance allocation structure.
+- `subsystem_state_matrix`: power, cooling, water, and readiness state by period.

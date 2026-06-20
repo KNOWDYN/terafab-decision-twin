@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Terafab Decision Twin one-page infographic</title>
+  <desc id="desc">Evidence-gated model boundary showing inputs, equations, gates, outputs, and policy decisions.</desc>
+  <rect width="1600" height="1000" fill="#ffffff"/>
+  <rect x="55" y="55" width="1490" height="890" rx="44" fill="#f7f8fa" stroke="#d8dbe0"/>
+  <text x="100" y="135" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#0a0a0a">Terafab Decision Twin</text>
+  <text x="100" y="180" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#333">A public, evidence-gated scenario engine for semiconductor megafab power, water, exergy, yield, economics, governance, and policy.</text>
+  <text x="100" y="230" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#4b5563">Independent KNOWDYN asset - no Terafab endorsement claimed - assumptions remain labeled.</text>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="100" y="300" width="300" height="140" rx="28" fill="#fff" stroke="#d8dbe0"/>
+    <text x="130" y="350" font-size="28" font-weight="700" fill="#0a0a0a">Inputs</text>
+    <text x="130" y="390" font-size="20" fill="#333">Evidence-coded values</text>
+    <text x="130" y="420" font-size="18" fill="#5b6470">facts, claims, assumptions, unknowns</text>
+
+    <rect x="455" y="300" width="300" height="140" rx="28" fill="#fff" stroke="#d8dbe0"/>
+    <text x="485" y="350" font-size="28" font-weight="700" fill="#0a0a0a">Equations</text>
+    <text x="485" y="390" font-size="20" fill="#333">First law, exergy, water</text>
+    <text x="485" y="420" font-size="18" fill="#5b6470">yield, cost, governance, policy</text>
+
+    <rect x="810" y="300" width="300" height="140" rx="28" fill="#fff" stroke="#d8dbe0"/>
+    <text x="840" y="350" font-size="28" font-weight="700" fill="#0a0a0a">Gates</text>
+    <text x="840" y="390" font-size="20" fill="#333">Capacity and evidence checks</text>
+    <text x="840" y="420" font-size="18" fill="#5b6470">unknowns cannot become facts</text>
+
+    <rect x="1165" y="300" width="300" height="140" rx="28" fill="#fff" stroke="#d8dbe0"/>
+    <text x="1195" y="350" font-size="28" font-weight="700" fill="#0a0a0a">Outputs</text>
+    <text x="1195" y="390" font-size="20" fill="#333">Decision records</text>
+    <text x="1195" y="420" font-size="18" fill="#5b6470">metadata, units, hashes, warnings</text>
+
+    <path d="M410 370 H445" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+    <path d="M765 370 H800" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+    <path d="M1120 370 H1155" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+
+    <rect x="100" y="525" width="430" height="220" rx="32" fill="#fff" stroke="#d8dbe0"/>
+    <text x="135" y="580" font-size="30" font-weight="700" fill="#0a0a0a">What it answers</text>
+    <text x="135" y="630" font-size="21" fill="#333">How large are power, cooling, and water burdens?</text>
+    <text x="135" y="665" font-size="21" fill="#333">Where do yield and readiness dominate economics?</text>
+    <text x="135" y="700" font-size="21" fill="#333">Which gates block a credible decision?</text>
+
+    <rect x="585" y="525" width="430" height="220" rx="32" fill="#fff" stroke="#d8dbe0"/>
+    <text x="620" y="580" font-size="30" font-weight="700" fill="#0a0a0a">What it refuses</text>
+    <text x="620" y="630" font-size="21" fill="#333">No private data is invented.</text>
+    <text x="620" y="665" font-size="21" fill="#333">No stress test becomes a fact.</text>
+    <text x="620" y="700" font-size="21" fill="#333">No Terafab affiliation is implied.</text>
+
+    <rect x="1070" y="525" width="395" height="220" rx="32" fill="#fff" stroke="#d8dbe0"/>
+    <text x="1105" y="580" font-size="30" font-weight="700" fill="#0a0a0a">Public release surface</text>
+    <text x="1105" y="630" font-size="21" fill="#333">Python package</text>
+    <text x="1105" y="665" font-size="21" fill="#333">Scenario schema and examples</text>
+    <text x="1105" y="700" font-size="21" fill="#333">Tests, reports, source governance</text>
+
+    <rect x="100" y="815" width="1365" height="70" rx="24" fill="#0a0a0a"/>
+    <text x="130" y="858" font-size="22" fill="#fff">Board-safe interpretation: model outputs are conditional scenario results. KNOWDYN reserves all rights. Terafab belongs to its official entity.</text>
+  </g>
+</svg>

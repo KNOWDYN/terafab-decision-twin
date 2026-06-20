@@ -1,0 +1,25 @@
+{
+  "unresolved_variables_version": "0.3",
+  "variables": [
+    {
+      "path": "energy.site_electric_load_MW",
+      "reason": "No verified Terafab operating site load is included.",
+      "effect": "Power, cooling, water, emissions, and cost outputs remain scenario-dependent."
+    },
+    {
+      "path": "water.permit_withdrawal_m3_per_day",
+      "reason": "No verified permit value is included.",
+      "effect": "Water gate conclusions are conditional on scenario input."
+    },
+    {
+      "path": "manufacturing.baseline_yield",
+      "reason": "No verified Terafab yield data is included.",
+      "effect": "Good-die and cost-per-good-die results are scenario-dependent."
+    },
+    {
+      "path": "economics.capex_USD",
+      "reason": "No verified Terafab capital structure is included.",
+      "effect": "Thermoeconomic outputs are scenario-dependent."
+    }
+  ]
+}

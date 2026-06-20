@@ -1,0 +1,26 @@
+{
+  "claim_register_version": "0.3",
+  "claims": [
+    {
+      "claim_id": "C-001",
+      "claim": "The package is an independent KNOWDYN model for Terafab-scale decision analysis.",
+      "status": "verified_project_fact",
+      "allowed_public_language": "independent KNOWDYN model",
+      "disallowed_public_language": "Terafab-endorsed model"
+    },
+    {
+      "claim_id": "C-002",
+      "claim": "One-terawatt cases are stress tests unless separately verified.",
+      "status": "model_identity",
+      "allowed_public_language": "one-terawatt stress-test scenario",
+      "disallowed_public_language": "verified Terafab site load"
+    },
+    {
+      "claim_id": "C-003",
+      "claim": "The repository excludes restricted or proprietary source documents.",
+      "status": "model_identity",
+      "allowed_public_language": "restricted sources are excluded",
+      "disallowed_public_language": "contains private Terafab source documents"
+    }
+  ]
+}

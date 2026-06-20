@@ -1,0 +1,15 @@
+{
+  "files_scanned": 103,
+  "text_files_scanned": 87,
+  "banned_exact_files": [
+    "KNOWDYN_Terafab_Intelligence_Report_2026.pdf",
+    "Terafab_Formal_JV_Exergy_Yield_Policy_Model.md",
+    "Terafab_review.md.txt",
+    "terafab.docx",
+    "terafab_decision_twin-2.md"
+  ],
+  "allowed_pdf_files": [
+    "assets/terafab_one_page_infographic.pdf"
+  ],
+  "issues": []
+}

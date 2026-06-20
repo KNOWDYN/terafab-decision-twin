@@ -1,22 +1,28 @@
 # Build Acceptance Checklist
 
-The v1 repository satisfies the implementation-oriented acceptance gates as follows.
+The upgraded repository satisfies the implementation-oriented public-release gates below.
 
-| Gate | v1 status |
+| Gate | Status |
 |---|---|
-| README explains thesis and limitations | Implemented |
-| Scenario schema exists | Implemented |
-| Evidence policy exists | Implemented |
+| README explains thesis, limitations, and rights | Implemented |
+| Scenario schema exists and is strict for material inputs | Implemented |
+| Canonical evidence statuses and alias normalization | Implemented |
+| Unknown-value discipline | Implemented |
 | Source-governance files exist | Implemented |
 | Restricted sources excluded | Implemented |
-| CLI validates and runs scenarios | Implemented |
+| CLI validates, simulates, reports, exports, and lists outputs | Implemented |
 | Thermodynamic equations executable | Implemented |
 | Exergy/entropy executable | Implemented |
 | Power/water/cooling executable | Implemented |
 | Yield/economics/governance/policy executable | Implemented |
-| Due-diligence gates executable | Implemented |
-| Tests cover core behavior | Implemented |
+| Cleanroom/contamination/packaging/qualification modules | Implemented |
+| Evidence-Bayes no-auto-verification module | Implemented |
+| Due-diligence gate matrix executable | Implemented |
+| Output metadata and reproducibility hashes | Implemented |
+| Tests cover core behavior and release guards | Implemented |
 | Sample scenarios included | Implemented |
-| Reports exportable | Implemented |
+| Non-editable package install supports schema display | Implemented |
+| KNOWDYN license, notice, and citation files | Implemented |
+| CI workflows included | Implemented |
 
-Known v1 limitation: numerical values are demonstration assumptions unless a future user supplies admissible verified evidence.
+Known boundary: numerical values in bundled scenarios are declared assumptions or stress-test assumptions unless a future user supplies admissible verified evidence.

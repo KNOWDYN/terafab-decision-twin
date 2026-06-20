@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "terafab-decision-twin"
-version = "0.1.0"
-description = "Evidence-gated Terafab-scale thermodynamic, yield, economic, and policy decision twin."
+version = "0.3.0"
+description = "Evidence-gated Terafab-scale thermodynamic, water, power, yield, economic, governance, and policy decision twin."
 readme = "README.md"
 requires-python = ">=3.10"
-authors = [{name = "Terafab Decision Twin Contributors"}]
+authors = [{name = "KNOWDYN"}]
 license = {file = "LICENSE.md"}
 keywords = ["thermodynamics", "exergy", "semiconductor", "policy", "water", "energy", "simulation"]
 classifiers = [
@@ -23,3 +23,7 @@ terafab = "terafab_decision_twin.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["terafab_decision_twin*"]
+
+
+[tool.setuptools.package-data]
+"terafab_decision_twin.data" = ["*.json"]

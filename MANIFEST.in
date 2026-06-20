@@ -1,0 +1,22 @@
+include README.md
+include LICENSE.md
+include LICENSE-ACADEMIC.md
+include LICENSE-COMMERCIAL.md
+include NOTICE.md
+include CITATION.cff
+include CHANGELOG.md
+include CONTRIBUTING.md
+include Makefile
+include QA_REPORT.md
+include PUBLIC_RELEASE_UPGRADE_REPORT.md
+include PUBLIC_RELEASE_FINAL_PASS_REPORT.md
+recursive-include schema *.json
+recursive-include scenarios *.json
+recursive-include sources *.json *.md
+recursive-include docs *.md
+recursive-include notebooks *.ipynb
+recursive-include scripts *.py
+recursive-include assets *.svg *.png *.pdf
+recursive-include terafab_decision_twin/data *.json
+recursive-include tests *.py
+graft .github

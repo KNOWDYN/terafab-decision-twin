@@ -3,27 +3,36 @@
     {
       "fact": "The repository implements a forward-looking scenario simulation structure beginning in 2026.",
       "status": "verified_project_fact",
-      "source_class": "blueprint"
+      "source_class": "blueprint",
+      "source_ref": "terafab_decision_twin-2.md",
+      "confidence": "locked"
     },
     {
-      "fact": "The model must distinguish verified facts, filed claims, reported claims, user inputs, assumptions, stress tests, unknowns, confidential inputs, and derived outputs.",
-      "status": "verified_project_fact",
-      "source_class": "formal_model_and_blueprint"
+      "fact": "The model distinguishes verified project facts, model identity, filed claims, reported claims, user-provided inputs, scenario assumptions, stress-test assumptions, unknowns, confidential private inputs, and derived outputs.",
+      "status": "model_identity",
+      "source_class": "formal_model_and_blueprint",
+      "source_ref": "terafab_decision_twin-2.md + formal model",
+      "confidence": "locked"
     },
     {
-      "fact": "A one-terawatt value must be treated as a scenario/stress-test assumption unless separately verified.",
-      "status": "verified_project_fact",
-      "source_class": "formal_model_and_blueprint"
+      "fact": "A one-terawatt value is treated as a scenario or stress-test assumption unless separately verified by an admissible source.",
+      "status": "model_identity",
+      "source_class": "formal_model_and_blueprint",
+      "source_ref": "formal model evidence gate",
+      "confidence": "locked"
     },
     {
-      "fact": "Any claimed electrical load must identify a comparable heat-rejection pathway.",
-      "status": "locked_model_identity",
-      "source_class": "formal_model"
+      "fact": "Any claimed electrical load must identify a comparable heat-rejection pathway and first-law balance.",
+      "status": "model_identity",
+      "source_class": "formal_model",
+      "source_ref": "formal first-law/exergy model",
+      "confidence": "locked"
     }
   ],
   "excluded_claims": [
     "No verified Terafab operating site load is asserted.",
     "No verified Terafab water permit value is asserted.",
-    "No proprietary Terafab data are included."
+    "No proprietary Terafab data are included.",
+    "No Terafab endorsement, authorization, acquisition interest, or employee involvement is asserted."
   ]
 }
