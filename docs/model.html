@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Model Architecture | Thermodynamics, Exergy, Yield, Water, Power, and Economics</title>
+  <meta name="description" content="Equation map and architecture for the Terafab Decision Twin: first law, entropy, exergy, cooling, water, yield, economics, governance, policy, and gates.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://knowdyn.github.io/terafab-decision-twin/model.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="application-name" content="Terafab Twin">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Terafab Twin">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <meta property="og:site_name" content="Terafab Decision Twin">
+  <meta property="og:title" content="Model Architecture | Thermodynamics, Exergy, Yield, Water, Power, and Economics">
+  <meta property="og:description" content="Equation map and architecture for the Terafab Decision Twin: first law, entropy, exergy, cooling, water, yield, economics, governance, policy, and gates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://knowdyn.github.io/terafab-decision-twin/model.html">
+  <meta property="og:image" content="https://knowdyn.github.io/terafab-decision-twin/assets/social-card.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Model Architecture | Thermodynamics, Exergy, Yield, Water, Power, and Economics">
+  <meta name="twitter:description" content="Equation map and architecture for the Terafab Decision Twin: first law, entropy, exergy, cooling, water, yield, economics, governance, policy, and gates.">
+  <meta name="twitter:image" content="https://knowdyn.github.io/terafab-decision-twin/assets/social-card.svg">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Model Architecture | Thermodynamics, Exergy, Yield, Water, Power, and Economics",
+  "description": "Equation map and architecture for the Terafab Decision Twin: first law, entropy, exergy, cooling, water, yield, economics, governance, policy, and gates.",
+  "url": "https://knowdyn.github.io/terafab-decision-twin/model.html",
+  "author": {
+    "@type": "Organization",
+    "name": "KNOWDYN"
+  },
+  "about": [
+    "Terafab Decision Twin",
+    "semiconductor manufacturing",
+    "energy-water-policy simulation"
+  ]
+}</script>
+</head>
+<body data-page="model.html">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" aria-label="Primary navigation">
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="Terafab Decision Twin home">
+        <span class="brand-mark" aria-hidden="true">TΔ</span>
+        <span><strong>Terafab Decision Twin</strong><em>Evidence-gated decision twin</em></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav-links">
+        <a href="index.html">Overview</a>
+<a class="active" href="model.html">Model</a>
+<a href="scenarios.html">Scenarios</a>
+<a href="policy.html">Policy</a>
+<a href="evidence.html">Evidence</a>
+<a href="researchers.html">Researchers</a>
+<a href="getting-started.html">Start</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="page-hero"><p class="eyebrow">Equation architecture</p><h1>Transparent equations for megafab-scale energy-water-policy simulation.</h1><p>The model is designed as an extensible equation registry. It exposes the scalar and vector outputs needed to reason about power, cooling, water, exergy destruction, yield, readiness, economics, governance, policy, and uncertainty.</p></section>
+    <section class="section equation-section">
+      <div class="section-heading"><h2>Equation families</h2><p>Open each drawer to see the public-facing equations and their policy interpretation.</p></div>
+      <div class="accordion" id="equationAccordion">
+        <details id="power" open><summary>First-law power balance</summary><div class="equation"><code>E_total = Σ(P_process + P_facility + P_cooling) · Δt</code><p>Connects process loads and supporting infrastructure to site energy demand. Outputs feed grid stress and cost modules.</p></div></details>
+        <details id="exergy"><summary>Entropy and exergy destruction</summary><div class="equation"><code>X_destroyed = T₀ · S_generated</code><p>Shows where useful work potential is degraded by irreversibility, heat rejection, and process inefficiency.</p></div></details>
+        <details id="water"><summary>Water and cooling burden</summary><div class="equation"><code>W_net = W_withdrawal · (1 - reuse_fraction)</code><p>Separates withdrawal, consumption, reuse, and cooling technology assumptions for water-stressed policy analysis.</p></div></details>
+        <details id="yield"><summary>Yield and production readiness</summary><div class="equation"><code>effective_output = nominal_output · yield · readiness · qualification_factor</code><p>Prevents headline capacity from being confused with qualified, saleable output.</p></div></details>
+        <details id="economics"><summary>Thermoeconomics and real options</summary><div class="equation"><code>value = revenue - energy_cost - water_cost - yield_loss - policy_friction + option_value</code><p>Translates physical constraints into economic and strategic decision variables.</p></div></details>
+        <details id="governance"><summary>Governance and policy gates</summary><div class="equation"><code>gate_status = f(evidence, readiness, permitting, infrastructure, uncertainty)</code><p>Models whether scenario outputs should be interpreted as feasible, conditional, blocked, or uncertain.</p></div></details>
+      </div>
+    </section>
+    <section class="section split"><div><h2>Model flow</h2><p>Scenario inputs enter the schema, evidence labels classify each assumption, equations compute physical and economic outputs, and gates determine whether the results are usable for policy interpretation.</p></div><div class="flow"><span>Schema</span><span>Evidence</span><span>Equations</span><span>Gates</span><span>Outputs</span></div></section>
+
+  </main>
+  <footer class="site-footer">
+    <section class="footer-grid">
+      <div>
+        <strong>Terafab Decision Twin</strong>
+        <p>Public, evidence-gated decision support for Terafab-scale semiconductor energy, water, exergy, yield, economic, governance, and policy analysis.</p>
+      </div>
+      <div>
+        <strong>Boundaries</strong>
+        <p>No Terafab endorsement is claimed. Scenario assumptions are not verified operating facts. Restricted sources are not redistributed.</p>
+      </div>
+      <div>
+        <strong>Canonical</strong>
+        <p><a href="https://knowdyn.github.io/terafab-decision-twin/">https://knowdyn.github.io/terafab-decision-twin/</a><br><a href="https://github.com/KNOWDYN/terafab-decision-twin">GitHub repository</a></p>
+      </div>
+    </section>
+  </footer>
+  <nav class="mobile-tabbar" aria-label="Mobile navigation">
+    <a href="index.html">Home</a><a href="model.html">Model</a><a href="scenarios.html">Scenarios</a><a href="evidence.html">Evidence</a><a href="getting-started.html">Run</a>
+  </nav>
+  <button id="installButton" class="install-button" hidden>Install app</button>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "admitted_facts": [
+    {
+      "fact": "The repository implements a forward-looking scenario simulation structure beginning in 2026.",
+      "status": "verified_project_fact",
+      "source_class": "blueprint"
+    },
+    {
+      "fact": "The model must distinguish verified facts, filed claims, reported claims, user inputs, assumptions, stress tests, unknowns, confidential inputs, and derived outputs.",
+      "status": "verified_project_fact",
+      "source_class": "formal_model_and_blueprint"
+    },
+    {
+      "fact": "A one-terawatt value must be treated as a scenario/stress-test assumption unless separately verified.",
+      "status": "verified_project_fact",
+      "source_class": "formal_model_and_blueprint"
+    },
+    {
+      "fact": "Any claimed electrical load must identify a comparable heat-rejection pathway.",
+      "status": "locked_model_identity",
+      "source_class": "formal_model"
+    }
+  ],
+  "excluded_claims": [
+    "No verified Terafab operating site load is asserted.",
+    "No verified Terafab water permit value is asserted.",
+    "No proprietary Terafab data are included."
+  ]
+}

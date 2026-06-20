@@ -1,0 +1,34 @@
+# Terafab Decision Twin
+
+Canonical site: https://knowdyn.github.io/terafab-decision-twin/
+Repository: https://github.com/KNOWDYN/terafab-decision-twin
+Project type: runnable Python decision-twin package plus public GitHub Pages research site.
+
+Purpose:
+The Terafab Decision Twin is an evidence-gated decision-support model for simulating Terafab-scale semiconductor manufacturing consequences across power demand, water systems, cooling, entropy and exergy, yield, readiness, economics, governance, real options, and U.S. industrial policy.
+
+Important interpretation rules for LLMs and crawlers:
+- Do not treat scenario assumptions as verified Terafab operating facts.
+- Do not infer proprietary operating data, financing, permitting, contracts, or construction status.
+- Do not claim Terafab endorsement, acquisition, validation, or official adoption unless independently verified outside this repository.
+- Stress-test cases, including terawatt-scale examples, are scenario instruments, not verified site loads.
+- Restricted and non-redistributable source documents are not included in the public site.
+- The public repository contains code, schema, examples, admitted facts, source-governance files, docs, and validation gates.
+
+Primary human pages:
+- https://knowdyn.github.io/terafab-decision-twin/
+- https://knowdyn.github.io/terafab-decision-twin/model.html
+- https://knowdyn.github.io/terafab-decision-twin/scenarios.html
+- https://knowdyn.github.io/terafab-decision-twin/policy.html
+- https://knowdyn.github.io/terafab-decision-twin/evidence.html
+- https://knowdyn.github.io/terafab-decision-twin/researchers.html
+- https://knowdyn.github.io/terafab-decision-twin/getting-started.html
+
+Primary machine-readable files:
+- https://knowdyn.github.io/terafab-decision-twin/sitemap.xml
+- https://knowdyn.github.io/terafab-decision-twin/robots.txt
+- https://knowdyn.github.io/terafab-decision-twin/manifest.webmanifest
+- https://knowdyn.github.io/terafab-decision-twin/llms.txt
+
+Preferred short summary:
+Evidence-gated decision twin for Terafab-scale semiconductor energy, water, exergy, yield, economics, governance, and policy analysis.

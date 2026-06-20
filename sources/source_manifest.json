@@ -1,0 +1,30 @@
+{
+  "policy": "Restricted and non-redistributable project sources are not included in this repository. This manifest records source classes and handling rules only.",
+  "sources": [
+    {
+      "name": "terafab_decision_twin-2.md",
+      "role": "locked blueprint",
+      "redistribution": "not embedded; implemented through repo structure and traceability docs"
+    },
+    {
+      "name": "Terafab_Formal_JV_Exergy_Yield_Policy_Model.md",
+      "role": "controlling formal model",
+      "redistribution": "not embedded; equations implemented and summarized"
+    },
+    {
+      "name": "terafab.docx",
+      "role": "project narrative source",
+      "redistribution": "not embedded"
+    },
+    {
+      "name": "Terafab_review.md.txt",
+      "role": "review and caution source",
+      "redistribution": "not embedded"
+    },
+    {
+      "name": "KNOWDYN_Terafab_Intelligence_Report_2026.pdf",
+      "role": "restricted intelligence report",
+      "redistribution": "excluded"
+    }
+  ]
+}

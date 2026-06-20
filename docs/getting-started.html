@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Getting Started | Run the Terafab Decision Twin CLI and Scenarios</title>
+  <meta name="description" content="Install, validate, and run Terafab Decision Twin scenarios using the Python CLI, schema validator, reporting tools, and evidence gates.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://knowdyn.github.io/terafab-decision-twin/getting-started.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="application-name" content="Terafab Twin">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Terafab Twin">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <meta property="og:site_name" content="Terafab Decision Twin">
+  <meta property="og:title" content="Getting Started | Run the Terafab Decision Twin CLI and Scenarios">
+  <meta property="og:description" content="Install, validate, and run Terafab Decision Twin scenarios using the Python CLI, schema validator, reporting tools, and evidence gates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://knowdyn.github.io/terafab-decision-twin/getting-started.html">
+  <meta property="og:image" content="https://knowdyn.github.io/terafab-decision-twin/assets/social-card.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Getting Started | Run the Terafab Decision Twin CLI and Scenarios">
+  <meta name="twitter:description" content="Install, validate, and run Terafab Decision Twin scenarios using the Python CLI, schema validator, reporting tools, and evidence gates.">
+  <meta name="twitter:image" content="https://knowdyn.github.io/terafab-decision-twin/assets/social-card.svg">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Run the Terafab Decision Twin",
+  "description": "Install, validate, and run Terafab Decision Twin scenarios using the Python CLI, schema validator, reporting tools, and evidence gates.",
+  "url": "https://knowdyn.github.io/terafab-decision-twin/getting-started.html",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Validate a scenario",
+      "text": "Run the CLI validator against a scenario JSON file."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Run the model",
+      "text": "Execute a scenario and inspect outputs, gates, and evidence status."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Generate a report",
+      "text": "Export a markdown report for technical review."
+    }
+  ]
+}</script>
+</head>
+<body data-page="getting-started.html">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" aria-label="Primary navigation">
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="Terafab Decision Twin home">
+        <span class="brand-mark" aria-hidden="true">TΔ</span>
+        <span><strong>Terafab Decision Twin</strong><em>Evidence-gated decision twin</em></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav-links">
+        <a href="index.html">Overview</a>
+<a href="model.html">Model</a>
+<a href="scenarios.html">Scenarios</a>
+<a href="policy.html">Policy</a>
+<a href="evidence.html">Evidence</a>
+<a href="researchers.html">Researchers</a>
+<a class="active" href="getting-started.html">Start</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="page-hero"><p class="eyebrow">Getting started</p><h1>Run the Terafab Decision Twin locally after uploading or cloning the repository.</h1><p>The GitHub Pages site is the public front door. The repository is the runnable package.</p></section>
+    <section class="section"><h2>CLI quickstart</h2><div class="code-grid">
+      <pre><code>python -m terafab_decision_twin.cli validate scenarios/baseline_2026.json</code><button class="copy" data-copy="python -m terafab_decision_twin.cli validate scenarios/baseline_2026.json">Copy</button></pre>
+      <pre><code>python -m terafab_decision_twin.cli run scenarios/terawatt_stress_2026.json</code><button class="copy" data-copy="python -m terafab_decision_twin.cli run scenarios/terawatt_stress_2026.json">Copy</button></pre>
+      <pre><code>python -m terafab_decision_twin.cli report scenarios/multi_year_2026_2030.json</code><button class="copy" data-copy="python -m terafab_decision_twin.cli report scenarios/multi_year_2026_2030.json">Copy</button></pre>
+    </div></section>
+    <section class="section split"><div><h2>Browser-only deployment</h2><ol class="numbered"><li>Upload the repository contents to GitHub.</li><li>Upload this package so the repo contains <code>/docs</code>.</li><li>Open <strong>Settings → Pages</strong>.</li><li>Choose <strong>Deploy from a branch</strong>.</li><li>Select <strong>main</strong> and <strong>/docs</strong>.</li><li>Save and open the published URL.</li></ol></div><div class="callout"><h3>Published URL</h3><p><code>https://knowdyn.github.io/terafab-decision-twin/</code></p></div></section>
+
+  </main>
+  <footer class="site-footer">
+    <section class="footer-grid">
+      <div>
+        <strong>Terafab Decision Twin</strong>
+        <p>Public, evidence-gated decision support for Terafab-scale semiconductor energy, water, exergy, yield, economic, governance, and policy analysis.</p>
+      </div>
+      <div>
+        <strong>Boundaries</strong>
+        <p>No Terafab endorsement is claimed. Scenario assumptions are not verified operating facts. Restricted sources are not redistributed.</p>
+      </div>
+      <div>
+        <strong>Canonical</strong>
+        <p><a href="https://knowdyn.github.io/terafab-decision-twin/">https://knowdyn.github.io/terafab-decision-twin/</a><br><a href="https://github.com/KNOWDYN/terafab-decision-twin">GitHub repository</a></p>
+      </div>
+    </section>
+  </footer>
+  <nav class="mobile-tabbar" aria-label="Mobile navigation">
+    <a href="index.html">Home</a><a href="model.html">Model</a><a href="scenarios.html">Scenarios</a><a href="evidence.html">Evidence</a><a href="getting-started.html">Run</a>
+  </nav>
+  <button id="installButton" class="install-button" hidden>Install app</button>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

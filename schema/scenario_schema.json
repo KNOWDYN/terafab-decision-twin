@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/terafab/scenario_schema.json",
+  "title": "Terafab Decision Twin Scenario Schema",
+  "type": "object",
+  "required": [
+    "metadata",
+    "time",
+    "terafab_phase",
+    "energy",
+    "cooling",
+    "water",
+    "manufacturing",
+    "economics",
+    "governance",
+    "policy",
+    "control"
+  ],
+  "definitions": {
+    "status": {
+      "enum": [
+        "verified_fact",
+        "filed_claim",
+        "reported_claim",
+        "user_input",
+        "assumption",
+        "stress_test_assumption",
+        "unknown",
+        "confidential_input",
+        "derived_output"
+      ]
+    },
+    "input": {
+      "oneOf": [
+        {
+          "type": [
+            "number",
+            "integer",
+            "string",
+            "boolean",
+            "null"
+          ]
+        },
+        {
+          "type": "object",
+          "required": [
+            "value",
+            "status"
+          ],
+          "properties": {
+            "value": {},
+            "unit": {
+              "type": "string"
+            },
+            "status": {
+              "$ref": "#/definitions/status"
+            },
+            "source": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      ]
+    }
+  },
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "scenario_id",
+        "title",
+        "version"
+      ],
+      "additionalProperties": true
+    },
+    "time": {
+      "type": "object",
+      "required": [
+        "start_year",
+        "end_year",
+        "time_step"
+      ],
+      "properties": {
+        "start_year": {
+          "type": "integer",
+          "minimum": 2026
+        },
+        "end_year": {
+          "type": "integer",
+          "minimum": 2026
+        },
+        "time_step": {
+          "enum": [
+            "monthly",
+            "quarterly",
+            "annual"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "terafab_phase": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/input"
+      }
+    },
+    "energy": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/input"
+      }
+    },
+    "cooling": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/input"
+      }
+    },
+    "water": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/input"
+      }
+    },
+    "manufacturing": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/input"
+      }
+    },
+    "economics": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/input"
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/input"
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/input"
+      }
+    },
+    "control": {
+      "type": "object",
+      "properties": {
+        "strict_evidence": {
+          "type": "boolean"
+        },
+        "fail_on_unverified_claims": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://knowdyn.github.io/terafab-decision-twin/sitemap.xml
