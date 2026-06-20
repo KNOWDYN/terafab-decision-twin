@@ -1,6 +1,6 @@
 # Terafab Decision Twin
 
-**Terafab Decision Twin** is a source-available KNOWDYN Python package for evidence-gated scenario analysis of Terafab-scale semiconductor energy, water, exergy, yield, economics, governance, and policy consequences.
+**Terafab Decision Twin** is a source-available Python package for evidence-gated scenario analysis of Terafab-scale semiconductor energy, water, exergy, yield, economics, governance, and policy consequences.
 
 It is a public strategic model, not a claim of verified Terafab operating data. It does not redistribute restricted source documents and does not imply Terafab endorsement, authorization, employee involvement, acquisition interest, financing, permitting, construction, or adoption.
 
