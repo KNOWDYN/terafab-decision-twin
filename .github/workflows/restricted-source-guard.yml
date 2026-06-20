@@ -1,0 +1,12 @@
+name: restricted-source-guard
+on:
+  push:
+  pull_request:
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure restricted source documents are not committed
+        run: |
+          ! find . -type f \( -name 'KNOWDYN_Terafab_Intelligence_Report_2026.pdf' -o -name 'terafab.docx' -o -name 'Terafab_Formal_JV_Exergy_Yield_Policy_Model.md' -o -name 'Terafab_review.md.txt' -o -name 'terafab_decision_twin-2.md' \) | grep .
