@@ -1,18 +1,18 @@
 {
   "name": "Terafab Decision Twin",
   "short_name": "Terafab Twin",
-  "description": "Interactive decision-twin model for Terafab-scale semiconductor power, water, exergy, yield, economics, governance, and policy analysis.",
+  "description": "Executive public decision-twin site for Terafab-scale semiconductor energy, water, exergy, yield, economics, governance, and policy analysis.",
   "start_url": "/terafab-decision-twin/",
   "scope": "/terafab-decision-twin/",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#08111f",
-  "theme_color": "#0b1220",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "categories": [
+    "business",
     "education",
     "science",
-    "productivity",
-    "utilities"
+    "productivity"
   ],
   "icons": [
     {
