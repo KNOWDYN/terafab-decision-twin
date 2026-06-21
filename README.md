@@ -1819,42 +1819,15 @@ The public package excludes named restricted source documents and allows only th
 
 ---
 
-## What this repo does not claim
+## What this repo claims
 
-This repo should not be read as claiming any of the following:
-
-```text
-verified Terafab operating data
-official Terafab endorsement or authorization
-Terafab employee involvement
-private facility telemetry
-real-time digital-twin operation
-construction status
-permitting status
-financing status
-acquisition interest
-investment recommendation
-permitting recommendation
-guaranteed 2026-2030 forecast
-calibrated industrial simulator
-finished autonomous control optimizer
-official stakeholder preference model
-official game-theory payoff model
-official utility-capacity commitment
-official water-authority conclusion
-official public-policy legitimacy finding
-Level 4 expert/calibrated validation without external data
-```
-
-The package is a public, executable, evidence-gated scenario simulator. Its conclusions are conditional on the scenario inputs, evidence labels, advanced assumptions, reference ranges, and validation limits supplied to it.
+The package is an independent, public, executable, evidence-gated scenario simulator. Its conclusions are conditional on the scenario inputs, evidence labels, advanced assumptions, reference ranges, and validation limits supplied to it.
 
 ---
 
 ## Licensing, ownership, and non-affiliation
 
-Copyright (c) 2026 KNOWDYN.
-
-All rights are reserved except as expressly granted in `LICENSE.md`. Commercial rights require a separate written commercial license from KNOWDYN. See:
+Copyright (c) 2026 KNOWDYN. All rights are reserved except as expressly granted in `LICENSE.md`. Commercial rights require a separate written commercial license from KNOWDYN. See:
 
 ```text
 LICENSE.md
@@ -1863,7 +1836,7 @@ LICENSE-COMMERCIAL.md
 NOTICE.md
 ```
 
-Terafab is owned by its official entity. This package is independent and is not affiliated with, endorsed by, authorized by, sponsored by, or connected to Terafab or its employees.
+This package is independent and is not affiliated with, endorsed by, authorized by, sponsored by, or connected to Terafab or its employees.
 
 ---
 
