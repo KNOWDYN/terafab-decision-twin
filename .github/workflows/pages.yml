@@ -25,10 +25,101 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Upload website artifact
+      - name: Stage Pages artifact
+        run: |
+          set -euo pipefail
+          publish_dir="${RUNNER_TEMP}/pages-publish"
+          rm -rf "${publish_dir}"
+          mkdir -p "${publish_dir}"
+
+          cp -R website "${publish_dir}/website"
+          cp -R docs "${publish_dir}/docs"
+          cp ACADEMIC_LICENSE.md COMMERCIAL_LICENSE.md "${publish_dir}/"
+
+          python - <<'PY'
+          from html import escape
+          import os
+          from pathlib import Path
+
+          publish_dir = Path(os.environ["RUNNER_TEMP"]) / "pages-publish"
+          aliases = {
+              "docs/index.html": "docs/index.md",
+              "docs/evidence.html": "docs/EVIDENCE_POLICY.md",
+              "docs/model.html": "docs/EQUATIONS.md",
+          }
+
+          for alias, target in aliases.items():
+              target_path = publish_dir / target
+              if not target_path.is_file():
+                  raise SystemExit(f"Missing reference target for {alias}: {target}")
+              title = target_path.stem.replace("_", " ").title()
+              body = escape(target_path.read_text(encoding="utf-8"))
+              (publish_dir / alias).write_text(
+                  "<!doctype html>\n"
+                  "<html lang=\"en\">\n"
+                  "<head>\n"
+                  "<meta charset=\"utf-8\">\n"
+                  "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
+                  f"<title>{escape(title)} | Terafab Decision Twin Reference Wiki</title>\n"
+                  "</head>\n"
+                  "<body>\n"
+                  f"<main><h1>{escape(title)}</h1><p>Reference source: <a href=\"{escape(Path(target).name)}\">{escape(target)}</a></p><pre>\n{body}\n</pre></main>\n"
+                  "</body>\n"
+                  "</html>\n",
+                  encoding="utf-8",
+              )
+          PY
+      - name: Verify website links in staged artifact
+        run: |
+          set -euo pipefail
+          publish_dir="${RUNNER_TEMP}/pages-publish"
+          python - <<'PY'
+          from html.parser import HTMLParser
+          import os
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          publish_dir = Path(os.environ["RUNNER_TEMP"]) / "pages-publish"
+          index = publish_dir / "website" / "index.html"
+
+          class LinkParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.hrefs = []
+              def handle_starttag(self, tag, attrs):
+                  for key, value in attrs:
+                      if key in {"href", "src"} and value:
+                          self.hrefs.append(value)
+
+          parser = LinkParser()
+          parser.feed(index.read_text(encoding="utf-8"))
+          missing = []
+          for href in parser.hrefs:
+              parsed = urlparse(href)
+              if parsed.scheme or parsed.netloc or href.startswith("#"):
+                  continue
+              candidate = (index.parent / parsed.path).resolve()
+              try:
+                  candidate.relative_to(publish_dir.resolve())
+              except ValueError:
+                  missing.append((href, "escapes publish artifact"))
+                  continue
+              if not candidate.exists():
+                  missing.append((href, str(candidate)))
+          required = ["../docs/evidence.html", "../docs/VALIDATION_LAB.md", "../docs/index.html"]
+          for href in required:
+              if href not in parser.hrefs:
+                  missing.append((href, "required link not present in website/index.html"))
+          if missing:
+              for href, reason in missing:
+                  print(f"Missing {href}: {reason}")
+              raise SystemExit(1)
+          print("Verified staged website links, including ../docs/evidence.html, ../docs/VALIDATION_LAB.md, and ../docs/index.html")
+          PY
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: website
+          path: ${{ runner.temp }}/pages-publish
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
