@@ -41,7 +41,7 @@ It is **not** verified Terafab operating data, not an official Terafab model, no
 - [Methods and equations](#methods-and-equations)
 - [Outputs and gates](#outputs-and-gates)
 - [Reports and export bundles](#reports-and-export-bundles)
-- [Notebooks, docs site, and infographic](#notebooks-docs-site-and-infographic)
+- [Website, reference wiki, notebooks, and infographic](#website-reference-wiki-notebooks-and-infographic)
 - [Build new simulations, scenarios, and case studies](#build-new-simulations-scenarios-and-case-studies)
 - [Build advanced simulations and validation studies](#build-advanced-simulations-and-validation-studies)
 - [Repository map](#repository-map)
@@ -967,9 +967,10 @@ terafab scenario validate scenarios/research_case.json
 python -m unittest discover -s tests
 ```
 
-Start with:
+Start with the text-first reference wiki:
 
 ```text
+docs/index.md
 docs/ARCHITECTURE.md
 docs/EQUATIONS.md
 docs/EVIDENCE_POLICY.md
@@ -1430,23 +1431,32 @@ surface = build_stakeholder_decision_surface(
 
 ---
 
-## Notebooks, docs site, and infographic
+## Website, reference wiki, notebooks, and infographic
 
-The repo includes a GitHub Pages-ready `/docs` site layer:
+The public GitHub Pages experience is the one-page stakeholder PWA under `/website`:
 
 ```text
-docs/index.html
-docs/getting-started.html
-docs/model.html
-docs/scenarios.html
-docs/evidence.html
-docs/policy.html
-docs/researchers.html
+website/index.html
+website/offline.html
+website/manifest.webmanifest
+website/service-worker.js
+website/assets/app.js
+website/assets/style.css
+website/assets/fonts.css
+website/assets/icon.svg
+website/assets/social-card.svg
 ```
 
-Technical docs include:
+The Pages workflow publishes `/website` as the site root and copies the text reference library, LLM guidance, and root license files into the deployed artifact:
 
 ```text
+.github/workflows/pages.yml
+```
+
+The text-first reference wiki lives under `/docs`:
+
+```text
+docs/index.md
 docs/ARCHITECTURE.md
 docs/EQUATIONS.md
 docs/CLI.md
@@ -1457,7 +1467,10 @@ docs/TRACEABILITY.md
 docs/ADVANCED_SIMULATION.md
 docs/VALIDATION_LAB.md
 docs/STAKEHOLDER_DECISION_SURFACES.md
+docs/llms.txt
 ```
+
+The website links to this reference library from its mega-footer. The reference wiki preserves the source-available, non-affiliation, evidence-status, restricted-source, unknown-value, no-verified-data, and scenario-dependence boundaries while keeping the public landing page concise.
 
 Colab notebooks:
 
@@ -1486,7 +1499,7 @@ assets/terafab_one_page_infographic.png
 assets/terafab_one_page_infographic.pdf
 ```
 
-The `/docs` site is included in the repository. Publication status depends on repository hosting and GitHub Pages configuration.
+GitHub Pages publication uses GitHub Actions rather than the browser branch-folder selector, because the deployment artifact is assembled from `/website` plus selected reference files.
 
 ---
 
@@ -1788,9 +1801,13 @@ scenarios/
 notebooks/
   Colab dashboard, comparative scenario reporting notebook, and advanced simulation lab notebook.
 
+website/
+  One-page stakeholder PWA deployed to GitHub Pages, including offline support,
+  install metadata, slide navigation, and static assets.
+
 docs/
-  GitHub Pages-ready public site and technical documentation, including advanced simulation
-  and validation-lab documentation.
+  Text-first reference wiki: evidence policy, architecture, equations, CLI,
+  reporting, validation lab, stakeholder decision surfaces, traceability, and LLM guidance.
 
 sources/
   Public source-governance files: admitted facts, claim register, source manifest, unresolved variables,
@@ -1804,7 +1821,8 @@ tests/
   strategic simulation, and validation lab.
 
 .github/workflows/
-  Tests, scenario schema validation, docs-link guard, and restricted-source guard workflows.
+  Tests, scenario schema validation, docs-link guard, restricted-source guard,
+  and GitHub Pages deployment workflows.
 ```
 
 ---
@@ -1850,6 +1868,7 @@ The repository also includes GitHub Actions workflows for:
 .github/workflows/schema.yml
 .github/workflows/docs-links.yml
 .github/workflows/restricted-source-guard.yml
+.github/workflows/pages.yml
 ```
 
 Restricted-source guard files:
