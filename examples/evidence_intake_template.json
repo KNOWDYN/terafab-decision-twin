@@ -1,0 +1,24 @@
+{
+  "claim_id": "public_claim_001",
+  "claim": "Describe the public claim in one sentence.",
+  "source_url": "https://example.invalid/public-record-or-report",
+  "source_type": "public_filing | agency_record | utility_disclosure | water_authority_record | public_statement | media_report | user_input | unknown",
+  "publication_date": "YYYY-MM-DD",
+  "retrieved_date": "YYYY-MM-DD",
+  "evidence_status": "filed_claimed | reported | user_provided | scenario_assumption | stress_test_assumption | unknown",
+  "confidence": "declared | low | medium | high",
+  "model_variable_impacted": "energy.firm_capacity_MW",
+  "candidate_input": {
+    "value": null,
+    "unit": "MW",
+    "status": "unknown",
+    "source_ref": "public_claim_001",
+    "confidence": "declared",
+    "notes": "Template entry. Replace with a concrete public source or leave unknown. Do not infer private Terafab facts."
+  },
+  "what_this_does_not_prove": [
+    "It does not prove private Terafab operating data.",
+    "It does not prove official Terafab endorsement.",
+    "It does not prove construction, financing, operation, or validation status."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "source_register_version": "public-monitoring-v1",
+  "sources": [
+    {
+      "source_ref": "public_source_001",
+      "title": "Public source title",
+      "url": "https://example.invalid/public-source",
+      "source_type": "public_filing",
+      "publication_date": "YYYY-MM-DD",
+      "retrieved_date": "YYYY-MM-DD",
+      "admissible_for_examples": true,
+      "recommended_evidence_status": "filed_claimed",
+      "notes": "Use for claims traceable to public filings or formal public records."
+    },
+    {
+      "source_ref": "reported_source_001",
+      "title": "Reported source title",
+      "url": "https://example.invalid/reported-source",
+      "source_type": "media_report",
+      "publication_date": "YYYY-MM-DD",
+      "retrieved_date": "YYYY-MM-DD",
+      "admissible_for_examples": true,
+      "recommended_evidence_status": "reported",
+      "notes": "Use for attributed public reporting. Do not treat as independently verified."
+    },
+    {
+      "source_ref": "restricted_source_placeholder",
+      "title": "Restricted, private, leaked, or confidential source",
+      "url": null,
+      "source_type": "restricted_or_private",
+      "publication_date": null,
+      "retrieved_date": null,
+      "admissible_for_examples": false,
+      "recommended_evidence_status": "unknown",
+      "notes": "Do not add restricted or private material to public examples."
+    }
+  ]
+}
