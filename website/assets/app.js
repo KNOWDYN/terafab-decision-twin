@@ -1,5 +1,5 @@
 (() => {
-  const base = '/terafab-decision-twin/';
+  const base = '/terafab-decision-twin/website/';
   const deck = document.querySelector('[data-deck]');
   const slides = deck ? Array.from(deck.querySelectorAll('.slide')) : [];
   const navLinks = Array.from(document.querySelectorAll('[data-nav] a'));
