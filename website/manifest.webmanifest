@@ -1,0 +1,15 @@
+{
+  "name": "Terafab Decision Twin Stakeholder Brief",
+  "short_name": "Terafab Brief",
+  "description": "A one-page stakeholder PWA for the source-available Terafab Decision Twin.",
+  "start_url": "/terafab-decision-twin/",
+  "scope": "/terafab-decision-twin/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f8fb",
+  "theme_color": "#07111f",
+  "categories": ["science", "education", "productivity"],
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

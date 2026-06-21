@@ -1,27 +1,15 @@
-const CACHE_NAME = 'terafab-decision-twin-site-v2';
+const CACHE_NAME = 'terafab-decision-twin-website-v1';
 const BASE = '/terafab-decision-twin/';
 const APP_SHELL = [
   BASE,
   `${BASE}index.html`,
-  `${BASE}model.html`,
-  `${BASE}scenarios.html`,
-  `${BASE}policy.html`,
-  `${BASE}evidence.html`,
-  `${BASE}researchers.html`,
-  `${BASE}getting-started.html`,
   `${BASE}offline.html`,
-  `${BASE}404.html`,
+  `${BASE}assets/fonts.css`,
   `${BASE}assets/style.css`,
   `${BASE}assets/app.js`,
   `${BASE}assets/icon.svg`,
-  `${BASE}assets/icon-192.png`,
-  `${BASE}assets/icon-512.png`,
-  `${BASE}assets/maskable-icon-512.png`,
   `${BASE}assets/social-card.svg`,
-  `${BASE}manifest.webmanifest`,
-  `${BASE}llms.txt`,
-  `${BASE}robots.txt`,
-  `${BASE}sitemap.xml`
+  `${BASE}manifest.webmanifest`
 ];
 
 self.addEventListener('install', event => {
