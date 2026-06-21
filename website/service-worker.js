@@ -1,5 +1,5 @@
 const CACHE_NAME = 'terafab-decision-twin-website-v1';
-const BASE = '/terafab-decision-twin/';
+const BASE = '/terafab-decision-twin/website/';
 const APP_SHELL = [
   BASE,
   `${BASE}index.html`,

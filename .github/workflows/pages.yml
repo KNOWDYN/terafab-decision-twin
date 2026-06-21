@@ -25,17 +25,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Build static Pages artifact
-        run: |
-          rm -rf _site
-          mkdir -p _site/docs
-          cp -R website/. _site/
-          cp docs/*.md docs/llms.txt _site/docs/
-          cp ACADEMIC_LICENSE.md COMMERCIAL_LICENSE.md _site/
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: website
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
