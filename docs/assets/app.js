@@ -3,7 +3,7 @@
   const repoUrl = 'https://github.com/KNOWDYN/terafab-decision-twin';
   const currentPage = document.body.dataset.page || 'index.html';
   const navItems = [
-    ['index.html', 'Board'],
+    ['index.html', 'Home'],
     ['model.html', 'Model'],
     ['scenarios.html', 'Scenarios'],
     ['policy.html', 'Policy'],
@@ -33,7 +33,7 @@
   function renderFooter() {
     const slot = document.querySelector('[data-site-footer]');
     if (!slot) return;
-    slot.outerHTML = `<footer class="footer"><div class="shell footer-grid"><div><b>KNOWDYN public model</b><p>© 2026 KNOWDYN. All rights reserved except where repository license files expressly state otherwise.</p></div><div><b>Independence boundary</b><p>This site is independent and does not claim Terafab endorsement, authorization, private data access, or verified operating status.</p></div><div><b>Repository</b><p><a href="${repoUrl}">Source-available repository</a><br><a href="llms.txt">LLM guidance</a><br><a href="sitemap.xml">Sitemap</a></p></div></div></footer>`;
+    slot.outerHTML = `<footer class="footer"><div class="shell footer-grid"><div><b>KNOWDYN public model</b><p>© 2026 KNOWDYN. All rights reserved except where repository license files expressly state otherwise.</p></div><div><b>Disclaimer</b><p>This site is independent and does not claim Terafab endorsement, authorization, private data access, or verified operating status.</p></div><div><b>Repository</b><p><a href="${repoUrl}">Source-available repository</a><br><a href="llms.txt">LLM guidance</a><br><a href="sitemap.xml">Sitemap</a></p></div></div></footer>`;
   }
 
   function bindMenu() {
@@ -80,7 +80,7 @@
         return;
       }
       installButton.textContent = 'Share → Add to Home Screen';
-      window.setTimeout(() => { installButton.textContent = 'Install'; }, 3600);
+      window.setTimeout(() => { installButton.textContent = 'Keep this'; }, 3600);
     });
   }
 })();
