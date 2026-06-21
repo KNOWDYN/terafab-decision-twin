@@ -296,7 +296,7 @@ The advanced update is provided as Python modules and a notebook, not as new CLI
 ```text
 strategic_simulation/
 validation_lab/
-notebooks/terafab_advanced_simulation_lab.ipynb
+notebooks/terafab_decision_twin_colab_lab.ipynb
 ```
 
 for Monte Carlo, game-theory, reduced-order-model, stakeholder-surface, and validation-readiness workflows.
@@ -383,7 +383,7 @@ It also adds:
 docs/ADVANCED_SIMULATION.md
 docs/VALIDATION_LAB.md
 docs/STAKEHOLDER_DECISION_SURFACES.md
-notebooks/terafab_advanced_simulation_lab.ipynb
+notebooks/terafab_decision_twin_colab_lab.ipynb
 tests/test_strategic_simulation.py
 tests/test_validation_lab.py
 UPDATE_PACKAGE_MANIFEST.md
@@ -1475,12 +1475,10 @@ The website links to this reference library from its mega-footer through generat
 Colab notebooks:
 
 ```text
-notebooks/terafab_colab_dashboard.ipynb
-notebooks/terafab_comparative_simulation_reporting_colab.ipynb
-notebooks/terafab_advanced_simulation_lab.ipynb
+notebooks/terafab_decision_twin_colab_lab.ipynb
 ```
 
-The advanced simulation notebook is designed to demonstrate:
+The integrated Colab lab notebook is designed to demonstrate:
 
 ```text
 deterministic baseline run
@@ -1591,10 +1589,10 @@ terafab export scenarios/board_case.json runs/board_case_bundle
 Use:
 
 ```text
-notebooks/terafab_comparative_simulation_reporting_colab.ipynb
+notebooks/terafab_decision_twin_colab_lab.ipynb
 ```
 
-The comparative notebook is designed for baseline / stress / support-style scenario comparison and policymaker-investor reporting.
+The integrated Colab lab includes baseline / stress / support-style scenario context, strategic simulation, validation-readiness screening, and policymaker-investor reporting examples.
 
 ### 8. Extend with tests
 
@@ -1799,7 +1797,7 @@ scenarios/
   Included runnable deterministic scenarios.
 
 notebooks/
-  Colab dashboard, comparative scenario reporting notebook, and advanced simulation lab notebook.
+  Integrated Colab lab notebook for public monitoring, deterministic simulation, strategic simulation, and validation-readiness screening.
 
 website/
   One-page stakeholder PWA deployed to GitHub Pages, including offline support,
