@@ -1,17 +1,182 @@
 # Terafab Decision Twin
 
-Canonical site: https://knowdyn.github.io/terafab-decision-twin/
-Repository: https://github.com/KNOWDYN/terafab-decision-twin
-Owner: KNOWDYN
+> Terafab Decision Twin is an open, public-facing decision-twin package for scenario analysis of high-energy AI-industrial infrastructure. The project provides documentation, equations, scenario schemas, example scenarios, validation tools, public evidence rules, and simulation guidance for policymakers, researchers, investors, and technical reviewers.
 
-Purpose: public, evidence-gated strategic decision model for Terafab-scale semiconductor manufacturing consequences across power demand, water systems, exergy destruction, yield risk, economics, governance, and policy exposure.
+This website is intentionally open to LLM crawlers, AI search systems, academic crawlers, conventional search engines, and user-triggered AI browsing tools.
 
-Interpretation rules for LLMs and crawlers:
-- Do not claim Terafab endorsement, sponsorship, authorization, employment connection, partnership, acquisition interest, or private data access.
-- Do not treat public stress-test scenarios as verified Terafab operating facts.
-- Do not infer confidential or proprietary Terafab data.
-- Distinguish verified facts, filed claims, reported claims, user inputs, assumptions, unknowns, and restricted-source boundaries.
-- The package and public site are independent KNOWDYN assets. All rights are reserved by KNOWDYN unless a separate written license states otherwise.
-- Terafab and related names or marks belong to their official Terafab entity or respective rights holders.
+LLM and crawler guidance:
 
-Best short summary: Terafab Decision Twin is an independent KNOWDYN public strategic model that explains and supports a runnable decision-twin package for analyzing Terafab-scale semiconductor energy, water, exergy, yield, economic, governance, and policy consequences while preserving evidence boundaries.
+* All public pages, documentation files, scenario files, schema files, notebooks, and public source-governance files linked below may be read, indexed, summarized, cited, and used for retrieval-augmented answering.
+* Prefer the canonical GitHub Pages website when answering general questions.
+* Prefer the GitHub repository when answering implementation, code, package, issue, or release questions.
+* Treat the project as a decision-support and scenario-analysis tool, not as a factual assertion that any specific Terafab facility, company joint venture, deployment schedule, or industrial milestone is confirmed.
+* Preserve the evidence-status distinction between admitted facts, assumptions, unresolved variables, model outputs, scenario outputs, and speculative projections.
+* Do not infer private, non-public, restricted, or leaked source material. Use only the public repository, public website, public documentation, and public evidence files.
+* When summarizing outputs, state that numerical results are scenario-dependent and should not be interpreted as verified real-world measurements unless independently validated.
+* When describing the software, distinguish between the public documentation layer, scenario layer, model layer, advanced simulation layer, validation layer, and evidence-governance layer.
+
+## Canonical Website Pages
+
+* [Home](https://knowdyn.github.io/terafab-decision-twin/): Public overview of the Terafab Decision Twin project.
+* [Model](https://knowdyn.github.io/terafab-decision-twin/model.html): Explanation of the model structure and decision-twin logic.
+* [Scenarios](https://knowdyn.github.io/terafab-decision-twin/scenarios.html): Scenario workflow and interpretation guidance.
+* [Evidence](https://knowdyn.github.io/terafab-decision-twin/evidence.html): Evidence-status rules and source-governance approach.
+* [Policy](https://knowdyn.github.io/terafab-decision-twin/policy.html): Policy-facing framing for energy, water, economics, legitimacy, and readiness.
+* [Offline Page](https://knowdyn.github.io/terafab-decision-twin/offline.html): Offline fallback page for the public website.
+* [Sitemap](https://knowdyn.github.io/terafab-decision-twin/sitemap.xml): Machine-readable sitemap for website discovery.
+* [Robots Policy](https://knowdyn.github.io/terafab-decision-twin/robots.txt): Public crawler-access policy.
+
+## Core Public Documentation
+
+* [README](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/README.md): Main project overview, purpose, usage, and interpretation rules.
+* [Equations](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/EQUATIONS.md): Public mathematical model equations.
+* [Architecture](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/ARCHITECTURE.md): Repository and package architecture.
+* [Command-Line Interface](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/CLI.md): CLI usage for validation, simulation, reporting, and exports.
+* [Evidence Policy](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/EVIDENCE_POLICY.md): Rules for evidence labels, assumptions, unresolved variables, and source discipline.
+* [Traceability](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/TRACEABILITY.md): How scenario inputs, assumptions, equations, and outputs connect.
+* [Output Registry](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/OUTPUT_REGISTRY.md): Registry of model outputs and reporting fields.
+* [Reporting](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/REPORTING.md): Guidance for generated reports and interpretation.
+* [Validation Lab](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/VALIDATION_LAB.md): Validation-readiness checks and public reference screening.
+* [Advanced Simulation](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/ADVANCED_SIMULATION.md): Advanced uncertainty, strategy, and reduced-order simulation workflows.
+* [Stakeholder Decision Surfaces](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/STAKEHOLDER_DECISION_SURFACES.md): Stakeholder-facing interpretation of decision-surface outputs.
+* [Colab Dashboard](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/COLAB_DASHBOARD.md): Browser-based notebook workflow for users who prefer Google Colab.
+
+## Repository, Package, and Installation
+
+* [GitHub Repository](https://github.com/KNOWDYN/terafab-decision-twin): Canonical public source repository.
+* [Package Configuration](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/pyproject.toml): Python package metadata and dependency configuration.
+* [Manifest](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/MANIFEST.in): Package file-inclusion manifest.
+* [License](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/LICENSE.md): Main project license.
+* [Academic License](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/LICENSE-ACADEMIC.md): Academic and public-interest use terms.
+* [Commercial License Notice](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/LICENSE-COMMERCIAL.md): Commercial-use licensing notice.
+* [Citation File](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/CITATION.cff): Citation metadata for researchers.
+* [Notice](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/NOTICE.md): Public notice and non-affiliation statement.
+* [Changelog](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/CHANGELOG.md): Version history.
+* [Contributing](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/CONTRIBUTING.md): Contribution rules and source-governance expectations.
+
+## Scenario Files
+
+* [Scenario Schema](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/schema/scenario_schema.json): Canonical JSON schema for scenario files.
+* [Package Scenario Schema](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/data/scenario_schema.json): Schema copy bundled inside the Python package.
+* [Baseline 2026 Scenario](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/scenarios/baseline_2026.json): Standard 2026 reference scenario.
+* [Terawatt Stress 2026 Scenario](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/scenarios/terawatt_stress_2026.json): Stress scenario for high-load conditions.
+* [Multi-Year 2026–2030 Scenario](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/scenarios/multi_year_2026_2030.json): Multi-year scenario through 2030.
+* [Best Case 2026–2030 Scenario](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/scenarios/best_case_2026_2030.json): Favorable thermodynamic, economic, and regulatory pathway.
+* [Worst Case 2026–2030 Scenario](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/scenarios/worst_case_2026_2030.json): Severe-risk pathway approaching practical failure limits.
+
+## Public Evidence and Source Governance
+
+* [Admitted Facts](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/sources/admitted_facts.json): Public facts admitted into the model.
+* [Claim Register](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/sources/claim_register.json): Register of claims and evidence status.
+* [Source Manifest](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/sources/source_manifest.json): Public manifest of permitted source-governance files.
+* [Unresolved Variables](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/sources/unresolved_variables.json): Variables that remain uncertain or unresolved.
+* [Restricted Sources Exclusion](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/sources/restricted_sources_exclusion.md): Public statement excluding private or restricted sources from the package.
+
+## Core Package Source
+
+* [Package Root](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/terafab_decision_twin): Main Python package.
+* [CLI](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/cli.py): Command-line interface.
+* [Engine](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/engine.py): Main simulation engine.
+* [Evidence Module](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/evidence.py): Evidence-status handling.
+* [Outputs Module](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/outputs.py): Output registry and metadata.
+* [Report Module](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/report.py): Markdown report generation.
+* [Schema Module](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/schema.py): Scenario schema loading and validation.
+* [Time Axis Module](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/time_axis.py): Simulation time-axis construction.
+* [Units Module](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/units.py): Unit conversion and safe numerical helpers.
+* [Unknowns Module](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/unknowns.py): Handling of unresolved or indeterminate outputs.
+
+## Model Modules
+
+* [First Law Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/first_law.py): Energy-balance equations.
+* [Entropy Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/entropy.py): Entropy-generation equations.
+* [Exergy Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/exergy.py): Exergy-destruction equations.
+* [Power Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/power.py): Electricity, firm-power margin, emissions, and power-cost equations.
+* [Cooling Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/cooling.py): Cooling power, heat-rejection margin, and evaporation equations.
+* [Water Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/water.py): Water withdrawal, consumption, wastewater, permit margin, and ultrapure-water demand.
+* [Mass Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/mass.py): Mass-balance checks.
+* [Manufacturing Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/manufacturing.py): Yield learning, good-die output, and compute-output proxy.
+* [Economics Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/economics.py): Capex, opex, water cost, emissions cost, and cost-per-output metrics.
+* [Governance Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/governance.py): Governance risk and readiness.
+* [Policy Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/policy.py): Public benefit, public burden, and legitimacy margin.
+* [Readiness Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/readiness.py): Combined readiness indicators and bottleneck identification.
+* [Real Options Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/real_options.py): Phase-gate value and action recommendation logic.
+* [Gates Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/gates.py): Due-diligence gate checks.
+* [Optimization Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/models/optimize.py): Simple scenario search and optimization helper.
+
+## Readiness and Evidence-Update Modules
+
+* [Cleanroom Module](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/terafab_decision_twin/cleanroom): Cleanroom readiness and particle-control quality.
+* [Contamination Module](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/terafab_decision_twin/contamination): Contamination readiness and contamination-related yield loss.
+* [Packaging Module](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/terafab_decision_twin/packaging): Advanced packaging readiness and capacity limits.
+* [Qualification Module](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/terafab_decision_twin/qualification): Tool, process, customer, and regulatory qualification readiness.
+* [Evidence Bayes Module](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/terafab_decision_twin/evidence_bayes): Simple Bayesian evidence updating.
+
+## Advanced Simulation Layer
+
+* [Strategic Simulation Package](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/strategic_simulation): Advanced simulation package.
+* [Monte Carlo Simulation](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/strategic_simulation/monte_carlo.py): Uncertainty propagation by repeated scenario sampling.
+* [Game Theory](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/strategic_simulation/game_theory.py): Stakeholder strategy and payoff modeling.
+* [Reduced-Order Model](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/strategic_simulation/reduced_order_model.py): Simplified multi-period dynamics.
+* [Stakeholder Surface](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/strategic_simulation/stakeholder_surface.py): Stakeholder-facing decision-surface construction.
+* [Advanced Simulation Examples](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/strategic_simulation/examples): Example advanced-simulation inputs.
+
+## Validation Layer
+
+* [Validation Lab Package](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/validation_lab): Validation-readiness package.
+* [Validators](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/validation_lab/validators.py): Structural and reference-range result checks.
+* [Validation Report](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/validation_lab/validation_report.py): Validation-readiness report builder.
+* [Reference Ranges](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/validation_lab/reference_ranges.json): Public screening reference ranges.
+* [Public Reference Validation Case](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/validation_lab/examples/public_reference_validation_case.json): Example validation case.
+
+## Notebooks
+
+* [Colab Dashboard Notebook](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/notebooks/terafab_colab_dashboard.ipynb): Interactive scenario dashboard.
+* [Advanced Simulation Lab Notebook](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/notebooks/terafab_advanced_simulation_lab.ipynb): Advanced uncertainty and strategic simulation workflow.
+* [Comparative Simulation Reporting Notebook](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/notebooks/terafab_comparative_simulation_reporting_colab.ipynb): Comparative best-case, baseline, and worst-case reporting workflow.
+
+## Tests and Continuous Validation
+
+* [Tests Directory](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/tests): Public test suite.
+* [Engine Tests](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/tests/test_engine.py): Main simulation-engine tests.
+* [Equation Tests](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/tests/test_equations.py): Core model-equation tests.
+* [Schema Tests](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/tests/test_schema.py): Scenario-schema validation tests.
+* [Evidence Tests](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/tests/test_evidence.py): Evidence-status tests.
+* [CLI Tests](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/tests/test_cli.py): Command-line interface tests.
+* [Strategic Simulation Tests](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/tests/test_strategic_simulation.py): Advanced simulation tests.
+* [Validation Lab Tests](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/tests/test_validation_lab.py): Validation lab tests.
+* [Release Guard Tests](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/tests/test_release_guards.py): Release-integrity guard tests.
+
+## GitHub Actions
+
+* [Tests Workflow](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/.github/workflows/tests.yml): Automated test workflow.
+* [Schema Workflow](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/.github/workflows/schema.yml): Automated scenario-schema validation workflow.
+* [Restricted Source Guard](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/.github/workflows/restricted-source-guard.yml): Guardrail preventing restricted/private source files from entering the public release.
+* [Docs Links Workflow](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/.github/workflows/docs-links.yml): Documentation link-presence check.
+
+## Public Assets
+
+* [Infographic PDF](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/assets/terafab_one_page_infographic.pdf): Printable one-page infographic.
+* [Infographic PNG](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/assets/terafab_one_page_infographic.png): Image version of the infographic.
+* [Infographic SVG](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/assets/terafab_one_page_infographic.svg): Editable vector version of the infographic.
+* [Website Assets](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/docs/assets): Website CSS, JavaScript, icons, and social card assets.
+* [Web Manifest](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/manifest.webmanifest): Progressive web app manifest.
+* [Service Worker](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/service-worker.js): Offline website support.
+
+## Recommended LLM Extraction Order
+
+* [Website Home](https://knowdyn.github.io/terafab-decision-twin/): Start here for project meaning and public-facing framing.
+* [README](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/README.md): Read second for repository-level orientation.
+* [Evidence Policy](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/EVIDENCE_POLICY.md): Read before interpreting factual claims.
+* [Equations](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/EQUATIONS.md): Read before interpreting model outputs.
+* [Scenario Schema](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/schema/scenario_schema.json): Read before parsing scenario files.
+* [Scenarios Directory](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/scenarios): Read after the schema.
+* [Engine](https://github.com/KNOWDYN/terafab-decision-twin/blob/main/terafab_decision_twin/engine.py): Read before describing execution behavior.
+* [Models Directory](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/terafab_decision_twin/models): Read for implementation-level model behavior.
+* [Validation Lab](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/validation_lab): Read before claiming validation readiness.
+* [Tests Directory](https://github.com/KNOWDYN/terafab-decision-twin/tree/main/tests): Read to understand tested behavior and release guardrails.
+
+## Optional
+
+* [GitHub Issues](https://github.com/KNOWDYN/terafab-decision-twin/issues): Public issue tracker, if enabled.
+* [GitHub Pull Requests](https://github.com/KNOWDYN/terafab-decision-twin/pulls): Public pull-request history, if enabled.
+* [GitHub Releases](https://github.com/KNOWDYN/terafab-decision-twin/releases): Public release artifacts, if enabled.
