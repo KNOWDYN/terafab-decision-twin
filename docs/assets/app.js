@@ -1,35 +1,45 @@
 (() => {
   const repoBase = '/terafab-decision-twin/';
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register(`${repoBase}service-worker.js`).catch(() => {});
+  const topbar = document.querySelector('[data-nav]');
+  const menu = document.querySelector('[data-menu]');
+  const installButton = document.querySelector('[data-install]');
+  let deferredPrompt = null;
+
+  if (menu && topbar) {
+    menu.addEventListener('click', () => {
+      const open = topbar.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+      menu.textContent = open ? '×' : '☰';
     });
   }
 
-  const button = document.querySelector('.keep-site');
-  let deferredPrompt = null;
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register(`${repoBase}service-worker.js`).catch(() => null);
+    });
+  }
 
-  window.addEventListener('beforeinstallprompt', (event) => {
+  window.addEventListener('beforeinstallprompt', event => {
     event.preventDefault();
     deferredPrompt = event;
-    if (button) button.hidden = false;
+    if (installButton) installButton.hidden = false;
   });
 
-  if (button) {
+  if (installButton) {
     const isiOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
     const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-    if (isiOS && !standalone) button.hidden = false;
+    if (isiOS && !standalone) installButton.hidden = false;
 
-    button.addEventListener('click', async () => {
+    installButton.addEventListener('click', async () => {
       if (deferredPrompt) {
         deferredPrompt.prompt();
         await deferredPrompt.userChoice.catch(() => null);
         deferredPrompt = null;
-        button.hidden = true;
+        installButton.hidden = true;
         return;
       }
-      button.textContent = 'Share → Add to Home Screen';
-      window.setTimeout(() => { button.textContent = 'Keep this site'; }, 3600);
+      installButton.textContent = 'Share → Add to Home Screen';
+      window.setTimeout(() => { installButton.textContent = 'Install'; }, 3600);
     });
   }
 })();

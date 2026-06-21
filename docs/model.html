@@ -3,89 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Model Architecture | LaTeX Equations for Terafab-Scale Decision Simulation</title>
-<meta name="description" content="LaTeX-rendered equation architecture for thermodynamics, exergy, water, power, yield, economics, governance, policy, and evidence gates in the Terafab Decision Twin.">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>Model | Terafab Decision Twin</title>
+<meta name="description" content="The model architecture for evidence-coded Terafab-scale scenario simulation, equations, outputs, readiness signals, and due-diligence gates.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <link rel="canonical" href="https://knowdyn.github.io/terafab-decision-twin/model.html">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
-<meta name="application-name" content="Terafab Twin">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Terafab Twin">
 <link rel="apple-touch-icon" href="assets/icon-192.png">
 <meta property="og:site_name" content="Terafab Decision Twin by KNOWDYN">
-<meta property="og:title" content="Model Architecture | LaTeX Equations for Terafab-Scale Decision Simulation">
-<meta property="og:description" content="LaTeX-rendered equation architecture for thermodynamics, exergy, water, power, yield, economics, governance, policy, and evidence gates in the Terafab Decision Twin.">
+<meta property="og:title" content="Model">
+<meta property="og:description" content="The model architecture for evidence-coded Terafab-scale scenario simulation, equations, outputs, readiness signals, and due-diligence gates.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://knowdyn.github.io/terafab-decision-twin/model.html">
 <meta property="og:image" content="https://knowdyn.github.io/terafab-decision-twin/assets/social-card.svg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Model Architecture | LaTeX Equations for Terafab-Scale Decision Simulation">
-<meta name="twitter:description" content="LaTeX-rendered equation architecture for thermodynamics, exergy, water, power, yield, economics, governance, policy, and evidence gates in the Terafab Decision Twin.">
+<meta name="twitter:title" content="Model">
+<meta name="twitter:description" content="The model architecture for evidence-coded Terafab-scale scenario simulation, equations, outputs, readiness signals, and due-diligence gates.">
 <meta name="twitter:image" content="https://knowdyn.github.io/terafab-decision-twin/assets/social-card.svg">
 <link rel="stylesheet" href="assets/style.css">
-<script>window.MathJax={tex:{inlineMath:[["\(","\)"],["$","$"]],displayMath:[["\[","\]"],["$$","$$"]]},svg:{fontCache:"global"}};</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "name": "Model Architecture | LaTeX Equations for Terafab-Scale Decision Simulation",
-  "headline": "Model Architecture | LaTeX Equations for Terafab-Scale Decision Simulation",
-  "description": "LaTeX-rendered equation architecture for thermodynamics, exergy, water, power, yield, economics, governance, policy, and evidence gates in the Terafab Decision Twin.",
-  "url": "https://knowdyn.github.io/terafab-decision-twin/model.html",
-  "publisher": {
-    "@type": "Organization",
-    "name": "KNOWDYN"
-  },
-  "creator": {
-    "@type": "Organization",
-    "name": "KNOWDYN"
-  },
-  "isAccessibleForFree": true,
-  "about": [
-    "Terafab-scale semiconductor manufacturing",
-    "decision twin",
-    "thermodynamics",
-    "exergy",
-    "water-energy nexus",
-    "industrial policy",
-    "evidence governance"
-  ]
-}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"Model","url":"https://knowdyn.github.io/terafab-decision-twin/model.html","description":"The model architecture for evidence-coded Terafab-scale scenario simulation, equations, outputs, readiness signals, and due-diligence gates.","publisher":{"@type":"Organization","name":"KNOWDYN"},"isAccessibleForFree":true}</script>
 </head>
 <body data-page="model.html">
 <a class="skip" href="#main">Skip to content</a>
-<header class="topbar">
-  <div class="nav-wrap glass">
-    <a class="brand" href="index.html"><span class="mark">TΔ</span><span><b>Terafab Decision Twin</b><small>Public strategic model by KNOWDYN</small></span></a>
-    <nav class="nav"><a class="" href="index.html">Board View</a><a class="active" href="model.html">Model</a><a class="" href="scenarios.html">Scenarios</a><a class="" href="policy.html">Policy</a><a class="" href="evidence.html">Evidence</a><a class="" href="researchers.html">Researchers</a><a class="" href="getting-started.html">Deploy</a></nav>
-    <a class="github-link" href="https://github.com/KNOWDYN/terafab-decision-twin" aria-label="Open GitHub repository" title="Open GitHub repository"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.8-.25.8-.56v-2c-3.26.7-3.95-1.4-3.95-1.4-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.04 1.78 2.74 1.26 3.4.96.1-.76.4-1.26.73-1.55-2.6-.3-5.34-1.3-5.34-5.78 0-1.28.46-2.33 1.2-3.15-.12-.3-.52-1.5.12-3.1 0 0 .98-.32 3.2 1.2a11.1 11.1 0 0 1 5.82 0c2.22-1.52 3.2-1.2 3.2-1.2.64 1.6.24 2.8.12 3.1.75.82 1.2 1.87 1.2 3.15 0 4.5-2.74 5.47-5.35 5.76.42.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
-    <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
-  </div>
+<header class="topbar" data-nav>
+  <a class="brand" href="index.html" aria-label="Terafab Decision Twin home"><span class="mark">TΔ</span><span><b>Terafab Decision Twin</b><small>Evidence-gated strategic model</small></span></a>
+  <nav class="nav" aria-label="Primary navigation"><a href="index.html">Board</a><a class="active" href="model.html">Model</a><a href="scenarios.html">Scenarios</a><a href="policy.html">Policy</a><a href="evidence.html">Evidence</a><a href="researchers.html">Researchers</a><a href="getting-started.html">Deploy</a></nav>
+  <a class="repo-link" href="https://github.com/KNOWDYN/terafab-decision-twin" rel="noopener" aria-label="Open GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.6v-2c-3.3.7-4-1.5-4-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2V22c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg> GitHub</a>
+  <button class="menu" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
 </header>
 <main id="main">
-<section class="page-hero"><p class="eyebrow">LaTeX-rendered architecture</p><h1>The model converts fab-scale physics into decision gates.</h1><p>Equations are public, readable, and explicitly separated from undisclosed or unverified operating facts.</p></section>
-<section class="section equation-grid">
- <article class="equation-card"><h2>First-law power balance</h2>\[\dot{Q}_{remove}=P_{IT}+P_{process}+P_{aux}-\dot{W}_{useful}-\Delta \dot{U}\]<p>Identifies thermal burden and cooling demand from scenario-level loads.</p></article>
- <article class="equation-card"><h2>Exergy destruction</h2>\[\dot{X}_{destroyed}=T_0\dot{S}_{gen}\]<p>Converts entropy generation into lost work potential and thermodynamic inefficiency.</p></article>
- <article class="equation-card"><h2>Water-cooling coupling</h2>\[\dot{m}_{water}=\frac{\dot{Q}_{remove}}{c_p\Delta T\eta_{cooling}}\]<p>Stress-tests withdrawal, consumption, and cooling-system sensitivity.</p></article>
- <article class="equation-card"><h2>Yield-adjusted economic output</h2>\[V_{net}=Y \cdot V_{gross}-C_{energy}-C_{water}-C_{delay}-C_{risk}\]<p>Links production value to utility burden, readiness risk, and delays.</p></article>
- <article class="equation-card"><h2>Evidence gate</h2>\[Claim_{public}\leftarrow Claim \; | \; status \in \{verified,filed,reported,input,assumption,unknown\}\]<p>Prevents unverified claims from entering public outputs as facts.</p></article>
- <article class="equation-card"><h2>Real-option value</h2>\[ROV = \max(E[V_{stage+1}]-I_{stage},0)\cdot \pi_{readiness}\]<p>Frames staged decisions under uncertainty rather than irreversible overcommitment.</p></article>
-</section>
-<section class="section"><div class="section-title"><p class="eyebrow">Interactive model map</p><h2>Touch a module to understand its executive function.</h2></div><div class="module-wall"><button data-module="thermo">Thermodynamics</button><button data-module="exergy">Exergy</button><button data-module="water">Water</button><button data-module="power">Power</button><button data-module="yield">Yield</button><button data-module="economics">Economics</button><button data-module="governance">Governance</button><button data-module="policy">Policy</button></div><p class="module-output" id="moduleOutput">The model is modular so engineers can audit equations while executives read decision consequences.</p></section>
+
+<section class="shell page-hero"><p class="eyebrow">Model architecture</p><h1>Physics, finance, readiness, and public legitimacy share one calculation path.</h1><p class="lead">The package validates evidence-coded scenario JSON, expands a time axis, computes equation modules, and returns scalar, vector, and matrix outputs for decision review.</p></section>
+<section class="shell section"><div class="grid three"><article class="card"><span class="status">Input</span><h3>Evidence-coded scenarios</h3><p>Material assumptions carry value, unit, status, source reference, confidence, and notes.</p></article><article class="card"><span class="status">Kernel</span><h3>Deterministic solver</h3><p>The core engine computes coupled consequences across infrastructure, operations, economics, and policy.</p></article><article class="card"><span class="status">Output</span><h3>Gate matrix</h3><p>Decision gates expose blockers instead of hiding risk inside a single aggregate score.</p></article></div></section>
+<section class="shell section"><div class="section-head"><div><p class="eyebrow">Core equations</p><h2>The public site shows the logic without pretending to be the full source code.</h2></div><p>The authoritative implementation remains in the repository; this page gives leadership the equations that matter first.</p></div><div class="grid two"><article class="equation"><h3>Thermal removal</h3><div class="math">Q_remove = P_IT + P_process + P_aux − W_useful − ΔU</div><p>Converts facility power into cooling burden.</p></article><article class="equation"><h3>Exergy destruction</h3><div class="math">X_destroyed = T0 × S_gen</div><p>Expresses irreversibility as lost work potential.</p></article><article class="equation"><h3>Water coupling</h3><div class="math">m_water = Q_remove / (c_p × ΔT × η_cooling)</div><p>Connects heat rejection to withdrawal and consumption stress.</p></article><article class="equation"><h3>Net value exposure</h3><div class="math">V_net = Y × V_gross − C_energy − C_water − C_delay − C_risk</div><p>Links yield and constraints to economic outcome.</p></article></div></section>
+<section class="shell section"><div class="grid four"><article class="card"><h3>Power</h3><p>Load, firm capacity, reserve margin, emissions, electricity cost.</p></article><article class="card"><h3>Manufacturing</h3><p>Wafer starts, die per wafer, learning, contamination, qualification, packaging.</p></article><article class="card"><h3>Governance</h3><p>Partner complexity, latency, readiness, and phase-gate action.</p></article><article class="card"><h3>Policy</h3><p>Public benefit, public burden, local stress, legitimacy margin.</p></article></div></section>
 </main>
-<footer class="footer">
-  <div class="footer-grid">
-    <div><b>Rights</b><p>© 2026 KNOWDYN. All rights reserved in the Terafab Decision Twin package, site design, public documentation, scenario framing, and model implementation except where expressly stated in repository license files.</p></div>
-    <div><b>Terafab notice</b><p>Terafab, the Terafab name, and any related marks or business identity are owned by the official Terafab entity and/or its rightful owners. This site is independent and does not claim endorsement, employment, agency, partnership, acquisition interest, confidential access, or approval by Terafab, its company, officers, employees, contractors, or affiliates.</p></div>
-    <div><b>Repository</b><p><a href="https://github.com/KNOWDYN/terafab-decision-twin">Open the GitHub repository</a><br><a href="llms.txt">Read the LLM crawler guide</a><br><a href="sitemap.xml">View sitemap</a></p></div>
-  </div>
-</footer>
-<nav class="tabbar"><a href="index.html">Board</a><a href="model.html">Model</a><a href="policy.html">Policy</a><a href="evidence.html">Evidence</a><a href="getting-started.html">Deploy</a></nav>
-<button class="install" id="installButton" hidden>Install</button>
+<footer class="footer"><div class="shell footer-grid"><div><b>KNOWDYN public model</b><p>© 2026 KNOWDYN. All rights reserved except where repository license files expressly state otherwise.</p></div><div><b>Independence boundary</b><p>This site is independent and does not claim Terafab endorsement, authorization, private data access, or verified operating status.</p></div><div><b>Repository</b><p><a href="https://github.com/KNOWDYN/terafab-decision-twin">Open source repository</a><br><a href="llms.txt">LLM guidance</a><br><a href="sitemap.xml">Sitemap</a></p></div></div></footer>
+<button class="install" type="button" data-install hidden>Install</button>
 <script src="assets/app.js" defer></script>
 </body>
 </html>
