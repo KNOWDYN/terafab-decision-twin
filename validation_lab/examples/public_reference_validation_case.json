@@ -1,0 +1,6 @@
+{
+  "purpose": "Example validation-lab configuration for screening a Terafab Decision Twin result against structural and public-reference ranges.",
+  "reference_ranges": "validation_lab/reference_ranges.json",
+  "validation_level_target": "Level 2 - structural and public-reference screening",
+  "caution": "This is not official Terafab validation and does not replace expert review, project data, utility studies, water authority records, or permitting documentation."
+}

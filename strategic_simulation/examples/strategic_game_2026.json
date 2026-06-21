@@ -1,0 +1,28 @@
+{
+  "purpose": "Finite normal-form demonstration game for Terafab-scale stakeholder coordination.",
+  "actors": ["terafab_sponsor", "utility"],
+  "strategies": {
+    "terafab_sponsor": ["accelerate", "stage"],
+    "utility": ["commit_capacity", "require_upgrade"]
+  },
+  "payoff_evidence_status": "scenario_assumption",
+  "payoffs": [
+    {
+      "profile": {"terafab_sponsor": "accelerate", "utility": "commit_capacity"},
+      "payoff": {"terafab_sponsor": 8, "utility": 5}
+    },
+    {
+      "profile": {"terafab_sponsor": "accelerate", "utility": "require_upgrade"},
+      "payoff": {"terafab_sponsor": 2, "utility": 7}
+    },
+    {
+      "profile": {"terafab_sponsor": "stage", "utility": "commit_capacity"},
+      "payoff": {"terafab_sponsor": 6, "utility": 4}
+    },
+    {
+      "profile": {"terafab_sponsor": "stage", "utility": "require_upgrade"},
+      "payoff": {"terafab_sponsor": 7, "utility": 8}
+    }
+  ],
+  "caution": "Payoffs are declared demonstration assumptions, not observed stakeholder preferences."
+}

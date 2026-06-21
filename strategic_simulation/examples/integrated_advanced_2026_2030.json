@@ -1,0 +1,9 @@
+{
+  "purpose": "Integrated advanced-simulation example that points to the Monte Carlo, game-theory, ROM, and validation-lab configurations included in this update package.",
+  "base_scenario": "scenarios/multi_year_2026_2030.json",
+  "monte_carlo_config": "strategic_simulation/examples/uncertainty_baseline_2026.json",
+  "game_config": "strategic_simulation/examples/strategic_game_2026.json",
+  "rom_config": "strategic_simulation/examples/rom_transition_2026_2030.json",
+  "validation_config": "validation_lab/examples/public_reference_validation_case.json",
+  "caution": "This file is an orchestration map. It does not claim official validation or private Terafab calibration."
+}
