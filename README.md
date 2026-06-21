@@ -1433,7 +1433,7 @@ surface = build_stakeholder_decision_surface(
 
 ## Website, reference wiki, notebooks, and infographic
 
-The public GitHub Pages experience is the one-page stakeholder PWA under `/website`:
+The public GitHub Pages experience redirects from the project root to the one-page stakeholder PWA under `/website`:
 
 ```text
 website/index.html
@@ -1447,7 +1447,7 @@ website/assets/icon.svg
 website/assets/social-card.svg
 ```
 
-The Pages workflow publishes `/website` as the site root and copies the text reference library, LLM guidance, and root license files into the deployed artifact:
+The Pages workflow publishes a root redirect, the `/website` PWA, the text reference library, LLM guidance, and root license files into the deployed artifact:
 
 ```text
 .github/workflows/pages.yml
