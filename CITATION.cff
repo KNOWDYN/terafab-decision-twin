@@ -5,7 +5,7 @@ type: software
 authors:
   - name: "KNOWDYN"
 version: "0.3.0"
-date-released: "2026-01-01"
+date-released: "2026-06-21"
 license: "LicenseRef-KNOWDYN-Source-Available-Noncommercial"
 repository-code: "https://github.com/KNOWDYN/terafab-decision-twin"
 abstract: "Evidence-gated Python decision twin for Terafab-scale semiconductor power, water, exergy, yield, economics, governance, and policy scenario analysis."
