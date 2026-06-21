@@ -27,6 +27,7 @@ It is **not** verified Terafab operating data, not an official Terafab model, no
 - [Quick start](#quick-start)
 - [CLI map](#cli-map)
 - [Run the included scenarios](#run-the-included-scenarios)
+- [Public monitoring examples](#public-monitoring-examples)
 - [Advanced simulation and validation update](#advanced-simulation-and-validation-update)
 - [Monte Carlo uncertainty propagation](#monte-carlo-uncertainty-propagation)
 - [Game-theory stakeholder analysis](#game-theory-stakeholder-analysis)
@@ -323,6 +324,49 @@ terafab export scenarios/best_case_2026_2030.json runs/best_case_bundle
 ```
 
 ---
+
+
+## Public monitoring examples
+
+The root-level `examples/` directory is a stakeholder-facing public monitoring playbook. It shows how boards, policymakers, engineers, investors, researchers, and other reviewers can map public information and verifiable available sources into evidence-coded scenario inputs without claiming private Terafab data or official Terafab status.
+
+Use these examples as an audit discipline:
+
+```text
+examples/README.md
+examples/public_monitoring_checklist.md
+examples/evidence_intake_template.json
+examples/source_register_template.json
+examples/stakeholder_board_monitoring.md
+examples/stakeholder_policy_monitoring.md
+examples/stakeholder_engineering_monitoring.md
+examples/stakeholder_investor_monitoring.md
+examples/scenario_public_progress_watch.json
+examples/scenario_public_infrastructure_watch.json
+```
+
+The examples preserve the path from public source claim to evidence status, model variable, output, and decision gate. They do **not** prove official Terafab progress, private schedules, confidential contracts, financing, construction, operation, endorsement, acquisition interest, or validated operating performance.
+
+Validation from the repository root:
+
+```bash
+python -m json.tool examples/evidence_intake_template.json
+python -m json.tool examples/source_register_template.json
+python -m json.tool examples/scenario_public_progress_watch.json
+python -m json.tool examples/scenario_public_infrastructure_watch.json
+python - <<'PY'
+from pathlib import Path
+from terafab_decision_twin.schema import load_scenario, validate_scenario
+for path in [
+    Path("examples/scenario_public_progress_watch.json"),
+    Path("examples/scenario_public_infrastructure_watch.json"),
+]:
+    errors = validate_scenario(load_scenario(path))
+    if errors:
+        raise SystemExit(f"{path}: {errors}")
+    print(f"VALID {path}")
+PY
+```
 
 ## Advanced simulation and validation update
 
