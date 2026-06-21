@@ -1,4 +1,4 @@
-# Terafab Decision Twin Final Public Release Report
+# Final Public Release Report
 
 ## Release identity
 
