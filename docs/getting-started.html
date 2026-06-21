@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Deploy and Use | Terafab Decision Twin</title>
-<meta name="description" content="Deployment and usage guide for publishing the GitHub Pages site, installing the package, running scenarios, and using Jupyter or Colab notebooks.">
+<title>Deploy | Terafab Decision Twin</title>
+<meta name="description" content="Deployment and installation guidance for the static GitHub Pages site published from the docs folder.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <link rel="canonical" href="https://knowdyn.github.io/terafab-decision-twin/getting-started.html">
 <link rel="manifest" href="manifest.webmanifest">
@@ -14,30 +14,33 @@
 <meta name="apple-mobile-web-app-title" content="Terafab Twin">
 <link rel="apple-touch-icon" href="assets/icon-192.png">
 <meta property="og:site_name" content="Terafab Decision Twin by KNOWDYN">
-<meta property="og:title" content="Deploy and Use">
-<meta property="og:description" content="Deployment and usage guide for publishing the GitHub Pages site, installing the package, running scenarios, and using Jupyter or Colab notebooks.">
+<meta property="og:title" content="Deploy">
+<meta property="og:description" content="Deployment and installation guidance for the static GitHub Pages site published from the docs folder.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://knowdyn.github.io/terafab-decision-twin/getting-started.html">
 <meta property="og:image" content="https://knowdyn.github.io/terafab-decision-twin/assets/social-card.svg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Deploy and Use">
-<meta name="twitter:description" content="Deployment and usage guide for publishing the GitHub Pages site, installing the package, running scenarios, and using Jupyter or Colab notebooks.">
+<meta name="twitter:title" content="Deploy">
+<meta name="twitter:description" content="Deployment and installation guidance for the static GitHub Pages site published from the docs folder.">
 <meta name="twitter:image" content="https://knowdyn.github.io/terafab-decision-twin/assets/social-card.svg">
 <link rel="stylesheet" href="assets/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Deploy and Use","url":"https://knowdyn.github.io/terafab-decision-twin/getting-started.html","description":"Deployment and usage guide for publishing the GitHub Pages site, installing the package, running scenarios, and using Jupyter or Colab notebooks.","publisher":{"@type":"Organization","name":"KNOWDYN"},"isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Deploy","url":"https://knowdyn.github.io/terafab-decision-twin/getting-started.html","description":"Deployment and installation guidance for the static GitHub Pages site published from the docs folder.","publisher":{"@type":"Organization","name":"KNOWDYN"},"isAccessibleForFree":true}</script>
 </head>
 <body data-page="getting-started.html">
 <a class="skip" href="#main">Skip to content</a>
-<header class="topbar" data-nav><a class="brand" href="index.html" aria-label="Terafab Decision Twin home"><span class="mark">TΔ</span><span><b>Terafab Decision Twin</b><small>Evidence-gated strategic model</small></span></a><nav class="nav" aria-label="Primary navigation"><a href="index.html">Board</a><a href="model.html">Model</a><a href="scenarios.html">Scenarios</a><a href="policy.html">Policy</a><a href="examples.html">Examples</a><a href="evidence.html">Evidence</a><a href="researchers.html">Researchers</a><a class="active" href="getting-started.html">Deploy</a></nav><a class="repo-link" href="https://github.com/KNOWDYN/terafab-decision-twin" rel="noopener" aria-label="Open repository">GitHub</a><button class="menu" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button></header>
+<header class="topbar" data-nav>
+  <a class="brand" href="index.html" aria-label="Terafab Decision Twin home"><span class="mark">TΔ</span><span><b>Terafab Decision Twin</b><small>Evidence-gated strategic model</small></span></a>
+  <nav class="nav" aria-label="Primary navigation"><a href="index.html">Board</a><a href="model.html">Model</a><a href="scenarios.html">Scenarios</a><a href="policy.html">Policy</a><a href="evidence.html">Evidence</a><a href="researchers.html">Researchers</a><a class="active" href="getting-started.html">Deploy</a></nav>
+  <a class="repo-link" href="https://github.com/KNOWDYN/terafab-decision-twin" rel="noopener" aria-label="Open GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.6v-2c-3.3.7-4-1.5-4-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2V22c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg> GitHub</a>
+  <button class="menu" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+</header>
 <main id="main">
-<section class="shell page-hero"><p class="eyebrow">Deploy and use</p><h1>Publish the site, install the package, and run scenarios.</h1><p class="lead">This page is for maintainers publishing GitHub Pages and analysts using the Python package locally, in Jupyter, or in Colab.</p></section>
-<section class="shell section"><div class="section-head"><div><p class="eyebrow">Publish website</p><h2>GitHub Pages from <code>/docs</code>.</h2></div><p>Repository Settings → Pages → Deploy from a branch → main → <code>/docs</code> → Save.</p></div><div class="code-list"><code>https://knowdyn.github.io/terafab-decision-twin/</code><code>https://knowdyn.github.io/terafab-decision-twin/sitemap.xml</code><code>https://knowdyn.github.io/terafab-decision-twin/llms.txt</code></div></section>
-<section class="shell section split"><div><p class="eyebrow">Install package locally</p><h2>Use editable install while developing scenarios.</h2></div><div class="code-list"><code>python -m venv .venv</code><code>. .venv/bin/activate</code><code>python -m pip install -e .</code><code>terafab version</code></div></section>
-<section class="shell section split"><div><p class="eyebrow">Run from CLI</p><h2>Validate first, then simulate.</h2></div><div class="code-list"><code>terafab scenario validate scenarios/baseline_2026.json</code><code>terafab simulate scenarios/baseline_2026.json --output runs/baseline.json --report runs/baseline.md</code><code>terafab export scenarios/baseline_2026.json runs/baseline_bundle</code></div></section>
-<section class="shell section"><div class="section-head"><div><p class="eyebrow">Use in Jupyter</p><h2>Minimal notebook cell.</h2></div><p>Load a scenario, run the engine, inspect summary outputs and gates.</p></div><article class="equation"><div class="math">from pathlib import Path<br>from terafab_decision_twin import load_scenario, run_scenario<br><br>scenario = load_scenario(Path("scenarios/baseline_2026.json"))<br>result = run_scenario(scenario)<br>result["summary"], result["gates"]</div></article></section>
-<section class="shell section"><div class="grid three"><article class="card"><h3>Colab dashboard</h3><p><code>notebooks/terafab_colab_dashboard.ipynb</code></p></article><article class="card"><h3>Advanced simulation</h3><p><code>notebooks/terafab_advanced_simulation_lab.ipynb</code></p></article><article class="card"><h3>Comparative reporting</h3><p><code>notebooks/terafab_comparative_simulation_reporting_colab.ipynb</code></p></article></div></section>
+
+<section class="shell page-hero"><p class="eyebrow">Deploy from docs</p><h1>A static GitHub Pages site with no backend and no build server requirement.</h1><p class="lead">Publish from the repository settings by selecting Deploy from a branch, the main branch, and the /docs folder.</p></section>
+<section class="shell section"><div class="timeline"><div class="step"><b>Upload or merge repository</b><p>Keep the `docs/` folder at the repository root.</p></div><div class="step"><b>Enable GitHub Pages</b><p>Repository Settings → Pages → Deploy from a branch → main → /docs → Save.</p></div><div class="step"><b>Verify public URL</b><p>Open `https://knowdyn.github.io/terafab-decision-twin/`, `sitemap.xml`, `llms.txt`, and `manifest.webmanifest`.</p></div><div class="step"><b>Install as PWA</b><p>Use the browser install prompt or Add to Home Screen on supported devices.</p></div></div></section>
+<section class="shell section"><div class="notice ok"><p><b>Final URL:</b> https://knowdyn.github.io/terafab-decision-twin/</p></div></section>
 </main>
-<footer class="footer mega"><div class="shell mega-footer"><div><b>Product</b><a href="model.html">Model</a><a href="scenarios.html">Scenarios</a><a href="examples.html">Examples</a><a href="getting-started.html">Deploy and use</a></div><div><b>Technical</b><a href="https://github.com/KNOWDYN/terafab-decision-twin">GitHub repository</a><a href="https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/CLI.md">CLI docs</a><a href="https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/EQUATIONS.md">Equations</a><a href="https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/OUTPUT_REGISTRY.md">Output registry</a></div><div><b>Public monitoring</b><a href="https://github.com/KNOWDYN/terafab-decision-twin/tree/main/examples">Examples directory</a><a href="https://github.com/KNOWDYN/terafab-decision-twin/blob/main/examples/public_monitoring_checklist.md">Monitoring checklist</a><a href="https://github.com/KNOWDYN/terafab-decision-twin/blob/main/examples/evidence_intake_template.json">Evidence intake</a><a href="https://github.com/KNOWDYN/terafab-decision-twin/blob/main/examples/source_register_template.json">Source register</a></div><div><b>Research</b><a href="researchers.html">Researchers</a><a href="evidence.html">Evidence method</a><a href="llms.txt">llms.txt</a><a href="sitemap.xml">Sitemap</a></div></div><div class="footer-note"><p>This independent public model is not affiliated with or endorsed by Terafab and does not claim private operating data.</p><p>© 2026 KNOWDYN. All rights reserved except where repository license files expressly state otherwise.</p></div></footer>
+<footer class="footer"><div class="shell footer-grid"><div><b>KNOWDYN public model</b><p>© 2026 KNOWDYN. All rights reserved except where repository license files expressly state otherwise.</p></div><div><b>Independence boundary</b><p>This site is independent and does not claim Terafab endorsement, authorization, private data access, or verified operating status.</p></div><div><b>Repository</b><p><a href="https://github.com/KNOWDYN/terafab-decision-twin">Open source repository</a><br><a href="llms.txt">LLM guidance</a><br><a href="sitemap.xml">Sitemap</a></p></div></div></footer>
 <button class="install" type="button" data-install hidden>Install</button>
 <script src="assets/app.js" defer></script>
 </body>

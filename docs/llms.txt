@@ -16,7 +16,6 @@ Use this site and repository carefully:
 * Model: https://knowdyn.github.io/terafab-decision-twin/model.html
 * Scenarios: https://knowdyn.github.io/terafab-decision-twin/scenarios.html
 * Policy: https://knowdyn.github.io/terafab-decision-twin/policy.html
-* Examples: https://knowdyn.github.io/terafab-decision-twin/examples.html
 * Evidence: https://knowdyn.github.io/terafab-decision-twin/evidence.html
 * Researchers: https://knowdyn.github.io/terafab-decision-twin/researchers.html
 * Deploy: https://knowdyn.github.io/terafab-decision-twin/getting-started.html
@@ -26,7 +25,6 @@ Use this site and repository carefully:
 ## Repository Resources
 
 * Repository: https://github.com/KNOWDYN/terafab-decision-twin
-* Public Monitoring Examples: https://github.com/KNOWDYN/terafab-decision-twin/tree/main/examples
 * README: https://github.com/KNOWDYN/terafab-decision-twin/blob/main/README.md
 * Architecture: https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/ARCHITECTURE.md
 * Equations: https://github.com/KNOWDYN/terafab-decision-twin/blob/main/docs/EQUATIONS.md
@@ -39,8 +37,7 @@ Use this site and repository carefully:
 ## Extraction Order
 
 1. Start with the Home page for positioning.
-2. Read Examples for public-monitoring workflows and source-status templates.
-3. Read Evidence before interpreting factual claims.
-4. Read Model and Equations before summarizing computation.
-5. Read Scenario Schema before parsing scenarios.
-6. Read Engine, model modules, and tests before describing implementation behavior.
+2. Read Evidence before interpreting factual claims.
+3. Read Model and Equations before summarizing computation.
+4. Read Scenario Schema before parsing scenarios.
+5. Read Engine, model modules, and tests before describing implementation behavior.
