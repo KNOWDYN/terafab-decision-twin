@@ -1470,7 +1470,7 @@ docs/STAKEHOLDER_DECISION_SURFACES.md
 docs/llms.txt
 ```
 
-The website links to this reference library from its mega-footer. The reference wiki preserves the source-available, non-affiliation, evidence-status, restricted-source, unknown-value, no-verified-data, and scenario-dependence boundaries while keeping the public landing page concise.
+The website links to this reference library from its mega-footer through generated GitHub Pages HTML aliases (`docs/index.html`, `docs/evidence.html`, `docs/model.html`, `docs/validation-lab.html`, and `docs/decision-surfaces.html`) rather than raw Markdown endpoints. The reference wiki preserves the source-available, non-affiliation, evidence-status, restricted-source, unknown-value, no-verified-data, and scenario-dependence boundaries while keeping the public landing page concise.
 
 Colab notebooks:
 
