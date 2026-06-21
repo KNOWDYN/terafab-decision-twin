@@ -46,6 +46,8 @@ jobs:
               "docs/index.html": "docs/index.md",
               "docs/evidence.html": "docs/EVIDENCE_POLICY.md",
               "docs/model.html": "docs/EQUATIONS.md",
+              "docs/validation-lab.html": "docs/VALIDATION_LAB.md",
+              "docs/decision-surfaces.html": "docs/STAKEHOLDER_DECISION_SURFACES.md",
           }
 
           for alias, target in aliases.items():
@@ -106,7 +108,15 @@ jobs:
                   continue
               if not candidate.exists():
                   missing.append((href, str(candidate)))
-          required = ["../docs/evidence.html", "../docs/VALIDATION_LAB.md", "../docs/index.html"]
+          required = [
+              "../docs/index.html",
+              "../docs/evidence.html",
+              "../docs/model.html",
+              "../docs/validation-lab.html",
+              "../docs/decision-surfaces.html",
+              "../ACADEMIC_LICENSE.md",
+              "../COMMERCIAL_LICENSE.md",
+          ]
           for href in required:
               if href not in parser.hrefs:
                   missing.append((href, "required link not present in website/index.html"))
@@ -114,7 +124,7 @@ jobs:
               for href, reason in missing:
                   print(f"Missing {href}: {reason}")
               raise SystemExit(1)
-          print("Verified staged website links, including ../docs/evidence.html, ../docs/VALIDATION_LAB.md, and ../docs/index.html")
+          print("Verified staged website links, including reference-wiki aliases and license files")
           PY
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
