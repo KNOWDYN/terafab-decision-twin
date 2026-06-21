@@ -6,7 +6,6 @@ const APP_SHELL = [
   `${BASE}model.html`,
   `${BASE}scenarios.html`,
   `${BASE}policy.html`,
-  `${BASE}examples.html`,
   `${BASE}evidence.html`,
   `${BASE}researchers.html`,
   `${BASE}getting-started.html`,
