@@ -1,0 +1,46 @@
+{
+  "minimum_firm_capacity_margin_MW": {
+    "low": 0,
+    "status": "screening_reference_range",
+    "notes": "Negative margin indicates load plus reserve exceeds declared firm capacity."
+  },
+  "minimum_heat_rejection_margin_MW": {
+    "low": 0,
+    "status": "screening_reference_range",
+    "notes": "Negative margin indicates declared heat rejection capacity is insufficient after reserve."
+  },
+  "minimum_water_withdrawal_margin_m3_per_day": {
+    "low": 0,
+    "status": "screening_reference_range",
+    "notes": "Negative margin indicates declared withdrawal demand exceeds permit capacity after reserve."
+  },
+  "minimum_wastewater_discharge_margin_m3_per_day": {
+    "low": 0,
+    "status": "screening_reference_range",
+    "notes": "Negative margin indicates declared wastewater discharge exceeds permit capacity after reserve."
+  },
+  "average_effective_yield": {
+    "low": 0,
+    "high": 1,
+    "status": "dimensional_reference_range",
+    "notes": "Yield must remain within [0, 1]."
+  },
+  "average_readiness_index": {
+    "low": 0,
+    "high": 1,
+    "status": "dimensional_reference_range",
+    "notes": "Readiness index must remain within [0, 1]."
+  },
+  "legitimacy_margin": {
+    "low": -1,
+    "high": 1,
+    "status": "model_index_reference_range",
+    "notes": "Policy legitimacy margin is a model index, not a public-opinion measurement."
+  },
+  "maximum_governance_risk_index": {
+    "low": 0,
+    "high": 1,
+    "status": "model_index_reference_range",
+    "notes": "Governance risk index is a model index, not a credit rating."
+  }
+}

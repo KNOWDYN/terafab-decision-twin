@@ -22,8 +22,10 @@ dependencies = []
 terafab = "terafab_decision_twin.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["terafab_decision_twin*"]
+include = ["terafab_decision_twin*", "strategic_simulation*", "validation_lab*"]
 
 
 [tool.setuptools.package-data]
 "terafab_decision_twin.data" = ["*.json"]
+"strategic_simulation" = ["examples/*.json"]
+"validation_lab" = ["*.json", "examples/*.json"]

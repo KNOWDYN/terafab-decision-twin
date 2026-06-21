@@ -1,0 +1,59 @@
+{
+  "purpose": "Monte Carlo uncertainty configuration for scenarios/baseline_2026.json.",
+  "base_scenario": "scenarios/baseline_2026.json",
+  "runs": 200,
+  "seed": 42,
+  "sensitivity_target": "total_cost_USD",
+  "parameters": {
+    "energy.site_electric_load_MW": {
+      "distribution": "triangular",
+      "low": 120,
+      "mode": 150,
+      "high": 210,
+      "unit": "MW",
+      "status": "scenario_assumption",
+      "source_ref": "strategic_simulation_example",
+      "confidence": "declared"
+    },
+    "cooling.heat_rejection_capacity_MW": {
+      "distribution": "triangular",
+      "low": 150,
+      "mode": 170,
+      "high": 230,
+      "unit": "MW",
+      "status": "scenario_assumption",
+      "source_ref": "strategic_simulation_example",
+      "confidence": "declared"
+    },
+    "water.withdrawal_m3_per_MWh": {
+      "distribution": "uniform",
+      "low": 0.8,
+      "high": 1.8,
+      "unit": "m3/MWh",
+      "status": "scenario_assumption",
+      "source_ref": "strategic_simulation_example",
+      "confidence": "declared"
+    },
+    "manufacturing.baseline_yield": {
+      "distribution": "normal_clipped",
+      "mean": 0.72,
+      "sd": 0.06,
+      "low": 0.45,
+      "high": 0.9,
+      "unit": "fraction",
+      "status": "scenario_assumption",
+      "source_ref": "strategic_simulation_example",
+      "confidence": "declared"
+    },
+    "economics.electricity_price_USD_per_MWh": {
+      "distribution": "triangular",
+      "low": 50,
+      "mode": 70,
+      "high": 120,
+      "unit": "USD/MWh",
+      "status": "scenario_assumption",
+      "source_ref": "strategic_simulation_example",
+      "confidence": "declared"
+    }
+  }
+}

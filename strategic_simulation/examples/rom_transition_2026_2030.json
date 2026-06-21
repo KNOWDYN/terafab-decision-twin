@@ -1,0 +1,54 @@
+{
+  "purpose": "Reduced-order demonstration trajectory for coupled Terafab-scale stress variables.",
+  "state_variables": [
+    "power_stress",
+    "heat_rejection_stress",
+    "water_stress",
+    "yield_maturity",
+    "policy_legitimacy"
+  ],
+  "control_variables": [
+    "grid_upgrade",
+    "cooling_redesign",
+    "water_reuse",
+    "yield_learning_program",
+    "community_benefit_package"
+  ],
+  "steps": 8,
+  "x0": {
+    "power_stress": 0.45,
+    "heat_rejection_stress": 0.55,
+    "water_stress": 0.5,
+    "yield_maturity": 0.35,
+    "policy_legitimacy": 0.55
+  },
+  "A": [
+    [0.88, 0.04, 0.02, 0.00, -0.02],
+    [0.05, 0.86, 0.02, 0.00, -0.01],
+    [0.03, 0.02, 0.90, 0.00, -0.03],
+    [0.00, 0.00, 0.00, 0.92, 0.02],
+    [-0.02, -0.01, -0.03, 0.02, 0.90]
+  ],
+  "B": [
+    [-0.12, 0.00, 0.00, 0.00, 0.00],
+    [0.00, -0.15, 0.00, 0.00, 0.00],
+    [0.00, 0.00, -0.16, 0.00, 0.00],
+    [0.00, 0.00, 0.00, 0.12, 0.00],
+    [0.02, 0.02, 0.03, 0.03, 0.12]
+  ],
+  "c": [0.02, 0.02, 0.01, 0.01, -0.01],
+  "control_policy": [
+    {"grid_upgrade": 0.5, "cooling_redesign": 0.2, "water_reuse": 0.2, "yield_learning_program": 0.5, "community_benefit_package": 0.2},
+    {"grid_upgrade": 0.6, "cooling_redesign": 0.4, "water_reuse": 0.3, "yield_learning_program": 0.6, "community_benefit_package": 0.4},
+    {"grid_upgrade": 0.8, "cooling_redesign": 0.6, "water_reuse": 0.5, "yield_learning_program": 0.7, "community_benefit_package": 0.5},
+    {"grid_upgrade": 0.8, "cooling_redesign": 0.8, "water_reuse": 0.6, "yield_learning_program": 0.7, "community_benefit_package": 0.6},
+    {"grid_upgrade": 0.7, "cooling_redesign": 0.8, "water_reuse": 0.8, "yield_learning_program": 0.8, "community_benefit_package": 0.7},
+    {"grid_upgrade": 0.7, "cooling_redesign": 0.8, "water_reuse": 0.8, "yield_learning_program": 0.8, "community_benefit_package": 0.8},
+    {"grid_upgrade": 0.6, "cooling_redesign": 0.7, "water_reuse": 0.8, "yield_learning_program": 0.9, "community_benefit_package": 0.8},
+    {"grid_upgrade": 0.6, "cooling_redesign": 0.7, "water_reuse": 0.8, "yield_learning_program": 0.9, "community_benefit_package": 0.9}
+  ],
+  "clip_lower": 0,
+  "clip_upper": 1,
+  "stability_warning_threshold": 1.5,
+  "caution": "This is a transparent reduced-order decision abstraction, not a high-fidelity fab physics simulator."
+}
