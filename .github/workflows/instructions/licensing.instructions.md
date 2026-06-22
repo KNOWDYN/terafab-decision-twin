@@ -13,9 +13,8 @@ Always preserve the root license files:
 
 Do not delete, rename, weaken, contradict, or bypass licensing, attribution, restricted-source, non-affiliation, evidence-status, assumption-boundary, scenario-dependence, no-verified-data, no-warranty, or no-reliance notices unless the repository owner explicitly requests that exact change.
 
-Do not reintroduce old root license filenames as primary license files:
+Do not reintroduce old academic/commercial license filenames as primary license files:
 
-- `LICENSE.md`
 - `LICENSE-ACADEMIC.md`
 - `LICENSE-COMMERCIAL.md`
 

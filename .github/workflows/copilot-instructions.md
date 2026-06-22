@@ -35,6 +35,6 @@ For release or packaging changes, verify that the following files are included i
 - `ACADEMIC_LICENSE.md`
 - `COMMERCIAL_LICENSE.md`
 
-If `pyproject.toml`, `MANIFEST.in`, README licensing text, docs licensing text, or release scripts reference old files such as `LICENSE.md`, `LICENSE-ACADEMIC.md`, or `LICENSE-COMMERCIAL.md`, update those references to the new license filenames.
+If `pyproject.toml`, `MANIFEST.in`, README licensing text, docs licensing text, or release scripts reference old academic/commercial license filenames such as `LICENSE-ACADEMIC.md` or `LICENSE-COMMERCIAL.md`, update those references to `ACADEMIC_LICENSE.md` and `COMMERCIAL_LICENSE.md`.
 
 Before declaring a release-ready change complete, run the project tests and the restricted-source scan if those commands are available in the repository.

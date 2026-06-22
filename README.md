@@ -386,8 +386,8 @@ docs/STAKEHOLDER_DECISION_SURFACES.md
 notebooks/terafab_decision_twin_colab_lab.ipynb
 tests/test_strategic_simulation.py
 tests/test_validation_lab.py
-UPDATE_PACKAGE_MANIFEST.md
-ADVANCED_UPDATE_QA_REPORT.md
+docs/RELEASE_CHECKLIST.md
+scripts/verify_release_artifacts.py
 ```
 
 The update extends the existing model without replacing it:
@@ -1472,6 +1472,21 @@ docs/llms.txt
 
 The website links to this reference library from its mega-footer through generated GitHub Pages HTML aliases (`docs/index.html`, `docs/evidence.html`, `docs/model.html`, `docs/validation-lab.html`, and `docs/decision-surfaces.html`) rather than raw Markdown endpoints. The reference wiki preserves the source-available, non-affiliation, evidence-status, restricted-source, unknown-value, no-verified-data, and scenario-dependence boundaries while keeping the public landing page concise.
 
+
+### Release artifact policy
+
+Public release artifacts are split by audience and runtime need:
+
+| Artifact | Intended contents | Notes |
+|---|---|---|
+| Source distribution (`sdist`) | Source code, tests, schema, scenarios, public examples, docs, notebooks, source/evidence manifests, infographic assets, GitHub workflow metadata, and root legal files | This is the complete source-available review artifact for reproducibility and public inspection. |
+| Wheel (`.whl`) | Importable Python packages, runtime package data, package metadata, console script, and root legal files in wheel metadata | The wheel is the installable runtime artifact. Repository-level docs, notebooks, website files, and broad examples are intentionally sdist/repository/Pages artifacts unless needed at runtime. |
+| GitHub Pages artifact | Root redirect, `/website` stakeholder PWA, generated reference-wiki HTML aliases, docs source files, LLM guidance, and root academic/commercial license files | The Pages artifact is the public web surface and preserves source-available and non-affiliation notices. |
+| GitHub release attachment, if produced | Built sdist and wheel plus any maintainer-approved release notes/checksums | Do not attach private source files, unpublished notes, scratch artifacts, or restricted materials. |
+
+Runtime package data is limited to the packaged scenario schema and advanced-overlay example JSON required for importable package behavior. Public scenarios, docs, notebooks, source manifests, infographic assets, and website files remain review/distribution assets in the repository, sdist, and/or Pages artifact rather than wheel runtime payload unless a future release explicitly changes this policy.
+
+
 Colab notebooks:
 
 ```text
@@ -1892,8 +1907,8 @@ Copyright (c) 2026 KNOWDYN. All rights are reserved except as expressly granted 
 
 ```text
 LICENSE.md
-LICENSE-ACADEMIC.md
-LICENSE-COMMERCIAL.md
+ACADEMIC_LICENSE.md
+COMMERCIAL_LICENSE.md
 NOTICE.md
 ```
 

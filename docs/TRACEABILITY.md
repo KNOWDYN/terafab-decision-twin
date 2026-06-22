@@ -5,7 +5,7 @@ This repository is a runnable implementation of the Terafab Decision Twin bluepr
 | Blueprint requirement | Implemented location |
 |---|---|
 | Repository shell and README | `README.md`, `pyproject.toml`, `LICENSE.md` |
-| KNOWDYN license/notice/citation | `LICENSE.md`, `LICENSE-ACADEMIC.md`, `LICENSE-COMMERCIAL.md`, `NOTICE.md`, `CITATION.cff` |
+| KNOWDYN license/notice/citation | `LICENSE.md`, `ACADEMIC_LICENSE.md`, `COMMERCIAL_LICENSE.md`, `NOTICE.md`, `CITATION.cff` |
 | Evidence registry and status discipline | `terafab_decision_twin/evidence.py`, `docs/EVIDENCE_POLICY.md`, `sources/admitted_facts.json` |
 | Unknown-value discipline | `terafab_decision_twin/unknowns.py`, `terafab_decision_twin/engine.py`, `tests/test_engine.py` |
 | Scenario schema | `schema/scenario_schema.json`, `terafab_decision_twin/data/scenario_schema.json`, `terafab_decision_twin/schema.py` |
