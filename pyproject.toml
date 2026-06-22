@@ -9,7 +9,8 @@ description = "Evidence-gated Terafab-scale thermodynamic, water, power, yield, 
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{name = "KNOWDYN"}]
-license = {file = "LICENSE.md"}
+license = "LicenseRef-KNOWDYN-Source-Available-Noncommercial"
+license-files = ["LICENSE.md", "ACADEMIC_LICENSE.md", "COMMERCIAL_LICENSE.md", "NOTICE.md"]
 keywords = ["thermodynamics", "exergy", "semiconductor", "policy", "water", "energy", "simulation"]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -20,6 +21,7 @@ dependencies = []
 
 [project.scripts]
 terafab = "terafab_decision_twin.cli:main"
+
 
 [tool.setuptools.packages.find]
 include = ["terafab_decision_twin*", "strategic_simulation*", "validation_lab*"]

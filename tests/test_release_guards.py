@@ -6,6 +6,16 @@ from terafab_decision_twin.engine import MODEL_VERSION
 from terafab_decision_twin.evidence import CANONICAL_STATUSES
 
 ROOT = Path(__file__).resolve().parents[1]
+CURRENT_LICENSE_FILES = {
+    "LICENSE.md",
+    "ACADEMIC_LICENSE.md",
+    "COMMERCIAL_LICENSE.md",
+    "NOTICE.md",
+}
+OBSOLETE_PRIMARY_LICENSE_FILES = {
+    "LICENSE-ACADEMIC.md",
+    "LICENSE-COMMERCIAL.md",
+}
 
 class ReleaseGuardTests(unittest.TestCase):
     def test_model_version_consistency(self):
@@ -36,6 +46,55 @@ class ReleaseGuardTests(unittest.TestCase):
             path = ROOT / "assets" / name
             self.assertTrue(path.exists(), name)
             self.assertGreater(path.stat().st_size, 1000, name)
+
+    def test_current_license_files_are_release_metadata(self):
+        for name in CURRENT_LICENSE_FILES:
+            self.assertTrue((ROOT / name).is_file(), name)
+
+        manifest = (ROOT / "MANIFEST.in").read_text(encoding="utf-8")
+        pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+        for name in CURRENT_LICENSE_FILES:
+            self.assertIn(name, manifest)
+            self.assertIn(name, pyproject)
+
+    def test_obsolete_license_filenames_not_publicly_referenced(self):
+        public_paths = [
+            ROOT / "MANIFEST.in",
+            ROOT / "README.md",
+            *sorted((ROOT / "docs").glob("*.md")),
+        ]
+        hits = []
+        for path in public_paths:
+            text = path.read_text(encoding="utf-8")
+            for obsolete in OBSOLETE_PRIMARY_LICENSE_FILES:
+                if obsolete in text:
+                    hits.append(f"{path.relative_to(ROOT)} references {obsolete}")
+        self.assertEqual(hits, [])
+
+    def test_manifest_does_not_reference_missing_release_files(self):
+        manifest = (ROOT / "MANIFEST.in").read_text(encoding="utf-8").splitlines()
+        missing = []
+        for line in manifest:
+            if not line.startswith("include "):
+                continue
+            path = ROOT / line.split(" ", 1)[1].strip()
+            if not path.exists():
+                missing.append(str(path.relative_to(ROOT)))
+        self.assertEqual(missing, [])
+
+    def test_release_artifact_policy_and_verifier_exist(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        checklist = ROOT / "docs" / "RELEASE_CHECKLIST.md"
+        verifier = ROOT / "scripts" / "verify_release_artifacts.py"
+        self.assertIn("### Release artifact policy", readme)
+        self.assertTrue(checklist.is_file())
+        self.assertTrue(verifier.is_file())
+
+    def test_website_font_policy_avoids_third_party_font_hosts(self):
+        fonts = (ROOT / "website" / "assets" / "fonts.css").read_text(encoding="utf-8")
+        self.assertIn("Public-release font policy", fonts)
+        self.assertNotIn("fonts.gstatic.com", fonts)
+        self.assertNotIn("fonts.googleapis.com", fonts)
 
     def test_restricted_source_documents_absent(self):
         banned = {
