@@ -1,7 +1,7 @@
 {
-  "name": "Terafab Decision Twin Stakeholder Brief",
-  "short_name": "Terafab Brief",
-  "description": "A one-page stakeholder PWA for the source-available Terafab Decision Twin.",
+  "name": "Terafab Decision Twin",
+  "short_name": "Terafab Decision Twin",
+  "description": "A source-available scenario simulation and evidence-gated decision twin for public assumptions, unknown-value discipline, stakeholder decision surfaces, and validation-readiness boundaries.",
   "start_url": "/terafab-decision-twin/website/",
   "scope": "/terafab-decision-twin/website/",
   "display": "standalone",
