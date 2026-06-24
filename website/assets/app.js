@@ -84,7 +84,7 @@
         return;
       }
       installButton.textContent = 'Share → Add to Home Screen';
-      window.setTimeout(() => { installButton.textContent = 'Keep this'; }, 3600);
+      window.setTimeout(() => { installButton.textContent = 'Save site'; }, 3600);
     });
   }
 
