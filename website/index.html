@@ -265,9 +265,58 @@
     </div>
   </section>
 
-  <section id="validation" class="section" aria-labelledby="validation-title">
-    <div class="section-copy wide"><p class="eyebrow">Validation readiness</p><h2 id="validation-title">Screening is not the same as official validation.</h2><p class="lead">The included validation lab supports code/schema execution, structural validation, and public-reference screening. Benchmark, expert, official, or calibrated validation requires additional evidence.</p></div>
-    <div class="levels" aria-label="Validation levels"><span class="done">Level 0<br><b>Runs</b></span><span class="done">Level 1<br><b>Structure</b></span><span class="done">Level 2<br><b>Public ranges</b></span><span>Level 3<br><b>Benchmarks</b></span><span>Level 4<br><b>Expert calibrated</b></span></div>
+  <section id="validation" class="section validation-section" aria-labelledby="validation-title">
+    <div class="section-copy wide">
+      <p class="eyebrow">Validation readiness</p>
+      <h2 id="validation-title">Validation is a staged readiness ladder, not a claim of official certainty.</h2>
+      <p class="lead">The validation lab currently supports screening through Level 2: runs, structural validation, and public-reference range checks. Level 3 benchmark validation and Level 4 expert or calibrated validation are not claimed without additional curated benchmark cases, official project data, stakeholder data, expert review, or proprietary calibration evidence.</p>
+    </div>
+    <div class="validation-ladder" aria-label="Validation readiness ladder">
+      <article class="supported">
+        <span class="level-number">Level 0</span>
+        <div>
+          <b>Runs</b>
+          <p>The model runs and produces finite outputs.</p>
+          <em>Supported screening level</em>
+        </div>
+      </article>
+      <article class="supported">
+        <span class="level-number">Level 1</span>
+        <div>
+          <b>Structural validation</b>
+          <p>Required result fields, matrices, gates, and output structures are present.</p>
+          <em>Supported screening level</em>
+        </div>
+      </article>
+      <article class="supported">
+        <span class="level-number">Level 2</span>
+        <div>
+          <b>Public reference range screening</b>
+          <p>Outputs are checked against declared public-reference or dimensional ranges.</p>
+          <em>Supported screening level</em>
+        </div>
+      </article>
+      <article class="not-claimed">
+        <span class="level-number">Level 3</span>
+        <div>
+          <b>Benchmark validation</b>
+          <p>Requires curated public benchmark cases before benchmark validation can be claimed.</p>
+          <em>Not claimed</em>
+        </div>
+      </article>
+      <article class="not-claimed">
+        <span class="level-number">Level 4</span>
+        <div>
+          <b>Expert/calibrated validation</b>
+          <p>Requires official project data, stakeholder data, expert review, or proprietary calibration evidence.</p>
+          <em>Not claimed</em>
+        </div>
+      </article>
+    </div>
+    <div class="validation-boundary" role="note">
+      <b>Validation boundary</b>
+      <p>Validation-lab checks are screening tools and do not replace utility interconnection studies, water-authority records, permitting documents, official project data, expert engineering review, or investment diligence.</p>
+    </div>
   </section>
 
   <section id="boundaries" class="section split" aria-labelledby="boundaries-title">
