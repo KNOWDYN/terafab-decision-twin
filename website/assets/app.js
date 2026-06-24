@@ -1,13 +1,43 @@
 (() => {
   const base = '/terafab-decision-twin/website/';
   const sections = Array.from(document.querySelectorAll('main section[id]'));
-  const navLinks = Array.from(document.querySelectorAll('[data-nav] a'));
+  const navLinks = Array.from(document.querySelectorAll('[data-nav] a[href^="#"]'));
   const installButton = document.querySelector('[data-install]');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let deferredPrompt = null;
 
+  function findHashTarget(hash) {
+    if (!hash || hash === '#') return null;
+    try {
+      return document.getElementById(decodeURIComponent(hash.slice(1)));
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function getTarget(link) {
+    return findHashTarget(link.hash);
+  }
+
   function setActive(id) {
-    navLinks.forEach(link => link.classList.toggle('active', link.hash === `#${id}`));
+    navLinks.forEach(link => {
+      const isActive = link.hash === `#${id}`;
+      link.classList.toggle('active', isActive);
+      if (isActive) {
+        link.setAttribute('aria-current', 'location');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  function scrollToSection(target) {
+    target.scrollIntoView({
+      behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+      block: 'start',
+    });
+    history.replaceState(null, '', `#${target.id}`);
+    setActive(target.id);
   }
 
   if ('IntersectionObserver' in window && sections.length) {
@@ -23,12 +53,10 @@
   }
 
   navLinks.forEach(link => link.addEventListener('click', event => {
-    const target = document.querySelector(link.hash);
+    const target = getTarget(link);
     if (!target) return;
     event.preventDefault();
-    target.scrollIntoView({ behavior: prefersReducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
-    history.replaceState(null, '', link.hash);
-    setActive(target.id);
+    scrollToSection(target);
   }));
 
   if ('serviceWorker' in navigator) {
@@ -61,11 +89,8 @@
   }
 
   if (location.hash) {
-    const target = document.querySelector(location.hash);
-    if (target) window.setTimeout(() => {
-      target.scrollIntoView({ behavior: prefersReducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
-      setActive(target.id);
-    }, 80);
+    const target = findHashTarget(location.hash);
+    if (target) window.setTimeout(() => scrollToSection(target), 80);
   } else if (sections[0]) {
     setActive(sections[0].id);
   }
