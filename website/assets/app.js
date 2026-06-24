@@ -1,67 +1,35 @@
 (() => {
   const base = '/terafab-decision-twin/website/';
-  const deck = document.querySelector('[data-deck]');
-  const slides = deck ? Array.from(deck.querySelectorAll('.slide')) : [];
+  const sections = Array.from(document.querySelectorAll('main section[id]'));
   const navLinks = Array.from(document.querySelectorAll('[data-nav] a'));
-  const prev = document.querySelector('[data-prev]');
-  const next = document.querySelector('[data-next]');
-  const dots = document.querySelector('[data-dots]');
   const installButton = document.querySelector('[data-install]');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let deferredPrompt = null;
 
-  function currentIndex() {
-    if (!deck || !slides.length) return 0;
-    const left = deck.scrollLeft;
-    let closest = 0;
-    slides.forEach((slide, index) => {
-      if (Math.abs(slide.offsetLeft - left) < Math.abs(slides[closest].offsetLeft - left)) closest = index;
-    });
-    return closest;
+  function setActive(id) {
+    navLinks.forEach(link => link.classList.toggle('active', link.hash === `#${id}`));
   }
 
-  function goTo(index) {
-    if (!deck || !slides[index]) return;
-    slides[index].scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', inline: 'start', block: 'nearest' });
+  if ('IntersectionObserver' in window && sections.length) {
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActive(visible.target.id);
+    }, { rootMargin: '-25% 0px -55% 0px', threshold: [0.15, 0.35, 0.6] });
+    sections.forEach(section => observer.observe(section));
+  } else if (sections[0]) {
+    setActive(sections[0].id);
   }
-
-  function update(index = currentIndex()) {
-    navLinks.forEach(link => link.classList.toggle('active', slides[index] && link.hash === `#${slides[index].id}`));
-    if (prev) prev.disabled = index === 0;
-    if (next) next.disabled = index === slides.length - 1;
-    if (dots) Array.from(dots.children).forEach((dot, dotIndex) => dot.setAttribute('aria-current', dotIndex === index ? 'step' : 'false'));
-  }
-
-  if (dots && slides.length) {
-    dots.innerHTML = slides.map((slide, index) => `<button type="button" aria-label="Go to slide ${index + 1}: ${slide.id}" data-dot="${index}"></button>`).join('');
-    dots.addEventListener('click', event => {
-      const button = event.target.closest('[data-dot]');
-      if (button) goTo(Number(button.dataset.dot));
-    });
-  }
-
-  if (prev) prev.addEventListener('click', () => goTo(Math.max(0, currentIndex() - 1)));
-  if (next) next.addEventListener('click', () => goTo(Math.min(slides.length - 1, currentIndex() + 1)));
 
   navLinks.forEach(link => link.addEventListener('click', event => {
-    const target = slides.findIndex(slide => `#${slide.id}` === link.hash);
-    if (target >= 0) {
-      event.preventDefault();
-      goTo(target);
-      history.replaceState(null, '', link.hash);
-    }
+    const target = document.querySelector(link.hash);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: prefersReducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
+    history.replaceState(null, '', link.hash);
+    setActive(target.id);
   }));
-
-  let scrollTimer = null;
-  if (deck) deck.addEventListener('scroll', () => {
-    window.clearTimeout(scrollTimer);
-    scrollTimer = window.setTimeout(() => update(), 80);
-  }, { passive: true });
-
-  window.addEventListener('keydown', event => {
-    if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
-    if (event.key === 'ArrowRight') { event.preventDefault(); goTo(Math.min(slides.length - 1, currentIndex() + 1)); }
-    if (event.key === 'ArrowLeft') { event.preventDefault(); goTo(Math.max(0, currentIndex() - 1)); }
-  });
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -93,8 +61,12 @@
   }
 
   if (location.hash) {
-    const target = slides.findIndex(slide => `#${slide.id}` === location.hash);
-    if (target >= 0) window.setTimeout(() => goTo(target), 80);
+    const target = document.querySelector(location.hash);
+    if (target) window.setTimeout(() => {
+      target.scrollIntoView({ behavior: prefersReducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
+      setActive(target.id);
+    }, 80);
+  } else if (sections[0]) {
+    setActive(sections[0].id);
   }
-  update(0);
 })();
