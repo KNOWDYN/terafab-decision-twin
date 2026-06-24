@@ -39,6 +39,7 @@
     <a href="#domains">Domains</a>
     <a href="#gates">Gates</a>
     <a href="#stakeholders">Stakeholders</a>
+    <a href="#advanced">Advanced</a>
     <a href="#validation">Validation</a>
     <a href="#boundaries">Boundaries</a>
     <a href="#inspect">Inspect</a>
@@ -213,9 +214,55 @@
     </div>
   </section>
 
-  <section id="advanced" class="section" aria-labelledby="advanced-title">
-    <div class="section-copy wide"><p class="eyebrow">Advanced analysis</p><h2 id="advanced-title">Use deeper modules without losing assumption boundaries.</h2><p class="lead">Advanced workflows can combine uncertainty ranges, reduced-order dynamics, game profiles, and validation labs while preserving evidence status and public/private boundaries.</p></div>
-    <div class="card-grid compact"><article><b>Uncertainty</b><p>Stress ranges and sensitivity paths remain labeled.</p></article><article><b>Strategic conflict</b><p>Decision surfaces can show competing incentives without implying official positions.</p></article><article><b>Trajectories</b><p>Time-step expansion reveals when constraints appear.</p></article></div>
+  <section id="advanced" class="section advanced-section" aria-labelledby="advanced-title">
+    <div class="section-copy wide">
+      <p class="eyebrow">Advanced simulation layer</p>
+      <h2 id="advanced-title">Layer probabilistic, strategic, and trajectory analysis over the deterministic core.</h2>
+      <p class="lead">The advanced layer treats <code>terafab_decision_twin.run_scenario()</code> as the deterministic scenario kernel, then extends it with uncertainty propagation, declared stakeholder games, reduced-order trajectories, stakeholder decision surfaces, and validation-lab checks.</p>
+    </div>
+    <div class="advanced-stack" aria-label="Advanced simulation layer architecture">
+      <article class="advanced-core">
+        <span>Core</span>
+        <b>Deterministic scenario kernel</b>
+        <p>Validated scenario JSON flows through the evidence-gated deterministic model before any advanced module is applied.</p>
+      </article>
+      <div class="advanced-layers">
+        <article>
+          <span>01</span>
+          <b>Monte Carlo uncertainty propagation</b>
+          <p>Runs declared distributions through the deterministic model to expose pass probabilities, gate-failure risk, and sensitivity ranges.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <b>Game-theory stakeholder analysis</b>
+          <p>Analyzes declared actor strategies and payoffs for best responses, pure-strategy Nash equilibria, conflict signals, and coordination warnings.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <b>Reduced-order trajectory simulation</b>
+          <p>Uses transparent low-dimensional state equations to explore time-stepped stress in power, heat rejection, water, yield maturity, and policy legitimacy.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <b>Stakeholder decision-surface synthesis</b>
+          <p>Combines Monte Carlo, game, trajectory, and validation outputs into board, investor, policy, and research-facing screening views.</p>
+        </article>
+        <article>
+          <span>05</span>
+          <b>Validation lab</b>
+          <p>Separates execution, structural, public-range, benchmark, and expert-calibrated validation levels so screening remains distinct from official validation.</p>
+        </article>
+      </div>
+    </div>
+    <div class="advanced-guardrails" aria-label="Advanced simulation guardrails">
+      <b>Guardrails</b>
+      <ul>
+        <li>Monte Carlo propagates declared uncertainty only.</li>
+        <li>Uncertainty does not turn assumptions into facts.</li>
+        <li>Game-theory payoffs are declared assumptions unless independently sourced.</li>
+        <li>The model does not claim to know stakeholder preferences.</li>
+      </ul>
+    </div>
   </section>
 
   <section id="validation" class="section" aria-labelledby="validation-title">
