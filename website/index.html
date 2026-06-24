@@ -124,9 +124,59 @@
     <div class="domain-strip"><article><b>Thermodynamics</b><span>energy, heat rejection, cooling reserve</span></article><article><b>Economics</b><span>capex, opex, yield, cost per output</span></article><article><b>Infrastructure</b><span>power, water, wastewater, timing</span></article><article><b>Governance</b><span>readiness, legitimacy, evidence posture</span></article><article><b>Public policy</b><span>community pressure, incentives, public benefit</span></article></div>
   </section>
 
-  <section id="gates" class="section split" aria-labelledby="gates-title">
-    <div class="section-copy"><p class="eyebrow">Decision gates</p><h2 id="gates-title">Gate actions expose the first hard limit.</h2><p class="lead">Decision gates translate scenario outputs into review posture: proceed, monitor, stress-test, defer, or stop. They do not convert assumptions into verified Terafab operating data.</p></div>
-    <div class="boundary-card"><b>Interpretation rule</b><p>Gate results are scenario-dependent analytical estimates derived from declared assumptions, model structure, and available public or user-supplied inputs.</p></div>
+  <section id="gates" class="section" aria-labelledby="gates-title">
+    <div class="section-copy wide">
+      <p class="eyebrow">Outputs and due-diligence gates</p>
+      <h2 id="gates-title">The output registry separates values, trajectories, matrices, and review gates.</h2>
+      <p class="lead">Each run moves from scenario JSON through validation, evidence audit, unknown-value discipline, time-axis expansion, formal equation modules, scalar/vector/matrix outputs, a due-diligence gate matrix, and JSON, Markdown, and CSV exports. The results are scenario-dependent analytical estimates, not verified operating facts or official Terafab data.</p>
+    </div>
+
+    <div class="output-dashboard" aria-label="Compact dashboard for registered output types">
+      <article>
+        <span>Scalar</span>
+        <b>Single-value records</b>
+        <p>Named outputs such as energy, average and peak site load, firm capacity margin, heat rejection, water margins, yield, readiness, cost, emissions, governance risk, legitimacy margin, and recommended phase action.</p>
+      </article>
+      <article>
+        <span>Vector</span>
+        <b>Time-series rows</b>
+        <p>One row per annual, quarterly, or monthly model period, preserving time labels and system-state outputs so trajectories and constraint timing remain inspectable.</p>
+      </article>
+      <article>
+        <span>Matrix</span>
+        <b>Structured cross-tabs</b>
+        <p>Gate, module-output, partner-allocation, and subsystem-state matrices show gate-by-period results and state by period for power, cooling, water, and readiness.</p>
+      </article>
+      <article>
+        <span>Reports</span>
+        <b>JSON · Markdown · CSV</b>
+        <p>The export bundle supports machine-readable results, narrative decision reports, and tabular review files while keeping assumptions, warnings, and reproducibility context visible.</p>
+      </article>
+    </div>
+
+    <div class="gate-detail-grid">
+      <article class="boundary-card">
+        <b>Output record discipline</b>
+        <p>Scalar records carry a name, kind, value, unit, scenario ID, source status, equation reference, assumptions used, warning flags, and reproducibility hash. Those fields keep numerical results connected to evidence status and the scenario that produced them.</p>
+      </article>
+      <article class="boundary-card">
+        <b>Due-diligence gate matrix</b>
+        <p>The gate matrix evaluates gate-by-period review posture after the formal equation modules run. It translates computed consequences into due-diligence signals without promoting assumptions, stress tests, or user-provided inputs into verified facts.</p>
+      </article>
+    </div>
+
+    <div class="gate-table-wrap" role="region" aria-labelledby="gate-fields-title" tabindex="0">
+      <table class="gate-table">
+        <caption id="gate-fields-title">Gate matrix fields and interpretation</caption>
+        <thead><tr><th scope="col">Field</th><th scope="col">What it explains</th><th scope="col">How to read it</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><code>severity</code></th><td>The analytical importance of a gate condition for the current scenario period.</td><td>Higher severity means the modeled constraint deserves stronger review before interpreting the scenario as feasible.</td></tr>
+          <tr><th scope="row"><code>status</code></th><td>The review posture produced by the gate calculation.</td><td>Use it to distinguish proceed, monitor, stress-test, defer, or stop style outcomes; it is not a certification or operating approval.</td></tr>
+          <tr><th scope="row"><code>margin</code></th><td>The modeled distance between the scenario state and the gate threshold or requirement.</td><td>Positive, near-zero, or negative margins help show reserve, tightness, or breach under the declared assumptions.</td></tr>
+          <tr><th scope="row"><code>message</code></th><td>A human-readable explanation of the gate result.</td><td>Read the message with the source status, assumptions, warning flags, and unknown-value notes before drawing conclusions.</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section id="stakeholders" class="section" aria-labelledby="stakeholders-title">
