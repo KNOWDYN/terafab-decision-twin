@@ -79,9 +79,23 @@
     <div class="metric-grid"><article><strong>Power</strong><span>firm capacity, load factor, cost, emissions</span></article><article><strong>Heat</strong><span>rejection load, cooling reserve, exergy loss</span></article><article><strong>Water</strong><span>withdrawal, consumption, UPW, wastewater</span></article><article><strong>Value</strong><span>yield, readiness, capex, opex, gate action</span></article></div>
   </section>
 
-  <section id="scenario-flow" class="section split" aria-labelledby="scenario-flow-title">
-    <div class="section-copy"><p class="eyebrow">Scenario flow</p><h2 id="scenario-flow-title">Real-world scenarios in. Decision consequences out.</h2><p class="lead">The model validates scenario JSON, audits evidence status, preserves unknown-value discipline, expands time steps, runs formal equation modules, and emits outputs that keep blockers and assumption boundaries visible.</p></div>
-    <ol class="pipeline"><li><b>Validate</b><span>scenario structure, evidence metadata, unknowns</span></li><li><b>Compute</b><span>thermodynamics, economics, infrastructure, governance, public policy</span></li><li><b>Gate</b><span>firm power, water, cooling, readiness, legitimacy</span></li><li><b>Report</b><span>JSON, Markdown, CSV, warnings, assumptions used</span></li></ol>
+  <section id="scenario-flow" class="section" aria-labelledby="scenario-flow-title">
+    <div class="section-copy wide"><p class="eyebrow">Scenario flow</p><h2 id="scenario-flow-title">Scenario JSON to decision outputs.</h2><p class="lead">The run path is a plain sequence. Each step keeps inputs, evidence status, unknowns, model calculations, gates, and exports inspectable.</p></div>
+    <ol class="scenario-flow" aria-label="Scenario processing flow">
+      <li class="flow-step"><b>scenario JSON</b><span>Declared scenario inputs and evidence metadata.</span></li>
+      <li class="flow-arrow" aria-hidden="true">→</li>
+      <li class="flow-step"><b>schema validation</b><span>Required structure, fields, time horizon, and controls.</span></li>
+      <li class="flow-arrow" aria-hidden="true">→</li>
+      <li class="flow-step"><b>evidence audit and status normalization</b><span>Evidence labels are checked and canonicalized.</span></li>
+      <li class="flow-arrow" aria-hidden="true">→</li>
+      <li class="flow-step"><b>unknown-value discipline</b><span>Underdetermined values remain visible.</span></li>
+      <li class="flow-arrow" aria-hidden="true">→</li>
+      <li class="flow-step"><b>model modules</b><span>Power, cooling, water, manufacturing, economics, governance, policy, and related equations.</span></li>
+      <li class="flow-arrow" aria-hidden="true">→</li>
+      <li class="flow-step"><b>due-diligence gate matrix</b><span>Gate checks translate computed outputs into review status.</span></li>
+      <li class="flow-arrow" aria-hidden="true">→</li>
+      <li class="flow-step"><b>outputs</b><span>Scalar, vector, matrix, JSON, Markdown, and CSV results.</span></li>
+    </ol>
   </section>
 
   <section id="evidence" class="section" aria-labelledby="evidence-title">
