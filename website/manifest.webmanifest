@@ -1,7 +1,7 @@
 {
   "name": "Terafab Decision Twin",
-  "short_name": "Terafab Decision Twin",
-  "description": "A source-available scenario simulation and evidence-gated decision twin for public assumptions, unknown-value discipline, stakeholder decision surfaces, and validation-readiness boundaries.",
+  "short_name": "Terafab Twin",
+  "description": "Terafab Decision Twin is an independent, source-available, scenario-dependent decision twin for public assumptions, evidence-gated consequences, unknown-value discipline, and non-affiliated Terafab-scale analysis.",
   "start_url": "/terafab-decision-twin/website/",
   "scope": "/terafab-decision-twin/website/",
   "display": "standalone",
