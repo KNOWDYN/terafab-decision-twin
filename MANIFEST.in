@@ -12,6 +12,7 @@ recursive-include scenarios *.json
 recursive-include sources *.json *.md
 recursive-include docs *.md
 recursive-include notebooks *.ipynb
+include terafab_ecm_publication_analysis_colab.ipynb
 recursive-include scripts *.py
 recursive-include assets *.svg *.png *.pdf
 recursive-include terafab_decision_twin/data *.json
