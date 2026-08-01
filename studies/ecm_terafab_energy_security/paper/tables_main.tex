@@ -1,0 +1,125 @@
+% Compact representations of the six prespecified tables. The complete,
+% machine-readable versions are generated under outputs/final/publication/tables.
+
+\begin{table*}[htbp]
+\centering
+\caption{Public claims and admitted interpretations. “Reported” and “filed”
+describe evidence provenance, not verification of project performance.}
+\label{tab:claims}
+\small
+\begin{tabularx}{\textwidth}{p{0.14\textwidth}p{0.13\textwidth}p{0.13\textwidth}X X}
+\toprule
+Public wording & Source/status & Admitted interpretation & Excluded interpretation & Consequence \\
+\midrule
+``Terafab output 1 TW/Year'' & Public website; reported & Aggregate rated electrical power embodied in good compute devices manufactured per calendar year & Factory electrical demand; deployed-device consumption; computing performance & Numerical conditional target; semantic gate remains indeterminate \\
+Four Texas phases with first-operation or incentive years 2029, 2032, 2035 and 2037 & JETI applications; filed claims & Scenario schedule only & Completed capacity, utility entitlement or executable interconnection & Schedule branches; phase output scale remains unknown \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\begin{table*}[htbp]
+\centering
+\caption{Principal variables and governing equations. Complete definitions,
+units, temporal bases, evidence classes and module ownership are in the generated
+Table 2.}
+\label{tab:equations}
+\small
+\begin{tabularx}{\textwidth}{p{0.11\textwidth}p{0.23\textwidth}p{0.18\textwidth}X}
+\toprule
+Symbol & Definition & Unit & Governing relation \\
+\midrule
+$D$ & Gross dies per 300-mm wafer & die wafer$^{-1}$ & $D=\pi d^2/(4A)-\pi d/\sqrt{2A}$ \\
+$W_y$ & Annual wafer starts & wafer yr$^{-1}$ & $W_y=C_{rated}N_d/(DYP_m)$ \\
+$E_f$ & Total facility electricity & MWh yr$^{-1}$ & Throughput times admitted total-facility intensity \\
+$P_f$ & Coincident facility peak & MW & $P_f=E_f/(8760\lambda)$ \\
+$Q_{rej}$ & Peak heat rejection & MW$_{th}$ & $Q_{rej}=P_f$ under the stated steady balance \\
+$V_w$ & External water withdrawal & m$^3$ yr$^{-1}$ & Gross demand less declared reuse; no double credit \\
+$P_g$ & Grid coincident peak & MW & $P_g=\max(0,P_f-C_{onsite,accr})$ \\
+$RM$ & Reserve-margin screen & fraction & $(C_{accr}-P_{peak})/P_{peak}$ \\
+$s^E$ & US annual-electricity share & fraction & $E_f/E^{US,0}$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\begin{table*}[htbp]
+\centering
+\caption{Evidence and validation dataset. These comparators define ranges or
+diagnostics; they do not constitute Terafab measurements.}
+\label{tab:evidence}
+\small
+\begin{tabularx}{\textwidth}{p{0.18\textwidth}p{0.16\textwidth}p{0.18\textwidth}X p{0.17\textwidth}}
+\toprule
+Source & Context & Metric role & Use & Limitation \\
+\midrule
+TSMC annual and sustainability reports & Mixed corporate fabs & Wafer, electricity and water scale & Comparator/range & Company aggregate, not a project analogue \\
+Hu et al. \cite{Hu2019} & Taiwanese high-tech fab & Facility/component energy & Calibration component & Single fab and non-project process \\
+Mathew et al. \cite{Mathew2010} & Fabs21 cleanrooms & Energy heterogeneity & Range diagnostic & Historical mixed cleanrooms \\
+Tschudi and Xu \cite{Tschudi2003} & Fourteen cleanrooms & HVAC energy & Cooling reference & Historical technology and climates \\
+Sandhu et al. \cite{Sandhu2025} & 300-mm semiconductor review & Water intensity & Water reference & Review estimate, not a site measurement \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\begin{table*}[htbp]
+\centering
+\caption{Predeclared scenario matrix. The Cartesian experiment contains one
+no-build counterfactual and 336 nonzero trajectories.}
+\label{tab:matrix}
+\small
+\begin{tabularx}{\textwidth}{p{0.17\textwidth}p{0.16\textwidth}p{0.17\textwidth}X}
+\toprule
+Axis & Levels & Numerical status & Interpretation boundary \\
+\midrule
+Target scale & no build; research fab; initial large scale; full announced target & 0; unknown; unknown; conditional 1 TW$_{rated}$/yr & Labels do not create capacity evidence \\
+Realization & accelerated; reference; delayed; not realized by 2050 & Annual fractions, 2026--2050 & No pathway is official or predictive \\
+Supply & grid dominant; firm onsite; renewable--storage--grid; firm low-carbon hybrid & Conditional capacities and accreditation & No portfolio is claimed as the project design \\
+Stress & normal plus six schedule, weather, yield, water/cooling and outage stresses & One declared stress per branch & Stress failures are not ordinary-case project facts \\
+Counterfactual & ERCOT protocol and SB6 through 2030; EIA baseline and high demand through 2050 & Official horizon only & No ERCOT extrapolation after 2030 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\begin{table*}[htbp]
+\centering
+\caption{Principal conditional results. Facility quantities at full target are
+identical across realization pathways; portfolios allocate the modeled peak
+between accredited onsite supply and the grid. Every row remains indeterminate.}
+\label{tab:principal}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrl}
+\toprule
+Pathway/portfolio & Year & Target & Wafers & Electricity & Peak/heat & Withdrawal & Net grid peak & Class \\
+ & & fraction & million yr$^{-1}$ & TWh yr$^{-1}$ & GW & million m$^3$ yr$^{-1}$ & GW & \\
+\midrule
+Accelerated/grid dominant & 2029 & 0.25 & 17.07 & 33.79 & 4.15 & 142.18 & 4.15 & indeterminate \\
+Accelerated/grid dominant & 2037 & 1.00 & 68.29 & 135.17 & 16.58 & 568.72 & 16.58 & indeterminate \\
+Reference/grid dominant & 2050 & 1.00 & 68.29 & 135.17 & 16.58 & 568.72 & 16.58 & indeterminate \\
+Delayed/grid dominant & 2050 & 1.00 & 68.29 & 135.17 & 16.58 & 568.72 & 16.58 & indeterminate \\
+Not realized/grid dominant & 2050 & 0.15 & 10.24 & 20.28 & 2.49 & 85.31 & 2.49 & indeterminate \\
+Accelerated/firm onsite & 2050 & 1.00 & 68.29 & 135.17 & 16.58 & 568.72 & 3.32 & indeterminate \\
+Accelerated/renewable--storage & 2050 & 1.00 & 68.29 & 135.17 & 16.58 & 568.72 & 5.47 & indeterminate \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+\begin{table*}[htbp]
+\centering
+\caption{Verification, validation and reproduction status.}
+\label{tab:verification}
+\small
+\begin{tabularx}{\textwidth}{p{0.21\textwidth}p{0.19\textwidth}p{0.13\textwidth}p{0.12\textwidth}X}
+\toprule
+Check & Metric & Result & Criterion & Interpretation \\
+\midrule
+Rated-output identity & Relative residual & 0 & $\leq10^{-8}$ & Passed on synthetic complete case \\
+Facility energy balance & Relative residual & 0 & $\leq10^{-8}$ & Passed algebraic allocation identity \\
+Water balance & Relative residual & 0 & $\leq10^{-8}$ & Passed when the admitted fraction is defined \\
+Fixed-seed reproduction & Scenario hash & bitwise repeat & exact & Passed automated API test \\
+Uncertainty convergence & Worst relative change & 0.002900 & $<0.01$ & Passed across independence and dependence stresses \\
+Independent validation & Numeric holdouts & 0 & $\geq5$ & Insufficient; no empirical accuracy claim \\
+CLI/notebook parity & Shared API & passed & $10^{-10}$ & Governing equations are not duplicated \\
+Claim level & Model description & prospective constraint analysis & not validated twin & Passed \\
+\bottomrule
+\end{tabularx}
+\end{table*}

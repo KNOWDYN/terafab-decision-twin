@@ -1,0 +1,47 @@
+{
+  "contract_version": "0.2.0",
+  "study_id": "ecm_terafab_us_energy_security",
+  "freeze_date": "2026-08-01",
+  "claim_level": "prospective_constraint_analysis",
+  "prohibited_claim": "validated_digital_twin_of_Terafab",
+  "reason": "No verified Terafab operating measurements, design loads, wafer capacity, water entitlement, or final interconnection were identified.",
+  "calibration_validation_separation": {
+    "calibration_sources": ["SRC_HU_2019_FES"],
+    "external_validation_sources": [
+      "SRC_TSMC_AR_2024",
+      "SRC_TSMC_SR_2024",
+      "SRC_LBNL_MATHEW_2010",
+      "SRC_LBNL_TSCHUDI_2001",
+      "SRC_SANDHU_2025_WATER",
+      "SRC_TSMC_GIGAFAB_2025"
+    ],
+    "rule": "A numerical observation used to fit a component may not also be counted as an independent holdout for that component."
+  },
+  "verification_thresholds": {
+    "algebraic_relative_residual_max": 1e-08,
+    "energy_balance_relative_residual_max": 1e-08,
+    "water_balance_relative_residual_max": 1e-08,
+    "fixed_seed_bitwise_repeat_required": true,
+    "cli_notebook_relative_difference_max": 1e-10,
+    "invalid_units_or_negative_physical_flows_allowed": false
+  },
+  "empirical_validation_thresholds": {
+    "minimum_independent_numeric_holdouts_for_validated_claim": 5,
+    "normalized_mean_bias_error_absolute_max": 0.20,
+    "normalized_root_mean_square_error_max": 0.35,
+    "mean_absolute_percentage_error_max": 0.35,
+    "predictive_interval": 0.90,
+    "predictive_interval_coverage_min": 0.80,
+    "component_case_absolute_error_max": 0.25,
+    "component_case_rule": "Use the larger of 25 percent and the benchmark's reported measurement uncertainty where an uncertainty is available.",
+    "insufficient_holdout_rule": "Report diagnostic comparisons, but do not use validated, calibrated-to-Terafab, or predictive-accuracy language."
+  },
+  "validation_map": [
+    {"model_quantity": "aggregate_fab_electricity_intensity", "calibration": [], "validation": ["B_TSMC_2024_ELECTRICITY", "B_LBNL_FABS21_HETEROGENEITY"], "current_numeric_holdout_count": 1, "status": "insufficient_for_validated_claim"},
+    {"model_quantity": "facility_component_energy", "calibration": ["B_HU_2019_COMPONENTS"], "validation": ["B_LBNL_FABS21_HETEROGENEITY"], "current_numeric_holdout_count": 0, "status": "structural_comparison_only"},
+    {"model_quantity": "water_intensity", "calibration": [], "validation": ["B_WATER_300MM_REVIEW", "B_TSMC_2024_WATER"], "current_numeric_holdout_count": 1, "status": "definitions_not_yet_harmonized"},
+    {"model_quantity": "manufacturing_scale", "calibration": [], "validation": ["B_TSMC_2025_CAPACITY", "B_ASML_NXE3400B"], "current_numeric_holdout_count": 2, "status": "scale_and_tool_comparators_only"},
+    {"model_quantity": "ercot_adequacy", "calibration": [], "validation": [], "current_numeric_holdout_count": 0, "status": "must_be_evaluated_against_official_thresholds_not_fitted"}
+  ],
+  "decision_rule": "The Step 3 model may be verified and benchmarked, but its paper description must remain prospective constraint analysis unless later independent project measurements satisfy this frozen contract."
+}

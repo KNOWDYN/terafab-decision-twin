@@ -1,0 +1,80 @@
+{
+  "contract_version": "0.1.0",
+  "study_id": "ecm_terafab_us_energy_security",
+  "status": "locked_for_step_2_evidence_test",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "name": "conditional_physical_realization",
+      "statement": "At least one evidence-supported deployment and supply pathway can satisfy the admitted Terafab target interpretation and every required manufacturing, facility, temporal, and electricity-security gate by 2050.",
+      "null_statement": "No evidence-supported pathway satisfies all required gates by 2050.",
+      "evaluation": {
+        "primary_metric": "joint_gate_pass",
+        "secondary_metrics": [
+          "first_joint_pass_year",
+          "feasibility_probability",
+          "binding_constraint"
+        ],
+        "support_rule": "Supported when at least one pathway has a dimensionally valid target interpretation and passes all required gates using evidence-supported parameter ranges.",
+        "falsification_rule": "Falsified when every admitted pathway fails at least one required gate through 2050.",
+        "indeterminate_rule": "Indeterminate when target semantics or indispensable public evidence cannot be bounded defensibly."
+      }
+    },
+    {
+      "id": "H2",
+      "name": "regional_constraint_visibility",
+      "statement": "At least one Terafab pathway that remains inside the spread of admitted national annual-electricity projections nevertheless violates an ERCOT firm-capacity or probabilistic adequacy constraint.",
+      "null_statement": "No pathway inside the admitted national annual-electricity projection spread violates an ERCOT adequacy constraint.",
+      "evaluation": {
+        "primary_metric": "normalized_constraint_margin",
+        "secondary_metrics": [
+          "regional_gate_failure_frequency",
+          "national_energy_share",
+          "delta_reserve_margin",
+          "delta_lole",
+          "delta_eue"
+        ],
+        "support_rule": "Supported when at least one pathway remains within the admitted EIA national annual-electricity case spread while an official ERCOT adequacy gate fails for that same pathway and year.",
+        "falsification_rule": "Falsified when no pathway meeting the national-case-spread condition violates an ERCOT adequacy gate.",
+        "indeterminate_rule": "Indeterminate when comparable regional and national constraint margins cannot be constructed from authoritative baselines."
+      }
+    },
+    {
+      "id": "H3",
+      "name": "supply_portfolio_effect",
+      "statement": "A pre-committed firm or hybrid electricity-supply portfolio reduces incremental ERCOT adequacy risk relative to a grid-dominant connection at the same manufacturing trajectory.",
+      "null_statement": "A firm or hybrid portfolio does not reduce incremental ERCOT adequacy risk relative to the grid-dominant case.",
+      "evaluation": {
+        "primary_metric": "delta_expected_unserved_energy",
+        "secondary_metrics": [
+          "delta_lole",
+          "delta_accredited_capacity_shortfall",
+          "curtailed_facility_energy",
+          "fuel_requirement",
+          "operational_emissions"
+        ],
+        "support_rule": "Supported when adequacy risk is lower under the firm or hybrid portfolio using identical manufacturing demand and consistently modeled outages, fuel, and accredited capacity.",
+        "falsification_rule": "Falsified when no admitted firm or hybrid portfolio lowers the primary adequacy-risk metric.",
+        "indeterminate_rule": "Indeterminate when hourly adequacy or accredited-capacity evidence is unavailable."
+      }
+    },
+    {
+      "id": "H4",
+      "name": "scale_uncertainty_concentration",
+      "statement": "The leading 20% of admitted uncertain inputs account for at least 80% of normalized total-order sensitivity mass for target realization year or joint feasibility, with stable bootstrap ranks.",
+      "null_statement": "The leading 20% of admitted uncertain inputs account for less than 80% of normalized total-order sensitivity mass or their ranks are unstable.",
+      "evaluation": {
+        "primary_metric": "global_sensitivity_total_order",
+        "secondary_metrics": [
+          "global_sensitivity_first_order",
+          "parameter_interaction_share",
+          "bootstrap_rank_stability"
+        ],
+        "support_rule": "Supported when the top ceiling(0.20 times N) inputs account for at least 0.80 of normalized total-order sensitivity mass for either primary outcome and bootstrap rank stability meets the Step 2 confidence rule.",
+        "falsification_rule": "Falsified when the predeclared 20/80 concentration condition is not met or rankings fail the bootstrap stability rule.",
+        "indeterminate_rule": "Indeterminate when the evidence does not support probability distributions or dependence structures."
+      }
+    }
+  ],
+  "locking_rule": "Hypothesis wording and evaluation rules cannot be changed after scenario results are inspected. Evidence-driven retirement is allowed only during Step 2 and must remain documented."
+}

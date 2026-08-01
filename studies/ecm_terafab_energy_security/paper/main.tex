@@ -1,0 +1,564 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,array}
+\usepackage{lineno}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em}
+
+\graphicspath{{../outputs/final/publication/figures/}}
+\newcommand{\Terafab}{Terafab}
+\newcommand{\wrated}{\mathrm{W_{rated}}}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\limitation}[1]{\textit{Boundary: #1}}
+
+\title{From terawatt-scale semiconductor output to grid burden:\\
+A prospective constraint assessment of the announced Terafab project}
+\author{Khalid M. Saqr\\
+\small KNOWDYN Ltd, United Kingdom}
+\date{}
+
+\begin{document}
+\linenumbers
+\maketitle
+
+\begin{abstract}
+Terafab has publicly described semiconductor output of 1 TW/year, but the
+dimension of that target and the associated facility requirements are not
+defined. This study asks whether currently available public evidence
+demonstrates a realistic project and what the admitted interpretation would
+imply for United States electricity security through 2050. A prospective,
+evidence-gated model translates one terawatt of aggregate rated power embodied
+in good compute devices manufactured per year into wafer throughput, facility
+electricity, coincident load, heat rejection and water withdrawal. It then
+tests 337 predeclared deployment--supply--stress trajectories against tri-state
+manufacturing, infrastructure and ERCOT adequacy gates, with correlated
+uncertainty propagated by scrambled Sobol sampling. Under the central
+full-target interpretation, the model requires 68.29 million 300-mm wafer
+starts/year, 135.17 TWh/year, 16.58 GW coincident load and heat rejection, and
+568.72 million m$^3$/year of external water withdrawal. The modeled electricity
+is 2.64\% of the EIA baseline US total in 2037 and 2.26\% in 2050. In the locked
+correlated uncertainty case, median electricity is 125.11 TWh/year, whereas
+marginal p95 peak and water requirements reach 91.54 GW and 1.571 billion
+m$^3$/year. All 336 nonzero trajectories remain indeterminate because public
+evidence does not establish target semantics, phase manufacturing capacity,
+utility capacity, executable interconnection or probabilistic ERCOT adequacy.
+Thus public evidence does not presently demonstrate project realism; this is
+not proof of infeasibility. The contribution is a reproducible method for
+separating resource implications from verified project facts.
+\end{abstract}
+
+\noindent\textbf{Keywords:} semiconductor manufacturing; electricity security;
+large loads; ERCOT; uncertainty; energy--water nexus; prospective assessment
+
+\section{Introduction}
+\label{sec:introduction}
+
+The announced \Terafab{} concept joins two energy-system questions that are
+usually treated separately: how a claimed semiconductor production scale maps
+to physical manufacturing throughput, and how the resulting industrial load
+interacts with an electricity system already absorbing rapidly growing large
+loads. The public website states ``Terafab output 1 TW/Year''
+\cite{Terafab2026}; Texas incentive applications identify four prospective
+phases and schedule information \cite{JETI2026}. Neither source supplies a
+dimensional definition of the target, phase wafer capacity, facility demand,
+water entitlement, or an executable grid interconnection. Equating the public
+target directly with factory electrical load would therefore be dimensionally
+and evidentially invalid.
+
+Semiconductor production is a coupled electricity--thermal--water process.
+Cleanroom air handling, process cooling and ultrapure-water systems can be
+material components of facility demand, while their intensities vary greatly
+across sites and process generations \cite{Hu2019,Mathew2010,Tschudi2003}.
+Manufacturer reports provide useful scale comparators, but company aggregates
+span multiple sites, nodes and products \cite{TSMCAnnual2024,TSMCSustainability2024}.
+Water-demand estimates are similarly heterogeneous and cannot establish a
+site-specific entitlement \cite{Sandhu2025}. A study of an announced facility
+must therefore distinguish public project evidence, industry comparators,
+scenario assumptions and derived results.
+
+The regional context adds a second identification problem. ERCOT planning
+reports and effective-load-carrying-capability studies support accredited-
+capacity screening through their stated horizons \cite{ERCOTCDR2025,ERCOTELCC2024},
+but reserve margin alone is not the Texas probabilistic reliability standard
+\cite{PUCT25508}. National EIA projections contextualize annual energy scale
+but do not determine ERCOT adequacy \cite{EIAAEO2026}. NERC has separately
+identified the planning relevance and uncertainty of emerging large loads
+\cite{NERCLTRA2025,NERCLargeLoads2025}.
+
+This paper asks: (i) what manufacturing and facility-resource requirements
+follow from a transparent interpretation of the target; (ii) when those
+requirements arise under predeclared realization pathways; (iii) what they
+imply for ERCOT capacity screening and US annual electricity; and (iv) whether
+the admitted public evidence is sufficient for a realism classification. Its
+novelty is not a prediction of the project. It is a dimensionally consistent,
+evidence-gated production-to-energy framework that refuses to convert unknown
+capacity or reliability inputs into favorable or unfavorable findings.
+
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Evidence contract, boundary and target semantics}
+
+All final calculations use frozen, hashed extracts dated 1 August 2026; the
+reproduction path performs no live web retrieval. Sources were classified as
+official project publications, public filings, manufacturer disclosures,
+peer-reviewed or government-laboratory benchmarks, official system
+projections, regulations and technical studies. Reported and filed claims were
+admitted only for their stated roles. Restricted, private, proprietary and
+unpublished project material was excluded.
+
+The primary conditional interpretation is
+
+\begin{quote}
+one terawatt of aggregate rated electrical power embodied in good compute
+devices manufactured per calendar year.
+\end{quote}
+
+The annual target has unit $\wrated$/year. It is product output, not site
+electrical power. An alternative public semantic branch remains explicit but
+non-numeric because the public wording does not identify another calculable
+quantity. Figure~\ref{fig:architecture} shows the claim-to-consequence chain,
+and Table~\ref{tab:claims} records the excluded interpretations.
+
+\begin{figure*}[htbp]
+\centering
+\includegraphics[width=0.94\textwidth]{figure_01.pdf}
+\caption{Claim-to-consequence architecture. Product rated output is translated
+through device and wafer throughput before facility electricity, heat and water
+are calculated; the public output wording is never assigned as factory load.}
+\label{fig:architecture}
+\end{figure*}
+
+\input{tables_main.tex}
+
+\subsection{Production translation}
+
+For a 300-mm wafer of diameter $d$ and die area $A$, the continuous edge-loss
+approximation is
+
+\begin{equation}
+D=\frac{\pi d^2}{4A}-\frac{\pi d}{\sqrt{2A}},
+\label{eq:dies}
+\end{equation}
+
+where $D$ is gross dies per wafer. Scribe-lane, defect and packaging losses are
+not hidden in Eq.~\eqref{eq:dies}; they are represented through die area and
+effective yield. If a compute module has rated power $P_m$, contains $N_d$ logic
+dies and has effective yield $Y$, annual wafer starts are
+
+\begin{equation}
+W_y=\frac{C_{rated}N_d}{DYP_m}.
+\label{eq:target}
+\end{equation}
+
+Reconstructing $C_{rated}$ from the calculated throughput is required to close
+within a relative residual of $10^{-8}$. Figure~\ref{fig:surface} maps the full
+target requirement across the admitted yield and module-power ranges. Because
+no public project wafer capacity is available, it is a requirement surface,
+not a pass/fail feasibility frontier.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figure_02.pdf}
+\caption{Full-target wafer-start requirement across effective yield and rated
+module power. Admitted ranges and extrapolated regions are distinguished; no
+project capacity boundary is inferred.}
+\label{fig:surface}
+\end{figure}
+
+\subsection{Facility electricity, thermal and water balances}
+
+Total annual facility electricity $E_f$ is throughput multiplied by an admitted
+total-facility electricity intensity. The source already includes cooling, so
+cooling cannot be added a second time. For non-cooling electricity $B$ and
+coefficient of performance $COP$,
+
+\begin{equation}
+E_f=B+\frac{B}{COP},\qquad B=E_f\frac{COP}{COP+1}.
+\label{eq:cooling}
+\end{equation}
+
+Coincident peak is derived from annual electricity and load factor $\lambda$,
+$P_f=E_f/(8760\lambda)$. Under the declared annual steady balance, negligible
+stored energy and no evidenced useful heat sink, the complete coincident
+electrical load is reported as peak heat rejection. Recoverable heat is not
+quantified without temperature-grade and sink evidence.
+
+Water intensities are explicitly typed as either gross process demand before
+reuse or external withdrawal after reuse. Reuse is subtracted only from the
+former, preventing double credit. When consumption is defined, the steady
+balance requires
+
+\begin{equation}
+V_{withdraw}=V_{consumed}+V_{discharged}
+\label{eq:water}
+\end{equation}
+
+to a relative residual of $10^{-8}$. Table~\ref{tab:evidence} separates the
+calibration comparators from unavailable independent project validation.
+Figure~\ref{fig:benchmark} is consequently a benchmark diagnostic, not a
+measured-versus-modeled validation result.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figure_03.pdf}
+\caption{Benchmark diagnostic and validation boundary. The same public
+comparators that inform admitted ranges cannot serve as independent Terafab
+holdouts; no bias, NRMSE, MAPE or coverage statistic is manufactured.}
+\label{fig:benchmark}
+\end{figure}
+
+\subsection{Deployment, supply and electricity-security screening}
+
+The predeclared matrix comprises one no-build counterfactual and 336 nonzero
+trajectories: three nonzero target labels, four realization pathways, four
+supply portfolios and seven stress conditions (Table~\ref{tab:matrix}). The
+research-fab and initial-large-scale labels remain non-numeric because public
+phase capacities are unknown. Numerical annual calculations cover 2026--2050
+only for the full-target interpretation.
+
+For hour $h$, grid load is conceptually $L^*_{t,h}=L^0_{t,h}+P_{grid,t,h}$.
+In the annual screening model, accredited onsite capacity is subtracted only
+after commissioning and availability rules are applied. Reserve margin is
+
+\begin{equation}
+RM_t=\frac{C_{accredited,t}-P_{peak,t}}{P_{peak,t}}.
+\label{eq:rm}
+\end{equation}
+
+The regional adequacy gate can pass only when the applicable loss-of-load
+expectation, maximum expected event duration and expected highest hourly
+average load shed are all available and satisfy the Texas standard. Missing
+probabilistic values produce \emph{indeterminate}; reserve margin cannot be
+promoted to a reliability verdict. Official ERCOT counterfactuals are used only
+through 2030, with no extrapolation. National scale is
+$s_t^E=E_{f,t}/E_{t}^{US,0}$ against the EIA baseline and high-demand cases.
+
+\subsection{Decision rules and uncertainty}
+
+Ten gates cover target semantics, manufacturing throughput, facility energy,
+thermal capacity, water capacity, schedule precedence, supply deliverability,
+regional adequacy, national context and evidence sufficiency. Every gate is
+\emph{pass}, \emph{fail} or \emph{indeterminate}. A pathway is conditionally
+feasible only if all required gates pass. Explicit failures are retained, but
+an indispensable unknown prevents an overall infeasibility finding. No weighted
+energy-security index is constructed.
+
+Ten manufacturing and facility parameters are propagated with a scrambled
+Sobol design \cite{Owen1998}, fixed seed 20260801, 16,384 preliminary samples
+and 32,768 confirmation samples. A Gaussian copula implements the predeclared
+dependence structure and $\pm0.20$ correlation stresses. Convergence requires
+strictly less than 1\% change in estimable medians and p95 quantities when the
+sample count is doubled. Independent-input first- and total-order Sobol indices
+\cite{Saltelli2010} are supplemented by a dependence-aware Shapley allocation
+\cite{OwenPrieur2017}; 1,000 bootstrap replicates quantify ranking uncertainty.
+Sensitivity is diagnostic for conditional facility peak and cannot substitute
+for the locked but unidentifiable joint-feasibility outcome.
+
+\subsection{Software implementation and reproducibility}
+
+The source-available Python overlay calls a single typed kernel from both the
+command line and notebook. It exports full scenario, annual and gate tables;
+one CSV per figure; six paper tables; uncertainty and hypothesis JSON; and a
+SHA-256 manifest. A synthetic complete case verifies algebraic identities but
+is never admitted as a Terafab scenario. The complete command, environment and
+artifact map are provided in the supplementary material.
+
+OpenAI Codex assisted implementation of source code, automated checks,
+deterministic Matplotlib visualization code and manuscript organization. It did
+not retrieve live data in the final reproduction path, fabricate observations,
+or alter generated numerical results. The author remains responsible for
+source admission, scientific judgement and final verification; the formal
+declaration appears before the references.
+
+\section{Results}
+
+\subsection{Central conditional requirement}
+\label{sec:results-central}
+
+In the accelerated pathway, modeled production reaches 25\% of the full target
+in 2029, 50\% in 2032, 75\% in 2035 and 100\% in 2037
+(Figure~\ref{fig:pathways}). Full target requires 68.2907 million wafer
+starts/year (5.6909 million/month), 135.1736 TWh/year of facility electricity,
+16.5809 GW coincident load, 16.5809 GW peak heat rejection and 568.7183 million
+m$^3$/year external water withdrawal. These values are identical after full
+target across the accelerated, reference and delayed demand pathways because
+the same production interpretation and central facility parameters apply; the
+pathways change timing rather than target magnitude. Table~\ref{tab:principal}
+reports selected portfolio allocations.
+
+\begin{figure*}[htbp]
+\centering
+\includegraphics[width=0.94\textwidth]{figure_04.pdf}
+\caption{Conditional full-target realization pathways from 2026 to 2050.
+Research-fab and initial-large-scale branches are not plotted numerically because
+their public production capacities are unknown.}
+\label{fig:pathways}
+\end{figure*}
+
+Figure~\ref{fig:decomposition} separates electricity, cooling and water
+quantities without double-counting cooling electricity or water reuse. The heat
+result is a first-law rejection requirement, not an identified useful-heat
+resource. Water entitlement, consumption fraction and discharge infrastructure
+remain project-specific unknowns outside the ordinary central case.
+
+\begin{figure*}[htbp]
+\centering
+\includegraphics[width=0.94\textwidth]{figure_05.pdf}
+\caption{Facility thermodynamic and water decomposition at principal
+milestones. Recoverable heat is omitted because temperature-grade and sink
+evidence are unavailable.}
+\label{fig:decomposition}
+\end{figure*}
+
+\subsection{ERCOT screening and supply portfolios}
+\label{sec:results-ercot}
+
+At 25\% target in 2029--2030, the central grid-dominant requirement is 4.145 GW
+coincident load and 33.793 TWh/year. Figure~\ref{fig:ercot} reports the two
+frozen ERCOT counterfactuals only through 2030. Under the protocol-prescribed
+case, the scenario's assumed accredited grid addition produces a positive
+reserve-margin change; under the SB6 counterfactual, the sign can reverse. This
+counterfactual dependence prevents interpretation of a positive screening
+number as a project reliability benefit.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figure_06.pdf}
+\caption{ERCOT incremental burden through the last frozen official
+counterfactual year. Reserve-margin changes are conditional screens, not
+probabilistic adequacy findings.}
+\label{fig:ercot}
+\end{figure}
+
+In the matched normal 2030 cases, grid-dominant and not-yet-commissioned
+firm-low-carbon portfolios leave 4.145 GW on the grid. Firm onsite supply has
+3.316 GW accredited onsite capacity and leaves 0.829 GW; the
+renewable--storage--grid portfolio has 2.777 GW accredited and leaves 1.368 GW.
+Figure~\ref{fig:portfolio} preserves LOLE and expected unserved energy as null.
+The screening cannot identify which portfolio reduces probabilistic adequacy
+risk, so H2 and H3 remain indeterminate.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figure_07.pdf}
+\caption{Accredited-capacity and reserve-margin replacement for the
+prespecified adequacy figure. LOLE and expected unserved energy are unavailable
+and are not inferred.}
+\label{fig:portfolio}
+\end{figure}
+
+\subsection{National annual-electricity context}
+\label{sec:results-national}
+
+The accelerated case equals 2.636\% of the EIA baseline US annual electricity
+in 2037 and 2.255\% in 2050 (Figure~\ref{fig:national}). The decline after full
+target is caused by growth in the national denominator, not lower facility
+demand. These shares contextualize scale; they are neither national security
+thresholds nor evidence of regional feasibility. National peak share, fuel
+demand and operational emissions remain null because the evidence contract did
+not identify consistent outputs for them.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figure_08.pdf}
+\caption{Conditional facility electricity as a share of EIA baseline and
+high-electricity-demand annual totals. National peak, fuel and emissions
+results are omitted rather than invented.}
+\label{fig:national}
+\end{figure}
+
+\subsection{Gate outcomes and realism classification}
+\label{sec:results-gates}
+
+Across 20,720 active-case gate evaluations, 8,724 pass, 2,228 fail under
+explicit schedule, supply, thermal or water stresses, and 9,768 are
+indeterminate. Manufacturing throughput, evidence sufficiency and regional
+adequacy are indeterminate for every active case. Thermal and water gates are
+indeterminate in ordinary cases and fail only in the declared 80\%-capacity
+stress. Schedule precedence and supply deliverability account for 818 failed
+evaluations. Consequently all 336 nonzero trajectories are indeterminate and
+no first joint-pass year exists (Figure~\ref{fig:gates}). H1--H4 all remain
+indeterminate under their predeclared definitions.
+
+\begin{figure*}[htbp]
+\centering
+\includegraphics[width=0.94\textwidth]{figure_09.pdf}
+\caption{Trajectory classification and gate-status map. Explicit failures and
+missing-evidence indeterminacy are distinct; neither is relabelled for a simpler
+overall verdict.}
+\label{fig:gates}
+\end{figure*}
+
+\subsection{Uncertainty, sensitivity and convergence}
+\label{sec:results-uncertainty}
+\label{sec:results-convergence}
+
+For the full target under the baseline correlated design and 32,768
+confirmation samples, median wafer starts are 50.445 million/year and median
+facility electricity is 125.107 TWh/year. Marginal p95 facility peak is
+91.542 GW and marginal p95 withdrawal is 1.571 billion m$^3$/year. These p95
+values are separate marginal quantiles and must not be combined into a joint
+design point. Feasibility probability is null because indispensable project
+capacity and probabilistic adequacy inputs are absent.
+
+The worst 16,384-to-32,768 relative change is 0.289999\%, below the locked 1\%
+criterion across independence, baseline dependence and both correlation
+stresses (Table~\ref{tab:verification}). For the independent conditional-peak
+diagnostic, logic dies per module has total-order index 0.5397, facility
+electricity intensity 0.2404, die area 0.1495, module rated power 0.0371 and
+effective yield 0.0324. The top two contribute 78.0212\% of normalized
+total-order mass, below the predeclared 80\% threshold; no favorable rounding
+is applied. The dependence-aware surrogate has $R^2=0.9405$ and retains logic
+dies per module, electricity intensity and die area as the leading three.
+Figure~\ref{fig:sensitivity} reports intervals and convergence.
+
+\begin{figure*}[htbp]
+\centering
+\includegraphics[width=0.94\textwidth]{figure_10.pdf}
+\caption{Independent Sobol and dependence-aware Shapley diagnostics with
+bootstrap intervals, plus sample-doubling convergence. The outcome is
+conditional facility peak, not the unavailable joint-feasibility outcome.}
+\label{fig:sensitivity}
+\end{figure*}
+
+\section{Discussion}
+
+\subsection{What the public evidence supports}
+
+The central scientific answer has two parts. First, the currently admitted
+public record does not demonstrate that the announced project is realistic.
+The conclusion follows from missing target semantics and missing phase
+manufacturing, electricity, thermal, water, interconnection and probabilistic
+adequacy capacity---not from a finding that a physical law is violated. The
+proper classification is therefore indeterminate, not infeasible.
+
+Second, the primary admitted interpretation is energy-security-material. A
+central 16.58-GW industrial peak would be too large to treat as an ordinary
+unmodeled load addition, and the broad epistemic uncertainty produces an even
+larger tail. The calculation establishes a planning-relevant order of
+magnitude under transparent assumptions. It does not establish an official
+load, an interconnection obligation, or a regulatory result.
+
+The distinction matters for both favorable and unfavorable narratives. A
+positive reserve-margin change under one capacity counterfactual is not proof
+of improved reliability; neither is an explicit failure in a deliberately
+stressed water or schedule case proof that the ordinary project fails. By
+retaining tri-state gates and separate counterfactuals, the model exposes where
+the conclusion depends on evidence rather than replacing missing evidence with
+an analyst's preference.
+
+\subsection{Energy-conversion and management contribution}
+
+The production-to-energy chain adds four methodological safeguards relevant to
+other emerging industrial loads. It prevents dimensional collapse between
+product output and factory input; maintains a closed facility electricity and
+heat allocation; types water intensities to avoid double-counting reuse; and
+separates reserve-margin screening from probabilistic adequacy. The same
+architecture can be applied to other public industrial claims whose physical
+scale is clearer than their utility implications.
+
+The analysis also identifies where additional evidence has highest decision
+value. A dimensional product definition and phase wafer capacity would test the
+manufacturing translation. Phase electrical, thermal and water designs would
+bound facility gates. An executable point and size of interconnection,
+portfolio-specific accredited capacity and hourly probabilistic studies would
+permit regional adequacy assessment. These observations identify scientific
+measurements and disclosures; they are not procurement, permitting or
+infrastructure-planning recommendations.
+
+\subsection{Limitations}
+
+The analysis is prospective and comparator-based, not an empirically validated
+digital twin. No independent numerical Terafab holdouts exist, and the public
+benchmarks used to define ranges cannot be reused as validation observations.
+The continuous die geometry is a screening approximation; actual layouts,
+node mix, memory, packaging, test and yield learning are unknown. Total-facility
+intensity compresses process heterogeneity, while the heat result lacks
+temperature-grade and sink information. Water availability and discharge are
+not site models.
+
+Regional screening omits power flow, congestion, unit commitment, outage and
+weather chronology, load flexibility, fuel networks, price formation, and
+probabilistic LOLE/EUE. ERCOT counterfactuals stop at 2030. National results are
+annual-energy shares only and cannot imply regional or hourly security. The
+uncertainty distributions are epistemic scenarios, not frequencies of future
+project outcomes; their marginal p95 values are not a joint worst case.
+Construction embodied energy, supply-chain benefits, costs, emissions, project
+finance and macroeconomic effects are outside scope.
+
+\section{Conclusions}
+
+Under a transparent interpretation of one terawatt of rated compute-device
+power manufactured annually, the announced output implies a central
+requirement of 68.29 million 300-mm wafer starts/year, 135.17 TWh/year,
+16.58 GW coincident electricity and heat rejection, and 568.72 million
+m$^3$/year external water withdrawal. Those requirements are large enough to
+be material to ERCOT and US electricity planning. Yet all nonzero trajectories
+remain evidentially indeterminate: current public information does not define
+the target or demonstrate the manufacturing, utility and adequacy capacities
+needed to realize it. The defensible answer is therefore that project realism
+is not presently demonstrated, not that the project is proven infeasible.
+
+This conclusion is deliberately falsifiable. Public disclosure of dimensional
+output, phase capacity, facility resource designs, interconnection and
+probabilistic adequacy results would convert the unknown gates into tests. Until
+then, the reproducible model supplies conditional resource implications while
+preserving the boundary between analytical estimates and verified project
+facts.
+
+\section*{Data and code availability}
+
+The source-available code, frozen public-evidence extracts, scenario contracts,
+notebook and deterministic regeneration instructions are provided at
+\url{https://github.com/KNOWDYN/terafab-decision-twin}. Noncommercial academic
+use is governed by \code{ACADEMIC_LICENSE.md}; commercial use requires a
+separate written license under \code{COMMERCIAL_LICENSE.md}. The final archival
+release, Git commit and DOI must be inserted after the Step 7 repository
+publication and archival deposit. Generated outputs are analytical estimates,
+not verified Terafab operating facts.
+
+\section*{CRediT authorship contribution statement}
+
+Khalid M. Saqr: Conceptualization, Methodology, Software, Validation, Formal
+analysis, Investigation, Data curation, Writing---original draft,
+Writing---review and editing, Visualization, Supervision and Project
+administration.
+
+\section*{Funding}
+
+The funding statement is author-controlled and must be supplied accurately
+before journal submission; this reproducibility package does not infer a
+funding source.
+
+\section*{Declaration of competing interest}
+
+The author is Managing Director of KNOWDYN Ltd, which owns the source-available
+software used in this work. The study is an independent KNOWDYN analysis and is
+not affiliated with, endorsed by, authorized by, sponsored by, or connected to
+Terafab or its employees. References to external organizations are analytical
+and do not imply access to verified internal data or endorsement.
+
+\section*{\raggedright Declaration of generative AI and AI-assisted technologies}
+
+During preparation of this work, the author used OpenAI Codex (GPT-5 family,
+accessed 1 August 2026) to assist source-code implementation, automated testing,
+reproducible data-visualization code, manuscript organization and language
+drafting. All figures are deterministic Matplotlib renderings of the cited
+machine-readable outputs; no generative imagery or fabricated data were used.
+After using this service, the author reviewed and edited the content as needed
+and takes full responsibility for the content of the publication. The exact
+service model/version must be confirmed against the author's access record
+before submission.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

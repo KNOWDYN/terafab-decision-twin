@@ -1,0 +1,44 @@
+{
+  "step": 5,
+  "status": "complete",
+  "decision": "move_to_step_6",
+  "decision_date": "2026-08-01",
+  "scope": "prespecified results analysis, publication figures and tables, integrity manifest, visual QA, and claim-boundary validation",
+  "publication_bundle": {
+    "figures": 10,
+    "figure_data_tables": 10,
+    "paper_tables": 6,
+    "trajectory_count": 337,
+    "annual_result_rows": 2825,
+    "gate_result_rows": 20720,
+    "generated_artifact_count_excluding_cli_stdout": 44,
+    "manifest": "outputs/final/publication/publication_manifest.json"
+  },
+  "stress_test": {
+    "status": "pass_with_mandatory_scientific_limitations",
+    "repository_tests_passed": 107,
+    "maximum_full_convergence_relative_change": 0.0028999878839666227,
+    "convergence_limit": 0.01,
+    "sensitivity_bootstrap_replicates": 1000,
+    "top_two_normalized_total_order_mass": 0.7802116749126273,
+    "dependence_aware_surrogate_R2": 0.94052115617125,
+    "limited_or_replacement_figures": ["figure_02", "figure_03", "figure_05", "figure_06", "figure_07", "figure_08", "figure_10"]
+  },
+  "central_full_target_conditional_result": {
+    "wafer_starts_per_year": 68290675.93764904,
+    "annual_electricity_MWh": 135173607.88151938,
+    "coincident_peak_load_MW": 16580.876735569167,
+    "heat_rejection_peak_MW": 16580.876735569167,
+    "external_water_withdrawal_m3_per_year": 568718329.8852031,
+    "classification": "indeterminate"
+  },
+  "hypothesis_disposition": {
+    "H1": "indeterminate",
+    "H2": "indeterminate",
+    "H3": "indeterminate",
+    "H4": "indeterminate"
+  },
+  "step_6_mandate": "Draft the manuscript as a prospective conditional constraint analysis. The defensible conclusion is that current public evidence does not demonstrate project realism, while the admitted output interpretation implies energy-security-material resource requirements. Do not claim official feasibility, infeasibility, empirical Terafab validation, reliability probability, endorsement, or prediction.",
+  "reason": "All prespecified outputs are generated or transparently replaced, every plotted value is machine-readable, full uncertainty convergence passes, visual and automated stress tests pass, and remaining limitations arise from unavailable evidence rather than Step 5 implementation defects.",
+  "authorization_boundary": "No commit, push, or pull request was created; GitHub publication remains Step 7."
+}

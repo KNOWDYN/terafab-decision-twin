@@ -1,0 +1,42 @@
+{
+  "step": 6,
+  "status": "complete",
+  "decision": "move_to_step_7",
+  "decision_date": "2026-08-01",
+  "scope": "ECM manuscript, supplement, references, highlights, cover letter, submission checklist, quantitative traceability, document build, visual QA, and release-artifact validation",
+  "manuscript": {
+    "title": "From terawatt-scale semiconductor output to grid burden: A prospective constraint assessment of the announced Terafab project",
+    "abstract_words": 232,
+    "keywords": 7,
+    "highlights": 5,
+    "figures": 10,
+    "tables": 6,
+    "references": 17,
+    "traceable_quantitative_claims": 15,
+    "main_pdf_pages": 18,
+    "supplement_pdf_pages": 3,
+    "cover_letter_pdf_pages": 1
+  },
+  "stress_test": {
+    "status": "pass_with_author_controlled_pre_submission_items",
+    "repository_tests_passed": 111,
+    "gate_rows_rechecked": 20720,
+    "latex_unresolved_references": 0,
+    "latex_overfull_boxes": 0,
+    "restricted_source_scan": "pass",
+    "source_distribution_verification": "pass",
+    "wheel_verification": "pass",
+    "visual_pdf_qa": "pass"
+  },
+  "scientific_conclusion": "Current public evidence does not demonstrate Terafab project realism. Under the primary admitted interpretation, the implied requirements are material to ERCOT and United States energy-security planning. This is an indeterminate evidence conclusion, not proof of feasibility or infeasibility.",
+  "author_confirmation_before_journal_submission": [
+    "corresponding-author details",
+    "funding statement",
+    "competing-interest wording",
+    "exact OpenAI Codex model/version",
+    "Step 7 Git commit, release, and archival DOI",
+    "final human source and scientific review"
+  ],
+  "reason": "The publication draft is quantitatively traceable, builds reproducibly, visually renders without defects, preserves all evidence and nonclaim boundaries, passes the full regression and release-artifact suites, and has no remaining computational defect that warrants revising Step 6.",
+  "authorization_boundary": "No commit, push, or pull request was created; GitHub publication remains Step 7. Journal submission is not authorized by this decision."
+}

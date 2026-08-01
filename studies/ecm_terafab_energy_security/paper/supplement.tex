@@ -1,0 +1,148 @@
+\documentclass[11pt]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs,tabularx,longtable,array}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+
+\title{Supplementary material\\
+From terawatt-scale semiconductor output to grid burden}
+\author{Khalid M. Saqr\\\small KNOWDYN Ltd, United Kingdom}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Purpose and status}
+
+This supplement documents the reproducible evidence and calculation package
+for an independent prospective conditional constraint analysis of the announced
+Terafab project. It contains no verified Terafab operating data and must not be
+read as engineering certification, an official feasibility assessment, or a
+prediction. The repository is source-available, not open source. Academic and
+commercial rights are governed by the two root license files.
+
+\section{Frozen evidence protocol}
+
+The evidence registry records source identity, publisher, publication date,
+URL, source class, evidence status, admissible use and limitation. Frozen JSON
+extracts contain only admitted public values. Their hashes are recorded in
+\texttt{evidence/snapshot\_manifest.json}; final reproduction does not access
+the web. The source classes are:
+
+\begin{enumerate}
+\item official project public statement and applicant public filings;
+\item manufacturer public disclosures and product specifications;
+\item peer-reviewed measured cases or reviews;
+\item government-laboratory benchmarks;
+\item official ERCOT, PUCT, EIA and NERC projections, standards and studies.
+\end{enumerate}
+
+Public claims are scenario inputs, not verified facts. The study excludes
+restricted, confidential, proprietary and unpublished project material. A
+bibliographic audit during Step 6 corrected the Hu et al. DOI from the erroneous
+registry suffix \texttt{ctz040} to the publisher-confirmed \texttt{ctz041}; no
+parameter or numerical result changed.
+
+\section{Scenario experiment}
+
+The complete scenario matrix contains 337 trajectories: one no-build
+counterfactual and 336 nonzero combinations of three target labels, four
+realization pathways, four supply portfolios and seven stress conditions. Of
+the nonzero trajectories, 224 research-fab or initial-large-scale cases are
+non-numeric because public phase output capacities are unavailable. The 112
+full-target trajectories are computed annually through 2050. The complete
+matrix is exported as
+\path{tables/table_04_scenario_matrix.csv}; annual and gate outputs are
+included in the supplementary artifact manifest.
+
+The target identities, facility energy and water balances, supply
+commissioning, accredited capacity and tri-state gates are implemented in the
+\texttt{terafab\_energy\_security} package. The notebook and command line call
+the same functions and do not duplicate governing calculations.
+
+\section{Uncertainty design}
+
+The locked design has ten uncertain manufacturing and facility inputs, fixed
+seed 20260801, scrambled Sobol sample sizes 16,384 and 32,768, a Gaussian copula
+and $\pm0.20$ correlation stresses. Convergence is tested on median wafer
+starts, median electricity, p95 facility peak and p95 water withdrawal. The
+strict criterion is relative change below 0.01 for every metric and dependence
+case. The observed maximum is 0.0028999879.
+
+The independent Sobol and dependence-aware Shapley results diagnose
+conditional facility peak. They do not answer H4's locked outcome of joint
+feasibility or realization year, which is unidentifiable while indispensable
+gates are unknown. Marginal p95 outputs must not be combined into a joint
+design point.
+
+\section{Prespecified figure disposition}
+
+\begin{longtable}{p{0.08\textwidth}p{0.23\textwidth}p{0.19\textwidth}p{0.37\textwidth}}
+\toprule
+Figure & Prespecified purpose & Final status & Scientific boundary \\
+\midrule
+1 & Claim-to-consequence architecture & Generated & Product output and factory load are separated. \\
+2 & Target-translation feasibility surface & Limited requirement surface & No project wafer capacity exists for a pass/fail boundary. \\
+3 & Independent benchmark validation & Replacement diagnostic & Zero independent numeric Terafab holdouts; no empirical errors are asserted. \\
+4 & Realization pathways & Generated & Only the conditional full-target scale is numerical. \\
+5 & Thermal and water split & Generated with omission & Useful heat is unknown without temperature and sink evidence. \\
+6 & ERCOT burden & Limited horizon & Official counterfactual ends in 2030; reserve margin is screening-only. \\
+7 & Portfolio adequacy & Replacement screen & LOLE and EUE remain null. \\
+8 & National scale/fuel exposure & Replacement context & Annual EIA electricity only; peak, fuel and emissions remain null. \\
+9 & Feasibility map & Generated & Pass, fail and indeterminate remain distinct. \\
+10 & Sensitivity & Diagnostic & Sensitivity outcome is conditional peak, not joint feasibility. \\
+\bottomrule
+\end{longtable}
+
+\section{Generated artifact inventory}
+
+The final publication bundle contains:
+
+\begin{itemize}
+\item 10 figures in editable-source-linked PDF and review PNG form;
+\item 10 machine-readable figure CSV files;
+\item 6 complete paper tables in CSV;
+\item 337 trajectory definitions, 2,825 annual rows and 20,720 gate rows;
+\item final uncertainty and hypothesis-disposition JSON;
+\item a SHA-256 manifest for every generated publication artifact.
+\end{itemize}
+
+The manuscript's quantitative statements map to those artifacts in
+\path{paper/claim_traceability.csv}. The validation script checks the
+underlying values, figure and table coverage, abstract and highlight limits,
+citation integrity, disclosure placement and prohibited-claim boundaries.
+
+\section{Reproduction}
+
+From the repository root:
+
+\begin{verbatim}
+python -m terafab_energy_security build-publication \
+  studies/ecm_terafab_energy_security \
+  --mode final \
+  --output-directory \
+  studies/ecm_terafab_energy_security/outputs/final/publication
+
+python studies/ecm_terafab_energy_security/paper/validate_manuscript.py
+make -C studies/ecm_terafab_energy_security/paper all
+\end{verbatim}
+
+The final research record should add the Step 7 Git commit, a release tag and
+an archival DOI. The paper's administrative checklist also requires author
+confirmation of correspondence details, funding, competing interests and the
+exact AI service model/version before journal upload.
+
+\section{Non-affiliation and reliance notice}
+
+This is an independent KNOWDYN analysis. It is not affiliated with, endorsed
+by, authorized by, sponsored by, or connected to Terafab or its employees.
+References to external organizations are descriptive and do not imply access to
+verified internal information. Outputs are assumption-dependent estimates and
+must not be relied upon as official facts, engineering certification, legal or
+investment advice, procurement guidance, permitting determinations, or
+regulatory findings.
+
+\end{document}

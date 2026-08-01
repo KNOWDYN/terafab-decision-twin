@@ -1,0 +1,96 @@
+{
+  "snapshot_id": "SNAP_SEMICONDUCTOR_BENCHMARKS_2026_08_01",
+  "extraction_date": "2026-08-01",
+  "benchmarks": [
+    {
+      "benchmark_id": "B_TSMC_2024_ELECTRICITY",
+      "source_ids": ["SRC_TSMC_AR_2024", "SRC_TSMC_SR_2024"],
+      "role": "validation",
+      "reported_total_energy_GWh": 27456,
+      "reported_purchased_electricity_fraction_rounded": 0.93,
+      "reported_12inch_equivalent_wafer_shipments": 12900000,
+      "derived_purchased_electricity_GWh": 25534.08,
+      "derived_kWh_per_shipped_12inch_equivalent_wafer": 1979.386,
+      "applicability": "Company-wide mixed-node, mixed-product external comparator only.",
+      "do_not_use_as": "Direct leading-edge Terafab process recipe."
+    },
+    {
+      "benchmark_id": "B_TSMC_2025_CAPACITY",
+      "source_ids": ["SRC_TSMC_GIGAFAB_2025"],
+      "role": "industry_scale_comparator",
+      "number_of_gigafab_facilities": 6,
+      "combined_12inch_equivalent_capacity_wafers_per_year_lower_bound": 13000000,
+      "gigafab_monthly_300mm_capacity_lower_bound": 100000,
+      "applicability": "Public industrial scale comparator; not proof that any single phase can reach this capacity."
+    },
+    {
+      "benchmark_id": "B_HU_2019_COMPONENTS",
+      "source_ids": ["SRC_HU_2019_FES"],
+      "role": "calibration",
+      "measured_major_consumers": ["process_tools", "water_chillers", "clean_dry_air"],
+      "measured_energy_conversion_factors": {
+        "exhaust_kWh_per_m3": 0.000723,
+        "makeup_air_kWh_per_m3": 0.0028,
+        "process_cooling_water_kWh_per_m3": 0.383,
+        "ultrapure_water_dimensionless_reported_factor": 8,
+        "vacuum_kWh_per_m3": 0.04,
+        "clean_dry_air_kWh_per_m3": 0.171
+      },
+      "reported_annual_model_error_fraction": -0.0073,
+      "cooling_COP_case": 8,
+      "cooling_energy_reduction_fraction_at_COP8": 0.437,
+      "total_fab_energy_reduction_fraction_at_COP8": 0.10,
+      "applicability": "Component structure and calibration only; the UPW factor requires source-unit review before numerical use."
+    },
+    {
+      "benchmark_id": "B_LBNL_FABS21_HETEROGENEITY",
+      "source_ids": ["SRC_LBNL_MATHEW_2010"],
+      "role": "validation_design",
+      "number_of_US_fabs": 28,
+      "reported_efficiency_spread_ratio_approx": 6,
+      "normalization_metrics": ["kWh_per_cm2_wafer_out", "kWh_per_cm2_wafer_out_mask_layer"],
+      "applicability": "Justifies broad predictive intervals and mask-layer normalization."
+    },
+    {
+      "benchmark_id": "B_WATER_300MM_REVIEW",
+      "source_ids": ["SRC_SANDHU_2025_WATER"],
+      "role": "validation",
+      "wafer_diameter_mm": 300,
+      "total_water_gallons_per_wafer": 2200,
+      "ultrapure_water_gallons_per_wafer": 1500,
+      "derived_total_water_m3_per_wafer": 8.327906,
+      "derived_ultrapure_water_m3_per_wafer": 5.678118,
+      "applicability": "Review-level screening benchmark, not a site-specific capacity entitlement."
+    },
+    {
+      "benchmark_id": "B_TSMC_2024_WATER",
+      "source_ids": ["SRC_TSMC_SR_2024"],
+      "role": "validation",
+      "unit_water_consumption_L_per_12inch_equivalent_wafer_mask_layer": 161.0,
+      "process_water_recycling_fraction": 0.881,
+      "total_recycled_water_million_m3": 284.6,
+      "applicability": "Requires a mask-layer count before comparison with water per wafer."
+    },
+    {
+      "benchmark_id": "B_ASML_NXE3400B",
+      "source_ids": ["SRC_ASML_NXE3400B"],
+      "role": "manufacturing_geometry",
+      "wafer_diameter_mm": 300,
+      "maximum_exposure_field_mm": [26, 33],
+      "maximum_exposure_field_area_mm2": 858,
+      "specified_throughput_wafers_per_hour_lower_bound": 125,
+      "throughput_test_dose_mJ_per_cm2": 20,
+      "throughput_test_shots": 96,
+      "applicability": "One lithography tool specification; complete fab throughput is constrained by the full process flow."
+    },
+    {
+      "benchmark_id": "B_ACCELERATOR_POWER_ANALOGS",
+      "source_ids": ["SRC_NVIDIA_H100", "SRC_AMD_MI300X", "SRC_NVIDIA_B200"],
+      "role": "target_interpretation_analog",
+      "module_power_W": [350, 700, 750, 1000],
+      "dgx_b200_system_power_W": 14300,
+      "dgx_b200_gpu_count": 8,
+      "applicability": "Comparator envelope only. Terafab AI5, AI6, and D3 power ratings and product mix are not public."
+    }
+  ]
+}

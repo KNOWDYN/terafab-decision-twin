@@ -1,0 +1,27 @@
+{
+  "step": 7,
+  "status": "complete",
+  "decision": "create_draft_pull_request",
+  "decision_date": "2026-08-01",
+  "scope": "release integration, staged-snapshot reproducibility, regression testing, manuscript compilation, distribution inspection, restricted-source exclusion, branch, commit, push, and draft pull request",
+  "stress_test": {
+    "status": "pass",
+    "repository_tests_passed": 112,
+    "clean_staged_snapshot_tests_passed": 112,
+    "evidence_sources_validated": 26,
+    "evidence_parameters_validated": 22,
+    "scenario_trajectories_regenerated": 337,
+    "gate_rows_rechecked": 20720,
+    "traceable_quantitative_claims": 15,
+    "manuscript_figures": 10,
+    "manuscript_tables": 6,
+    "source_distribution_verification": "pass",
+    "wheel_verification": "pass",
+    "restricted_source_scan": "pass",
+    "generated_output_exclusion": "pass",
+    "staged_diff_whitespace_check": "pass"
+  },
+  "scientific_conclusion": "Current public evidence does not demonstrate Terafab project realism. Under the primary admitted interpretation, the implied requirements are material to ERCOT and United States energy-security planning. This is an indeterminate evidence conclusion, not proof of feasibility or infeasibility.",
+  "reason": "The complete seven-step change set is reproducible from tracked inputs in a clean staged snapshot, passes the full scientific and software test suite, compiles the manuscript package, contains the required source-available licensing material, excludes restricted sources and generated artifacts, and has no defect requiring revision of Step 6.",
+  "journal_boundary": "The pull request publishes a reproducible research draft for review. It does not authorize journal submission or guarantee editorial acceptance. Author-controlled submission details and final human scientific review remain required."
+}

@@ -1,0 +1,202 @@
+{
+  "schema_version": "0.4.0",
+  "study_id": "ecm_terafab_us_energy_security",
+  "start_year": 2026,
+  "end_year": 2050,
+  "public_target_W_rated_per_year": 1000000000000.0,
+  "public_target_source_id": "SRC_TERAFAB_SITE_2026",
+  "target_interpretation": "aggregate_rated_power_of_good_devices_manufactured_per_year",
+  "target_semantic_branches": {
+    "rated_device_output": {
+      "numerical_status": "conditional_model_interpretation",
+      "unit": "W_rated/year",
+      "use_rule": "Primary computable branch; this is not a verified project definition."
+    },
+    "other_publicly_undefined_meaning": {
+      "numerical_status": "indeterminate",
+      "unit": null,
+      "use_rule": "Mandatory alternative branch preserving the public semantic ambiguity; it cannot be converted into facility demand."
+    }
+  },
+  "target_scales": {
+    "no_build": {
+      "fraction_of_public_target": 0.0,
+      "evidence_status": "model_identity",
+      "use_rule": "Mandatory zero-increment counterfactual."
+    },
+    "research_fab": {
+      "fraction_of_public_target": null,
+      "evidence_status": "unknown",
+      "use_rule": "No public rated-output or wafer-capacity scale was identified; the scenario remains structurally present but numerically indeterminate."
+    },
+    "initial_large_scale": {
+      "fraction_of_public_target": null,
+      "evidence_status": "unknown",
+      "use_rule": "No public Phase 1 rated-output or wafer-capacity scale was identified; investment cannot be converted into throughput."
+    },
+    "full_announced_target": {
+      "fraction_of_public_target": 1.0,
+      "evidence_status": "model_identity",
+      "use_rule": "Conditional primary interpretation of the ambiguous 1 TW/year public target."
+    }
+  },
+  "realization_pathways": {
+    "accelerated": {
+      "milestones": [[2029, 0.25], [2032, 0.50], [2035, 0.75], [2037, 1.00]],
+      "schedule_basis": "filed_phase_years",
+      "allocation_status": "scenario_assumption",
+      "use_rule": "Uses the earliest filed phase years; equal 25 percent output increments are not filed project capacities."
+    },
+    "reference": {
+      "milestones": [[2031, 0.25], [2034, 0.50], [2037, 0.75], [2039, 1.00]],
+      "schedule_basis": "filed_phase_years_plus_two_years",
+      "allocation_status": "scenario_assumption"
+    },
+    "delayed": {
+      "milestones": [[2034, 0.25], [2037, 0.50], [2040, 0.75], [2042, 1.00]],
+      "schedule_basis": "filed_phase_years_plus_five_years",
+      "allocation_status": "stress_test_assumption"
+    },
+    "not_realized_by_2050": {
+      "milestones": [[2036, 0.05], [2042, 0.10], [2048, 0.15]],
+      "schedule_basis": "partial_realization_stress_path",
+      "allocation_status": "stress_test_assumption",
+      "use_rule": "The modeled target reaches only 15 percent by 2050; this is not a prediction."
+    }
+  },
+  "central_manufacturing": {
+    "module_rated_power_W": 750.0,
+    "die_area_mm2": 500.0,
+    "wafer_diameter_mm": 300.0,
+    "effective_yield": 0.70,
+    "logic_dies_per_module": 4.0,
+    "capacity_wafers_per_month": null,
+    "evidence_status": "scenario_assumption",
+    "capacity_status": "unknown"
+  },
+  "central_facility": {
+    "electricity_kWh_per_wafer": 1979.386,
+    "load_factor": 0.93,
+    "cooling_cop": 6.0,
+    "total_water_m3_per_wafer": 8.327906,
+    "total_water_intensity_basis": "external_withdrawal_after_reuse",
+    "upw_m3_per_wafer": 5.678118,
+    "water_recycling_fraction": 0.881,
+    "recycling_displacement_fraction": null,
+    "consumptive_fraction": 0.20,
+    "heat_rejection_capacity_MW": null,
+    "withdrawal_capacity_m3_per_day": null,
+    "wastewater_capacity_m3_per_day": null,
+    "evidence_status": "scenario_assumption",
+    "capacity_status": "unknown"
+  },
+  "supply_portfolios": {
+    "grid_dominant": {
+      "technology": "grid_interconnection",
+      "onsite_peak_share": 0.0,
+      "onsite_energy_share": 0.0,
+      "generic_lead_time_years": 0,
+      "mandatory_adder_years": 3,
+      "first_available_year": 2026,
+      "interconnection_headroom_fraction": 0.10,
+      "grid_resource_reserve_fraction": 0.15,
+      "evidence_status": "scenario_assumption"
+    },
+    "firm_onsite": {
+      "technology": "combustion_turbine_industrial_frame",
+      "onsite_peak_share": 0.80,
+      "onsite_energy_share": 0.70,
+      "generic_lead_time_years": 2,
+      "mandatory_adder_years": 2,
+      "first_available_year": 2026,
+      "availability_fraction": 0.90,
+      "fuel_availability_fraction": 0.95,
+      "interconnection_headroom_fraction": 0.10,
+      "grid_resource_reserve_fraction": 0.15,
+      "evidence_status": "scenario_assumption"
+    },
+    "renewable_storage_grid": {
+      "technology": "solar_pv_with_five_hour_storage",
+      "onsite_energy_share": 0.60,
+      "solar_nameplate_to_facility_peak_ratio": 3.0,
+      "storage_nameplate_to_facility_peak_ratio": 0.50,
+      "solar_elcc_fraction_normal": 0.10,
+      "solar_elcc_fraction_winter": 0.02,
+      "storage_elcc_fraction": 0.74,
+      "storage_duration_hours": 5,
+      "generic_lead_time_years": 2,
+      "mandatory_adder_years": 2,
+      "first_available_year": 2026,
+      "interconnection_headroom_fraction": 0.10,
+      "grid_resource_reserve_fraction": 0.15,
+      "evidence_status": "scenario_assumption"
+    },
+    "firm_low_carbon_hybrid": {
+      "technology": "combined_cycle_with_95pct_ccs",
+      "onsite_peak_share": 0.80,
+      "onsite_energy_share": 0.65,
+      "generic_lead_time_years": 4,
+      "mandatory_adder_years": 3,
+      "first_available_year": 2028,
+      "availability_fraction": 0.90,
+      "fuel_availability_fraction": 0.95,
+      "interconnection_headroom_fraction": 0.10,
+      "grid_resource_reserve_fraction": 0.15,
+      "evidence_status": "scenario_assumption"
+    }
+  },
+  "stress_conditions": {
+    "normal": {
+      "peak_multiplier": 1.0,
+      "yield_multiplier": 1.0,
+      "supply_availability_multiplier": 1.0,
+      "infrastructure_delay_years": 0
+    },
+    "summer_peak": {
+      "peak_multiplier": 1.12,
+      "yield_multiplier": 1.0,
+      "supply_availability_multiplier": 1.0,
+      "infrastructure_delay_years": 0
+    },
+    "winter_extreme": {
+      "peak_multiplier": 1.08,
+      "yield_multiplier": 1.0,
+      "supply_availability_multiplier": 0.80,
+      "infrastructure_delay_years": 0
+    },
+    "infrastructure_delay": {
+      "peak_multiplier": 1.0,
+      "yield_multiplier": 1.0,
+      "supply_availability_multiplier": 1.0,
+      "infrastructure_delay_years": 3
+    },
+    "yield_underperformance": {
+      "peak_multiplier": 1.0,
+      "yield_multiplier": 0.75,
+      "supply_availability_multiplier": 1.0,
+      "infrastructure_delay_years": 0
+    },
+    "cooling_or_water_constraint": {
+      "peak_multiplier": 1.0,
+      "yield_multiplier": 1.0,
+      "supply_availability_multiplier": 1.0,
+      "infrastructure_delay_years": 0,
+      "capacity_fraction_of_requirement": 0.80
+    },
+    "firm_supply_outage": {
+      "peak_multiplier": 1.0,
+      "yield_multiplier": 1.0,
+      "supply_availability_multiplier": 0.0,
+      "infrastructure_delay_years": 0
+    }
+  },
+  "rules": {
+    "phase_output_allocation_is_project_fact": false,
+    "portfolio_capacity_is_project_fact": false,
+    "derived_interconnection_is_project_fact": false,
+    "probabilistic_ercot_metrics_available": false,
+    "post_2030_official_ercot_baseline_available": false,
+    "unknown_target_scales_receive_numeric_defaults": false,
+    "national_energy_is_context_only": true
+  }
+}

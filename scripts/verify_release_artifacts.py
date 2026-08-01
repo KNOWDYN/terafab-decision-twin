@@ -42,15 +42,25 @@ REQUIRED_SDIST = {
     "assets/terafab_one_page_infographic.png",
     "assets/terafab_one_page_infographic.pdf",
     "tests/test_release_guards.py",
+    "tests/test_energy_security_manuscript.py",
     ".github/workflows/tests.yml",
     ".github/workflows/pages.yml",
     "scripts/verify_release_artifacts.py",
+    "studies/ecm_terafab_energy_security/model_contract.json",
+    "studies/ecm_terafab_energy_security/evidence/source_registry.json",
+    "studies/ecm_terafab_energy_security/paper/main.tex",
+    "studies/ecm_terafab_energy_security/paper/references.bib",
+    "studies/ecm_terafab_energy_security/paper/claim_traceability.csv",
+    "studies/ecm_terafab_energy_security/paper/validate_manuscript.py",
+    "studies/ecm_terafab_energy_security/paper/Makefile",
 }
 
 REQUIRED_WHEEL_SUFFIXES = {
     "terafab_decision_twin/__init__.py",
     "terafab_decision_twin/cli.py",
     "terafab_decision_twin/data/scenario_schema.json",
+    "terafab_energy_security/__init__.py",
+    "terafab_energy_security/cli.py",
     "strategic_simulation/__init__.py",
     "strategic_simulation/examples/uncertainty_baseline_2026.json",
     "validation_lab/__init__.py",
@@ -117,6 +127,16 @@ def verify_sdist(path: Path) -> None:
     names = _strip_sdist_root(raw_names)
     _assert_missing("sdist", REQUIRED_SDIST, names)
     _assert_no_banned("sdist", names)
+    generated = sorted(
+        name
+        for name in names
+        if name.startswith("studies/ecm_terafab_energy_security/outputs/")
+    )
+    if generated:
+        raise SystemExit(
+            "sdist contains generated study outputs; regenerate them after unpacking:\n"
+            + "\n".join(f"- {name}" for name in generated)
+        )
 
 
 def verify_wheel(path: Path) -> None:

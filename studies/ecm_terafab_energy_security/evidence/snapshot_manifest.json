@@ -1,0 +1,13 @@
+{
+  "manifest_version": "0.2.0",
+  "study_id": "ecm_terafab_us_energy_security",
+  "freeze_date": "2026-08-01",
+  "algorithm": "sha256",
+  "files": [
+    {"path": "aeo2026_national_electricity.json", "sha256": "537d3f9d46b49f00c010a3913e5003d1d60cb66308a1e80c625315976d2622b1"},
+    {"path": "ercot_adequacy.json", "sha256": "2ef493f3985f362f3d2b0eb723d589145df8e74ec8867021b832bd6bbbfab14b"},
+    {"path": "semiconductor_benchmarks.json", "sha256": "c21eb5f473495597c698d98692fecb74310b21a6b8ca85bc3ef5f1786b39915f"},
+    {"path": "supply_technology.json", "sha256": "f5ad87153be65e45cfc409a5b8a7d581b3171eb3dcf44142e9a20e40742954dd"},
+    {"path": "terafab_public_schedule.json", "sha256": "4d3bbff65553f8ddf7eb25ef832b1ff387e92b8c209bf89604df8787f4f269a8"}
+  ]
+}

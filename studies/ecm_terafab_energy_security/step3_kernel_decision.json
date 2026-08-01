@@ -1,0 +1,19 @@
+{
+  "contract_version": "0.3.0",
+  "study_id": "ecm_terafab_us_energy_security",
+  "step": 3,
+  "completed_on": "2026-08-01",
+  "decision": "move_to_step_4",
+  "kernel_package": "terafab_energy_security",
+  "kernel_version": "0.1.0",
+  "claim_level": "prospective_conditional_constraint_analysis",
+  "conditions_for_step_4": [
+    "Construct only the predeclared target-scale, realization, supply-portfolio, and stress axes.",
+    "Use the Step 3 Python API as the sole source of governing calculations for CLI and notebook runs.",
+    "Keep project wafer capacity, facility load, water capacity, interconnection, and probabilistic adequacy values unknown unless a scenario assumption is explicitly admitted.",
+    "Preserve pass, fail, and indeterminate as separate states in every yearly and aggregate output.",
+    "Do not use reserve margin as a regulatory adequacy pass.",
+    "Do not describe the synthetic verification fixture as a project case or research result."
+  ],
+  "reason": "The five-stage deterministic kernel closes its target, energy, heat, and water identities; preserves unknowns; rejects known physical and schedule failures; exposes identical CLI and Python results; and passes package, notebook, evidence, and regression verification."
+}

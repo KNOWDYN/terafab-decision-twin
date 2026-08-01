@@ -1,0 +1,51 @@
+{
+  "case_id": "synthetic-step3-verification-case",
+  "year": 2026,
+  "facility_operation_year": 2026,
+  "target": {
+    "rated_output_W_per_year": 1000000000000.0,
+    "target_fraction": 0.001,
+    "interpretation": "aggregate_rated_power_of_good_devices_manufactured_per_year",
+    "interpretation_admitted": true
+  },
+  "manufacturing": {
+    "module_rated_power_W": 750.0,
+    "die_area_mm2": 500.0,
+    "wafer_diameter_mm": 300.0,
+    "effective_yield": 0.7,
+    "logic_dies_per_module": 4.0,
+    "capacity_wafers_per_month": 1000000.0
+  },
+  "facility": {
+    "electricity_kWh_per_wafer": 2000.0,
+    "load_factor": 0.93,
+    "cooling_cop": 6.0,
+    "total_water_m3_per_wafer": 8.327906,
+    "total_water_intensity_basis": "external_withdrawal_after_reuse",
+    "upw_m3_per_wafer": 5.678118,
+    "water_recycling_fraction": 0.881,
+    "recycling_displacement_fraction": 0.8,
+    "consumptive_fraction": 0.2,
+    "heat_rejection_capacity_MW": 100.0,
+    "withdrawal_capacity_m3_per_day": 10000.0,
+    "wastewater_capacity_m3_per_day": 10000.0
+  },
+  "supply": {
+    "grid_interconnection_capacity_MW": 200.0,
+    "grid_interconnection_year": 2026,
+    "grid_accredited_addition_MW": 100.0
+  },
+  "ercot": {
+    "year": 2026,
+    "baseline_peak_load_MW": 94159.0,
+    "baseline_reserve_margin_fraction": 0.183,
+    "lole_events_per_year": 0.05,
+    "maximum_event_duration_hours": 8.0,
+    "highest_hourly_average_load_shed_MW": 5000.0,
+    "magnitude_limit_MW": 13988.0
+  },
+  "national": {
+    "annual_electricity_TWh": 4422.875977,
+    "peak_load_MW": 800000.0
+  }
+}
