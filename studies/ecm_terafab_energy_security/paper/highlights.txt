@@ -1,0 +1,5 @@
+1. A 1 TW/year device-output claim is translated without equating it to fab load.
+2. The central full-target case requires 135 TWh/year and 16.6 GW peak load.
+3. All 336 nonzero scenario trajectories remain evidentially indeterminate.
+4. Missing project capacities and probabilistic adequacy data prevent a verdict.
+5. Open calculations separate resource implications from verified project facts.

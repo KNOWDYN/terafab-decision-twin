@@ -1,0 +1,19 @@
+{
+  "contract_version": "0.2.0",
+  "study_id": "ecm_terafab_us_energy_security",
+  "step": 2,
+  "completed_on": "2026-08-01",
+  "decision": "move_to_step_3",
+  "scope_lock": "prospective_conditional_constraint_analysis",
+  "validated_digital_twin_claim_permitted": false,
+  "hypotheses_retired": [],
+  "conditions_for_step_3": [
+    "Preserve project-specific wafer capacity, facility load, water, and interconnection as unknown values.",
+    "Never transform the 1 TW/year manufacturing-output interpretation into facility electrical load.",
+    "Implement the target, throughput, energy, thermal, water, schedule, supply-deliverability, and ERCOT gates as explicit tested stages.",
+    "Return indeterminate wherever indispensable evidence is not defensibly bounded.",
+    "Use frozen snapshots during calculations and verify their SHA-256 manifest before execution.",
+    "Describe outputs as scenario-conditioned estimates, not project specifications or official feasibility findings."
+  ],
+  "reason": "All six empirical kill tests have either passed or have defensible conditional bounds and mandatory failure/indeterminate behavior. Remaining unknowns are model inputs and decision gates, not hidden assumptions."
+}

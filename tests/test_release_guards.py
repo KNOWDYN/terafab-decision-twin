@@ -90,6 +90,10 @@ class ReleaseGuardTests(unittest.TestCase):
         self.assertTrue(checklist.is_file())
         self.assertTrue(verifier.is_file())
 
+        verifier_text = verifier.read_text(encoding="utf-8")
+        self.assertIn("terafab_energy_security/__init__.py", verifier_text)
+        self.assertIn("studies/ecm_terafab_energy_security/paper/main.tex", verifier_text)
+
     def test_website_font_policy_avoids_third_party_font_hosts(self):
         fonts = (ROOT / "website" / "assets" / "fonts.css").read_text(encoding="utf-8")
         self.assertIn("Public-release font policy", fonts)

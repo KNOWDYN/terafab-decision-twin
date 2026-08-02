@@ -1,0 +1,16 @@
+claim_id,manuscript_anchor,claim,artifact,selector,locked_value,unit,boundary
+C01,sec:results-central,Full-target wafer starts,figures/figure_04_data.csv,"accelerated; year=2037; wafer_starts_per_year",68290675.93764904,wafer_starts/year,Conditional central model output
+C02,sec:results-central,Full-target electricity,tables/table_05_principal_results_by_pathway.csv,"accelerated; grid_dominant; year=2050; annual_electricity_MWh",135173607.88151938,MWh/year,Not a disclosed project load
+C03,sec:results-central,Full-target coincident peak,tables/table_05_principal_results_by_pathway.csv,"accelerated; grid_dominant; year=2050; coincident_peak_load_MW",16580.876735569167,MW,Not a disclosed project load
+C04,sec:results-central,Full-target external withdrawal,tables/table_05_principal_results_by_pathway.csv,"accelerated; grid_dominant; year=2050; external_water_withdrawal_m3",568718329.8852031,m3/year,Conditional withdrawal after declared reuse
+C05,sec:results-national,2037 AEO baseline share,figures/figure_08_data.csv,"accelerated; year=2037; EIA counterfactual baseline energy share",0.026363801447169766,fraction,Context only and not a security threshold
+C06,sec:results-uncertainty,Correlated median wafer starts,raw/uncertainty_report.json,"correlation_stress baseline confirmation wafer_starts_per_year_median",50445381.423904665,wafer_starts/year,Marginal conditional uncertainty summary
+C07,sec:results-uncertainty,Correlated median electricity,raw/uncertainty_report.json,"correlation_stress baseline confirmation facility_electricity_MWh_median",125107441.90736708,MWh/year,Marginal conditional uncertainty summary
+C08,sec:results-uncertainty,Correlated p95 peak,raw/uncertainty_report.json,"correlation_stress baseline confirmation facility_peak_MW_p95",91542.45741785511,MW,Marginal p95 and not a joint design point
+C09,sec:results-uncertainty,Correlated p95 withdrawal,raw/uncertainty_report.json,"correlation_stress baseline confirmation water_withdrawal_m3_p95",1571236045.9405465,m3/year,Marginal p95 and not a joint design point
+C10,sec:results-gates,Nonzero trajectory classification,publication_manifest.json,"scenario_manifest classification_counts indeterminate",336,trajectories,Indeterminate is not infeasible
+C11,sec:results-gates,Active gate passes,raw/scenarios/gate_results.csv,"all active gate evaluations with status pass",8724,evaluations,Gate-level status
+C12,sec:results-gates,Active gate failures,raw/scenarios/gate_results.csv,"all active gate evaluations with status fail",2228,evaluations,Explicit scenario failures only
+C13,sec:results-gates,Active gate indeterminate,raw/scenarios/gate_results.csv,"all active gate evaluations with status indeterminate",9768,evaluations,Missing evidence remains unknown
+C14,sec:results-convergence,Worst convergence change,tables/table_06_verification_and_validation.csv,"uncertainty_convergence value",0.0028999878839666227,fraction,Below locked 0.01 threshold
+C15,sec:results-convergence,Top-two total-order mass,figures/figure_10_data.csv,"independent total-order normalized top-two sum",0.7802116749126273,fraction,Below locked 0.80 diagnostic threshold

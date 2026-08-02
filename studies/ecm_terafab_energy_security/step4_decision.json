@@ -1,0 +1,29 @@
+{
+  "step": 4,
+  "status": "complete",
+  "decision": "move_to_step_5",
+  "decision_date": "2026-08-01",
+  "scope": "2026-2050 scenario pathways, supply portfolios, failure stresses, uncertainty convergence, and sensitivity diagnostics",
+  "stress_test": {
+    "status": "pass_with_scientific_boundaries",
+    "repository_tests_passed": 98,
+    "trajectory_count": 337,
+    "annual_result_rows": 2825,
+    "gate_result_rows": 20720,
+    "full_target_conditional_trajectories": 112,
+    "unknown_target_scale_trajectories": 224,
+    "maximum_full_convergence_relative_change": 0.0028999878839666227,
+    "convergence_limit": 0.01,
+    "sensitivity_bootstrap_replicates": 1000,
+    "top_two_normalized_total_order_mass": 0.7802116749126273,
+    "dependence_aware_surrogate_R2": 0.94052115617125
+  },
+  "hypothesis_disposition": {
+    "H1": "indeterminate",
+    "H2": "indeterminate",
+    "H3": "indeterminate",
+    "H4": "indeterminate"
+  },
+  "reason": "The computational experiment is reproducible and stress-tested, while all feasibility hypotheses correctly remain indeterminate under the frozen evidence. Revising Step 4 cannot manufacture missing project capacities or official probabilistic adequacy data; Step 5 should analyze conditional requirements and evidence gaps without a yes/no project verdict.",
+  "authorization_boundary": "No commit, push, or pull request was created; publication remains Step 7."
+}

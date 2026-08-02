@@ -17,6 +17,8 @@ recursive-include scripts *.py
 recursive-include assets *.svg *.png *.pdf
 recursive-include terafab_decision_twin/data *.json
 recursive-include tests *.py
+recursive-include studies/ecm_terafab_energy_security *.json *.md *.py *.ipynb *.tex *.bib *.txt *.csv Makefile
+prune studies/ecm_terafab_energy_security/outputs
 graft .github
 recursive-include examples *.md *.json
 recursive-include website *.html *.webmanifest *.js *.css *.svg

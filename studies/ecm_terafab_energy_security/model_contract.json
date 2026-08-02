@@ -1,0 +1,249 @@
+{
+  "contract_version": "0.1.0",
+  "study_id": "ecm_terafab_us_energy_security",
+  "intended_journal": "Energy Conversion and Management",
+  "status": "step_1_complete_pending_owner_approval",
+  "primary_question": "Under transparent interpretations of the publicly announced Terafab production target, what semiconductor throughput and facility electricity, heat-rejection, water, and firm-supply requirements are implied, and under which 2026-2050 deployment and energy-supply pathways can those requirements be accommodated without violating defined ERCOT and United States electricity-security constraints?",
+  "target_semantics": {
+    "public_phrase": "Terafab output 1 TW/Year",
+    "primary_interpretation": "aggregate rated electrical power embodied in good compute devices manufactured per calendar year",
+    "primary_unit": "W_rated/year",
+    "prohibited_equivalence": "The public 1 TW/year output target must never be assigned as a 1 TW facility electrical load.",
+    "alternative_interpretation_required": true,
+    "insufficient_semantics_outcome": "indeterminate"
+  },
+  "boundaries": {
+    "start_year": 2026,
+    "end_year": 2050,
+    "primary_time_step": "annual",
+    "secondary_time_step": "hourly_selected_years_if_authoritative_data_are_available",
+    "facility_geography": "publicly reported Texas research and large-scale facilities",
+    "regional_system": "ERCOT conditional on ERCOT interconnection",
+    "national_system": "United States electricity system represented by EIA and NERC public projections",
+    "functional_unit": "1 W_rated of good compute-device capacity manufactured per calendar year",
+    "included": [
+      "semiconductor throughput and yield",
+      "process-tool electricity",
+      "cleanroom and facility electricity",
+      "cooling and heat rejection",
+      "ultrapure water and wastewater",
+      "advanced packaging and testing where publicly supportable",
+      "onsite electricity generation and storage",
+      "operational fuel use and emissions",
+      "ERCOT and national counterfactual comparison"
+    ],
+    "excluded": [
+      "electricity consumed by manufactured chips after deployment",
+      "orbital data-center operation",
+      "launch energy",
+      "proprietary process recipes or schedules",
+      "full macroeconomic equilibrium",
+      "wholesale electricity price prediction",
+      "investment valuation",
+      "project finance",
+      "unquantified semiconductor security benefits"
+    ]
+  },
+  "scenario_axes": {
+    "target_scale": [
+      "no_build",
+      "research_fab",
+      "initial_large_scale",
+      "full_announced_target"
+    ],
+    "realization_pathway": [
+      "accelerated",
+      "reference",
+      "delayed",
+      "not_realized_by_2050"
+    ],
+    "supply_portfolio": [
+      "grid_dominant",
+      "firm_onsite",
+      "renewable_storage_grid",
+      "firm_low_carbon_hybrid"
+    ],
+    "stress_condition": [
+      "normal",
+      "summer_peak",
+      "winter_extreme",
+      "infrastructure_delay",
+      "yield_underperformance",
+      "cooling_or_water_constraint",
+      "firm_supply_outage"
+    ]
+  },
+  "required_model_stages": [
+    "target_interpreter",
+    "manufacturing_translator",
+    "facility_resource_model",
+    "deployment_and_supply_model",
+    "electricity_security_assessment"
+  ],
+  "required_equations": [
+    "rated_output_identity",
+    "inverse_wafer_throughput_requirement",
+    "facility_electricity_balance",
+    "coincident_peak_load",
+    "first_law_heat_balance",
+    "water_balance",
+    "ercot_incremental_load",
+    "reserve_margin",
+    "loss_of_load_expectation_if_data_support",
+    "expected_unserved_energy_if_data_support",
+    "national_energy_share",
+    "national_peak_share"
+  ],
+  "required_outputs": {
+    "manufacturing": [
+      "wafer_starts_per_month",
+      "wafer_starts_per_year",
+      "gross_device_output",
+      "good_device_output",
+      "effective_yield",
+      "packaging_throughput"
+    ],
+    "facility": [
+      "annual_electricity_MWh",
+      "coincident_peak_load_MW",
+      "component_energy_breakdown",
+      "cooling_auxiliary_power_MW",
+      "heat_rejection_MW",
+      "water_withdrawal_m3",
+      "water_consumption_m3",
+      "water_reuse_m3",
+      "wastewater_m3",
+      "operational_emissions_tCO2e"
+    ],
+    "ercot": [
+      "incremental_energy_MWh",
+      "incremental_coincident_peak_MW",
+      "delta_reserve_margin",
+      "accredited_capacity_requirement_MW",
+      "delta_lole_if_available",
+      "delta_eue_MWh_if_available",
+      "curtailed_or_unserved_facility_energy_MWh",
+      "onsite_fuel_requirement",
+      "grid_supply_share",
+      "supply_construction_lead_time_years",
+      "accredited_supply_availability",
+      "commissioned_supply_capacity_MW"
+    ],
+    "national": [
+      "share_of_us_annual_electricity",
+      "share_of_us_peak_load",
+      "incremental_firm_capacity_MW",
+      "incremental_fuel_requirement",
+      "incremental_operational_emissions"
+    ],
+    "decision": [
+      "first_pass_year_by_gate",
+      "first_joint_pass_year",
+      "feasibility_probability",
+      "feasibility_confidence_interval",
+      "binding_constraint",
+      "global_sensitivity_ranking",
+      "classification"
+    ]
+  },
+  "feasibility_gates": [
+    {
+      "id": "target_semantics",
+      "threshold_source": "step_2_evidence",
+      "required": true
+    },
+    {
+      "id": "manufacturing_throughput",
+      "threshold_source": "step_2_industry_benchmarks",
+      "required": true
+    },
+    {
+      "id": "facility_energy",
+      "threshold_source": "physical_closure_and_identified_supply",
+      "required": true
+    },
+    {
+      "id": "thermal_capacity",
+      "threshold_source": "physical_capacity_and_reserve",
+      "required": true
+    },
+    {
+      "id": "water_capacity",
+      "threshold_source": "public_capacity_or_scenario_envelope",
+      "required": true
+    },
+    {
+      "id": "schedule_precedence",
+      "threshold_source": "infrastructure_commissioning_before_load",
+      "required": true
+    },
+    {
+      "id": "supply_deliverability",
+      "threshold_source": "evidence_supported_capacity_lead_time_availability_interconnection_and_fuel_constraints",
+      "required": true
+    },
+    {
+      "id": "regional_adequacy",
+      "threshold_source": "official_ercot_or_nerc_standard_identified_in_step_2",
+      "required": true
+    },
+    {
+      "id": "national_context",
+      "threshold_source": "context_only_unless_official_constraint_is_identified",
+      "required": false
+    },
+    {
+      "id": "evidence_sufficiency",
+      "threshold_source": "no_material_unbounded_or_undisclosed_unknown",
+      "required": true
+    }
+  ],
+  "classification_rules": {
+    "conditionally_feasible": "At least one evidence-supported pathway passes every required gate.",
+    "not_demonstrated": "No admitted pathway passes every required gate through 2050.",
+    "indeterminate": "Target semantics or indispensable evidence are insufficient for a defensible assessment.",
+    "prohibited_conclusion": "The model may not declare official Terafab feasibility, infeasibility, schedule, endorsement, or prediction."
+  },
+  "verification_contract": {
+    "algebraic_relative_residual_max": 1e-08,
+    "fixed_seed_reproducibility": true,
+    "cli_notebook_parity": true,
+    "unit_and_dimension_tests": true,
+    "backward_compatibility_tests": true
+  },
+  "validation_contract": {
+    "minimum_independent_electricity_sources": 2,
+    "minimum_cleanroom_or_cooling_sources": 1,
+    "minimum_water_sources": 1,
+    "minimum_throughput_or_yield_sources": 1,
+    "official_ercot_baseline_required": true,
+    "official_eia_baseline_required": true,
+    "calibration_validation_separation_required_where_possible": true,
+    "required_diagnostics": [
+      "bias",
+      "mae",
+      "rmse_or_nrmse",
+      "interval_coverage",
+      "residual_patterns"
+    ],
+    "hard_empirical_error_thresholds": "lock_at_end_of_step_2_before_model_results_after_benchmark_heterogeneity_is_quantified"
+  },
+  "uncertainty_contract": {
+    "correlated_sampling_required": true,
+    "seed_required": true,
+    "sample_count_required": true,
+    "doubling_convergence_relative_change_max": 0.01,
+    "global_sensitivity_uncertainty_intervals_required": true,
+    "concentration_hypothesis_top_fraction": 0.2,
+    "concentration_hypothesis_required_normalized_mass": 0.8,
+    "bootstrap_rank_stability_rule": "lock_numeric_confidence_rule_in_step_2_before_model_results"
+  },
+  "nonclaims": [
+    "No verified Terafab operating data",
+    "No official feasibility determination",
+    "No prediction that Terafab will or will not be built",
+    "No endorsement or affiliation",
+    "No investment, permitting, procurement, or regulatory advice",
+    "No validated digital-twin claim without independent physical calibration"
+  ]
+}

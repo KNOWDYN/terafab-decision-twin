@@ -1,4 +1,5 @@
 import json
+import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -88,3 +89,12 @@ def test_ecm_colab_notebook_has_forecast_grade_figures_and_exports():
     ]
     for export_name in required_exports:
         assert export_name in text
+
+
+def load_tests(loader, tests, pattern):
+    """Expose the function-style checks to the repository's unittest runner."""
+    suite = unittest.TestSuite()
+    for name, function in sorted(globals().items()):
+        if name.startswith("test_") and callable(function):
+            suite.addTest(unittest.FunctionTestCase(function, description=name))
+    return suite

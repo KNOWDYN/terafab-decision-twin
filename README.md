@@ -6,14 +6,15 @@ It is built for a simple public decision problem: Terafab-scale planning cannot 
 
 This repo turns labeled scenario assumptions into auditable consequences.
 
-The base package is a deterministic, evidence-gated decision twin. The advanced update adds two root-level overlay packages:
+The base package is a deterministic, evidence-gated decision twin. The advanced update adds three root-level overlay packages:
 
 ```text
 strategic_simulation/
 validation_lab/
+terafab_energy_security/
 ```
 
-Together they extend the repo from single-scenario deterministic analysis into uncertainty propagation, stakeholder strategy analysis, reduced-order trajectory simulation, stakeholder decision-surface synthesis, and validation-readiness screening.
+Together they extend the repo from single-scenario deterministic analysis into uncertainty propagation, stakeholder strategy analysis, reduced-order trajectory simulation, stakeholder decision-surface synthesis, validation-readiness screening, and a publication-oriented prospective energy-security study.
 
 It is **not** verified Terafab operating data, not an official Terafab model, not a Terafab endorsement, not investment advice, not a permitting forecast, and not a claim of financing, construction, operation, acquisition interest, adoption, real-time operation, private-data calibration, or official validation. It does not redistribute restricted source documents.
 
@@ -29,6 +30,7 @@ It is **not** verified Terafab operating data, not an official Terafab model, no
 - [Run the included scenarios](#run-the-included-scenarios)
 - [Public monitoring examples](#public-monitoring-examples)
 - [Advanced simulation and validation update](#advanced-simulation-and-validation-update)
+- [Terafab energy-security study](#terafab-energy-security-study)
 - [Monte Carlo uncertainty propagation](#monte-carlo-uncertainty-propagation)
 - [Game-theory stakeholder analysis](#game-theory-stakeholder-analysis)
 - [Reduced-order model simulation](#reduced-order-model-simulation)
@@ -98,6 +100,7 @@ terafab_decision_twin/cli.py          command-line interface
 terafab_decision_twin/models/         equation modules and gates
 strategic_simulation/                 advanced simulation overlay
 validation_lab/                       validation-readiness overlay
+terafab_energy_security/             publication-oriented energy-security overlay
 ```
 
 Public package status:
@@ -106,8 +109,9 @@ Public package status:
 Package: terafab-decision-twin
 Model version: 0.3.0
 Python: >=3.10
-Runtime dependencies: none
-CLI entry point: terafab
+Core runtime dependencies: none
+Study extras: matplotlib, numpy, scipy
+CLI entry points: terafab, terafab-energy-security
 ```
 
 Python API:
@@ -133,6 +137,8 @@ from validation_lab import (
     validation_scorecard,
     build_validation_report,
 )
+
+from terafab_energy_security import EnergySecurityCase, run_case
 ```
 
 ---
@@ -418,6 +424,27 @@ validation_lab/examples/public_reference_validation_case.json
 ```
 
 These examples are demonstrations. They do not claim official stakeholder preferences, official utility commitments, official water-authority conclusions, official permitting outcomes, or private Terafab calibration.
+
+---
+
+## Terafab energy-security study
+
+`terafab_energy_security/` is a specialized research overlay for the question: is the publicly announced Terafab project realistic, and what prospective constraints could it place on United States energy security before and through realization? The accompanying study freezes its public evidence, separates observations from assumptions, evaluates 337 declared pathways, propagates uncertainty, and generates traceable figures, tables, and manuscript inputs.
+
+Install the study dependencies and reproduce the publication workflow:
+
+```bash
+python -m pip install -e ".[study]"
+terafab-energy-security validate-evidence studies/ecm_terafab_energy_security
+terafab-energy-security run-matrix studies/ecm_terafab_energy_security --output-directory /tmp/terafab-matrix
+terafab-energy-security build-publication studies/ecm_terafab_energy_security --mode final --output-directory studies/ecm_terafab_energy_security/outputs/publication
+python studies/ecm_terafab_energy_security/paper/validate_manuscript.py
+make -C studies/ecm_terafab_energy_security/paper all
+```
+
+The study contracts, evidence registry, calculation code, notebook, and manuscript sources are versioned. Generated publication bundles and compiled PDFs are reproducible and intentionally ignored.
+
+The current public-evidence record does not demonstrate project realism. That finding is not proof of feasibility or infeasibility, an official energy-security assessment, a project certification, or policy, investment, or permitting advice.
 
 ---
 
@@ -1805,6 +1832,13 @@ validation_lab/
 validation_lab/examples/
   Example validation-lab configuration for public-reference screening.
 
+terafab_energy_security/
+  Prospective constraint kernel, pathway matrix, uncertainty analysis, publication builder, and CLI.
+
+studies/ecm_terafab_energy_security/
+  Frozen evidence, scientific contract, scenario assumptions, notebook, stress-test records,
+  generated-artifact specifications, and Energy Conversion and Management manuscript sources.
+
 schema/
   Public scenario schema.
 
@@ -1831,7 +1865,8 @@ assets/
 
 tests/
   Unit tests for schema, engine, equations, evidence, CLI behavior, release guards,
-  strategic simulation, and validation lab.
+  strategic simulation, validation lab, the energy-security overlay, publication outputs,
+  notebook execution, manuscript structure, and release packaging.
 
 .github/workflows/
   Tests, scenario schema validation, docs-link guard, restricted-source guard,

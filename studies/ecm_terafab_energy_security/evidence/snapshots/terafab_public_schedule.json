@@ -1,0 +1,91 @@
+{
+  "snapshot_id": "SNAP_TERAFAB_PUBLIC_SCHEDULE_2026_08_01",
+  "extraction_date": "2026-08-01",
+  "unit_conventions": {
+    "investment": "nominal_USD_as_filed",
+    "area": "ft2"
+  },
+  "public_target": {
+    "source_id": "SRC_TERAFAB_SITE_2026",
+    "exact_short_phrase": "Terafab output 1 TW/Year",
+    "numeric_value": 1000000000000,
+    "unit_as_modeled": "W_rated/year",
+    "evidence_status": "reported",
+    "semantic_status": "ambiguous_public_claim",
+    "prohibited_transform": "Do not assign this value as facility electrical load.",
+    "announced_factory_area_ft2": 100000000,
+    "separate_solar_phrase": "1 TW+ solar power needed"
+  },
+  "location": {
+    "county": "Grimes County",
+    "state": "Texas",
+    "school_districts_in_eight_applications": [
+      "Anderson-Shiro ISD",
+      "Iola ISD"
+    ],
+    "evidence_status": "filed_claimed",
+    "ercot_interconnection_status": null,
+    "ercot_interconnection_note": "Location in Texas does not by itself prove the final point of interconnection or available capacity."
+  },
+  "phases": [
+    {
+      "phase": 1,
+      "source_id": "SRC_JETI_J0035",
+      "construction_start_year": 2026,
+      "construction_end_year": 2028,
+      "first_incentive_or_operations_year": 2029,
+      "anderson_shiro_eligible_investment_USD": 10366217000,
+      "manufacturing_capacity_wafers_per_month": null,
+      "facility_electric_load_MW": null,
+      "water_withdrawal_m3_per_day": null
+    },
+    {
+      "phase": 2,
+      "source_id": "SRC_JETI_J0036",
+      "construction_start_year": 2029,
+      "construction_end_year": 2031,
+      "first_incentive_or_operations_year": 2032,
+      "anderson_shiro_eligible_investment_USD": 23838288600,
+      "manufacturing_capacity_wafers_per_month": null,
+      "facility_electric_load_MW": null,
+      "water_withdrawal_m3_per_day": null
+    },
+    {
+      "phase": 3,
+      "source_id": "SRC_JETI_J0037",
+      "construction_start_year": 2032,
+      "construction_end_year": 2034,
+      "first_incentive_or_operations_year": 2035,
+      "anderson_shiro_eligible_investment_USD": 23838288600,
+      "manufacturing_capacity_wafers_per_month": null,
+      "facility_electric_load_MW": null,
+      "water_withdrawal_m3_per_day": null
+    },
+    {
+      "phase": 4,
+      "source_id": "SRC_JETI_J0038",
+      "construction_start_year": 2035,
+      "construction_end_year": 2036,
+      "first_incentive_or_operations_year": 2037,
+      "anderson_shiro_eligible_investment_USD": 23838288600,
+      "manufacturing_capacity_wafers_per_month": null,
+      "facility_electric_load_MW": null,
+      "water_withdrawal_m3_per_day": null,
+      "source_conflict": "The application's placement-in-service table is mislabeled Phase 3 and repeats 2032-2034, while its economic-benefit schedule identifies Phase 4 construction in 2035-2036 and operations from 2037. The latter is used provisionally and the conflict remains flagged."
+    }
+  ],
+  "project_level_filed_context": {
+    "number_of_applications": 8,
+    "number_of_phases": 4,
+    "combined_total_investment_USD": 119000000000,
+    "phase_decision_rule": "Applicant states that it would decide whether to proceed with later phases after completing each preceding phase.",
+    "technology_claim": "leading-edge semiconductor process technologies including sub-2 nm class nodes",
+    "included_infrastructure_claims": [
+      "onsite power generation",
+      "utility-scale battery storage",
+      "substations and transformers",
+      "water treatment and recycling",
+      "industrial waste treatment"
+    ]
+  }
+}

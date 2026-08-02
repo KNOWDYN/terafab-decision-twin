@@ -1,0 +1,68 @@
+{
+  "contract_version": "0.2.0",
+  "study_id": "ecm_terafab_us_energy_security",
+  "freeze_date": "2026-08-01",
+  "sampling": {
+    "method": "scrambled_sobol_qmc",
+    "seed": 20260801,
+    "preliminary_sample_count": 16384,
+    "confirmation_sample_count": 32768,
+    "doubling_convergence_relative_change_max": 0.01,
+    "convergence_outputs": [
+      "wafer_starts_per_year_median",
+      "facility_electricity_MWh_median",
+      "facility_peak_MW_p95",
+      "water_withdrawal_m3_p95",
+      "feasibility_probability"
+    ]
+  },
+  "distributions": [
+    {"distribution_id": "D_MODULE_POWER", "parameter_id": "P_MODULE_RATED_POWER", "family": "triangular", "minimum": 350, "mode": 750, "maximum": 1000, "unit": "W_rated/module"},
+    {"distribution_id": "D_DIE_AREA", "parameter_id": "P_DIE_AREA", "family": "triangular", "minimum": 100, "mode": 500, "maximum": 858, "unit": "mm2/die"},
+    {"distribution_id": "D_EFFECTIVE_YIELD", "parameter_id": "P_EFFECTIVE_YIELD", "family": "scaled_beta_pert", "minimum": 0.30, "mode": 0.70, "maximum": 0.95, "shape": 4, "unit": "fraction"},
+    {"distribution_id": "D_DIES_PER_MODULE", "parameter_id": "P_LOGIC_DIES_PER_MODULE", "family": "discrete_uniform", "values": [1, 2, 4, 8], "unit": "dies/module"},
+    {"distribution_id": "D_FAB_ELECTRICITY", "parameter_id": "P_FAB_ELECTRICITY_INTENSITY", "family": "loguniform", "minimum": 1000, "maximum": 6000, "unit": "kWh/300mm_wafer"},
+    {"distribution_id": "D_FAB_LOAD_FACTOR", "parameter_id": "P_FAB_LOAD_FACTOR", "family": "triangular", "minimum": 0.85, "mode": 0.93, "maximum": 0.98, "unit": "fraction"},
+    {"distribution_id": "D_COOLING_COP", "parameter_id": "P_COOLING_COP", "family": "triangular", "minimum": 4, "mode": 6, "maximum": 8, "unit": "dimensionless"},
+    {"distribution_id": "D_TOTAL_WATER", "parameter_id": "P_TOTAL_WATER_INTENSITY", "family": "triangular", "minimum": 5, "mode": 8.327906, "maximum": 10, "unit": "m3/300mm_wafer"},
+    {"distribution_id": "D_UPW", "parameter_id": "P_UPW_INTENSITY", "family": "triangular", "minimum": 3, "mode": 5.678118, "maximum": 6, "unit": "m3/300mm_wafer"},
+    {"distribution_id": "D_WATER_RECYCLING", "parameter_id": "P_WATER_RECYCLING", "family": "scaled_beta_pert", "minimum": 0.50, "mode": 0.881, "maximum": 0.90, "shape": 4, "unit": "fraction"}
+  ],
+  "dependence_model": {
+    "method": "gaussian_copula_with_spearman_to_latent_pearson_transform",
+    "matrix_type": "target_spearman_rank_correlation_hypothesis",
+    "latent_transform": "rho_gaussian = 2 * sin(pi * rho_spearman / 6)",
+    "positive_semidefinite_check_required": true,
+    "correlations": [
+      {"parameter_a": "P_MODULE_RATED_POWER", "parameter_b": "P_DIE_AREA", "rho": 0.50, "rationale": "Higher-power accelerator analogs tend to require larger or more complex silicon; this is a scenario hypothesis, not project evidence."},
+      {"parameter_a": "P_DIE_AREA", "parameter_b": "P_FAB_ELECTRICITY_INTENSITY", "rho": 0.35, "rationale": "Larger and more complex compute products are screened with greater process burden."},
+      {"parameter_a": "P_FAB_ELECTRICITY_INTENSITY", "parameter_b": "P_TOTAL_WATER_INTENSITY", "rho": 0.40, "rationale": "Process complexity can raise both facility energy and water requirements."},
+      {"parameter_a": "P_TOTAL_WATER_INTENSITY", "parameter_b": "P_UPW_INTENSITY", "rho": 0.75, "rationale": "UPW is a material subset of total fab water use."}
+    ],
+    "zero_by_default": true,
+    "sensitivity_requirement": "Repeat final uncertainty results under independence and under correlations varied by plus or minus 0.20, clipped to valid rank correlations."
+  },
+  "derived_not_independently_sampled": [
+    {"output": "gross_dies_per_wafer", "depends_on": ["P_WAFER_DIAMETER", "P_DIE_AREA"], "reason": "wafer geometry identity"},
+    {"output": "required_wafer_starts", "depends_on": ["P_TARGET_RATED_OUTPUT", "P_MODULE_RATED_POWER", "P_LOGIC_DIES_PER_MODULE", "P_EFFECTIVE_YIELD", "P_DIE_AREA"], "reason": "inverse throughput identity"},
+    {"output": "cooling_electricity", "depends_on": ["thermal_load", "P_COOLING_COP"], "reason": "avoid double counting facility electricity"},
+    {"output": "heat_rejection", "depends_on": ["facility_electricity", "process_exports", "cooling_system"], "reason": "first-law balance"},
+    {"output": "net_water_withdrawal", "depends_on": ["P_TOTAL_WATER_INTENSITY", "P_WATER_RECYCLING", "recycle_definition"], "reason": "water balance; recycling is not automatically one-for-one withdrawal avoidance"}
+  ],
+  "sensitivity": {
+    "h4_primary_method": "sobol_total_and_first_order_under_independent_marginal_design",
+    "h4_scope_rule": "The predeclared 20/80 total-order test applies only to the independent-marginal sensitivity design; ordinary Sobol indices are not attributed to parameters under the correlated joint distribution.",
+    "dependence_aware_method": "shapley_effects_or_equivalent_conditional_variance_allocation_under_the_gaussian_copula",
+    "required_comparison": "Report independent Sobol and dependence-aware rankings side by side; do not use agreement as a post hoc condition for H4 support.",
+    "uncertainty_intervals": "bootstrap_95_percent",
+    "bootstrap_replicates": 1000,
+    "h4_top_fraction": 0.20,
+    "h4_required_total_order_mass": 0.80,
+    "rank_stability": {
+      "top_set_inclusion_frequency_min": 0.80,
+      "median_spearman_rank_correlation_min": 0.80,
+      "fifth_percentile_spearman_rank_correlation_min": 0.60
+    },
+    "rule": "H4 is supported only if both concentration and every rank-stability threshold pass; otherwise it is falsified unless sensitivity itself is unidentifiable."
+  }
+}

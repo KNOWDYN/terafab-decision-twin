@@ -19,12 +19,20 @@ classifiers = [
 ]
 dependencies = []
 
+[project.optional-dependencies]
+study = [
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "scipy>=1.11",
+]
+
 [project.scripts]
 terafab = "terafab_decision_twin.cli:main"
+terafab-energy-security = "terafab_energy_security.cli:main"
 
 
 [tool.setuptools.packages.find]
-include = ["terafab_decision_twin*", "strategic_simulation*", "validation_lab*"]
+include = ["terafab_decision_twin*", "terafab_energy_security*", "strategic_simulation*", "validation_lab*"]
 
 
 [tool.setuptools.package-data]

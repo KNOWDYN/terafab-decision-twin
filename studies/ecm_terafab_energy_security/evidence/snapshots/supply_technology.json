@@ -1,0 +1,36 @@
+{
+  "snapshot_id": "SNAP_SUPPLY_TECHNOLOGY_2026_08_01",
+  "extraction_date": "2026-08-01",
+  "source_id": "SRC_EIA_AEO2026_EMM_TABLE3",
+  "lead_time_scope": "generic_central_station_construction_assumption",
+  "technologies": [
+    {"technology": "battery_storage", "representative_size_MW": 150, "first_available_year": 2025, "generic_lead_time_years": 1, "firm_accreditation": null},
+    {"technology": "solar_pv_tracking", "representative_size_MW": 150, "first_available_year": 2026, "generic_lead_time_years": 2, "firm_accreditation": null},
+    {"technology": "solar_pv_with_storage", "representative_size_MW": 150, "first_available_year": 2026, "generic_lead_time_years": 2, "firm_accreditation": null},
+    {"technology": "combustion_turbine_industrial_frame", "representative_size_MW": 419, "first_available_year": 2026, "generic_lead_time_years": 2, "heat_rate_Btu_per_kWh": 9142, "firm_accreditation": null},
+    {"technology": "combined_cycle_single_shaft", "representative_size_MW": 627, "first_available_year": 2027, "generic_lead_time_years": 3, "heat_rate_Btu_per_kWh": 6226, "firm_accreditation": null},
+    {"technology": "combined_cycle_with_95pct_ccs", "representative_size_MW": 543, "first_available_year": 2028, "generic_lead_time_years": 4, "heat_rate_Btu_per_kWh": 7239, "firm_accreditation": null},
+    {"technology": "onshore_wind", "representative_size_MW": 200, "first_available_year": 2027, "generic_lead_time_years": 3, "firm_accreditation": null},
+    {"technology": "geothermal", "representative_size_MW": 50, "first_available_year": 2028, "generic_lead_time_years": 4, "firm_accreditation": null},
+    {"technology": "nuclear_light_water_reactor", "representative_size_MW": 2156, "first_available_year": 2030, "generic_lead_time_years": 6, "firm_accreditation": null},
+    {"technology": "nuclear_small_modular_reactor", "representative_size_MW": 480, "first_available_year": 2030, "generic_lead_time_years": 6, "firm_accreditation": null}
+  ],
+  "ercot_elcc_constraints": {
+    "source_id": "SRC_ERCOT_ELCC_2024",
+    "solar_winter_expected_2026_penetration_ELCC_upper_fraction": 0.02,
+    "wind_winter_ELCC_upper_fraction": 0.32,
+    "storage_summer_afternoon_duration_for_at_least_91pct_ELCC_hours": 3,
+    "storage_summer_evening_duration_for_at_least_74pct_ELCC_hours": 5,
+    "rule": "Use portfolio- and season-specific ELCC curves in calculations; these extracted bounds are stress-test checks, not fixed accreditation factors."
+  },
+  "mandatory_adders_not_in_generic_lead_time": [
+    "site control",
+    "permitting",
+    "generation interconnection",
+    "transmission construction",
+    "fuel infrastructure",
+    "water infrastructure",
+    "commissioning",
+    "supply-chain delay"
+  ]
+}
